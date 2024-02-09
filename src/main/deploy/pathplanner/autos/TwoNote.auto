@@ -20,7 +20,13 @@
         {
           "type": "path",
           "data": {
-            "pathName": "New Path"
+            "pathName": "To note 2"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Move .1M"
           }
         }
       ]
