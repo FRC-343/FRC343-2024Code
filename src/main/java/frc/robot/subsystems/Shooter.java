@@ -5,8 +5,8 @@ import frc.robot.Commands.ShootingRelatingCommands.ShootCommand;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.RelativeEncoder;
-import com.revrobotics.SparkMaxRelativeEncoder;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import com.revrobotics.SparkRelativeEncoder;
+import com.revrobotics.CANSparkLowLevel.MotorType;
 
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.math.controller.SimpleMotorFeedforward;
@@ -17,12 +17,12 @@ public class Shooter extends SubsystemBase {
     private static final Shooter m_instance = new Shooter();
 
     private final CANSparkMax m_bottomShooter = new CANSparkMax(1, MotorType.kBrushless);
-    private final CANSparkMax m_topShooter = new CANSparkMax(2, MotorType.kBrushless);
+    private final CANSparkMax m_topShooter = new CANSparkMax(2, MotorType.kBrushed );
 
     private final RelativeEncoder m_bottomShooterEncoder = m_bottomShooter
-            .getEncoder(SparkMaxRelativeEncoder.Type.kHallSensor, 42);
+            .getEncoder(SparkRelativeEncoder.Type.kHallSensor, 42);
     private final RelativeEncoder m_topShooterEncoder = m_topShooter
-            .getEncoder(SparkMaxRelativeEncoder.Type.kHallSensor, 42);
+            .getEncoder(SparkRelativeEncoder.Type.kHallSensor, 42);
 
     private final PIDController m_bottomShooterPIDController = new PIDController(0.167, 0.0, 0.0);
     private final SimpleMotorFeedforward m_bottomShooterFeedforward = new SimpleMotorFeedforward(0.1113, 0.12233, 0.004487);

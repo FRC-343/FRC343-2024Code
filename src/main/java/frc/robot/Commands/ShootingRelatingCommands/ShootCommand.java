@@ -1,11 +1,11 @@
 package frc.robot.Commands.ShootingRelatingCommands;
 
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Robot;
 import frc.robot.subsystems.*;
 
-public class ShootCommand extends CommandBase {
+public class ShootCommand extends Command {
     // in Rev/Sec
     private double kTopShootSpeed;
     private double kBottomShootSpeed;
@@ -66,16 +66,14 @@ public class ShootCommand extends CommandBase {
         refreshAimValues();
         isShooterSpeedReady_v2();
 
-        // if (Robot.kUseColorSensor && (m_kicker.isBadCargo() || m_kicker.isRecentlyBadCargo(.3))) { // if bad cargo
-        //     ejectBadCargo();
-        // } else { // good carg
-        //     if (useVariableSpeed) {
-        //         setShooterSpeed(getShooterSpeed());
-        //     } else {
-        //         setShooterSpeed(shooterDesiredSpeed[0], shooterDesiredSpeed[1]);
-        //     }
-        //     shootShooter();
-        // }
+
+             if (useVariableSpeed) {
+                 setShooterSpeed(getShooterSpeed());
+             } else {
+                 setShooterSpeed(shooterDesiredSpeed[0], shooterDesiredSpeed[1]);
+             }
+             shootShooter();
+         
 
     }
 
