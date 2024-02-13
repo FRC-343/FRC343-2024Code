@@ -19,6 +19,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.PS4Controller.Button;
 import frc.robot.Commands.Auto.TestAuto;
+import frc.robot.Commands.Auto.PPSpecificCommands.waitcommand;
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.AimShootCommand;
 import frc.robot.Constants.AutoConstants;
 import frc.robot.Constants.DriveConstants;
@@ -68,6 +69,8 @@ public class RobotContainer {
       NamedCommands.registerCommand("AimShoot", new AimShootCommand());
       NamedCommands.registerCommand("Intake lift", new IntakeLiftCommand(.3));
       NamedCommands.registerCommand("Climber", new ClimberCommand(.3));
+      NamedCommands.registerCommand("Intake not timed", new IntakeTimedCommand());
+      NamedCommands .registerCommand("Wait", new waitcommand());
 
 
       field = new Field2d();

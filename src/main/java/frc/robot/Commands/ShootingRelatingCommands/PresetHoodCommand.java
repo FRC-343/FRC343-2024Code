@@ -1,10 +1,10 @@
 package frc.robot.Commands.ShootingRelatingCommands;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 
 // import frc.robot.subsystems.Hood;
 
-public class PresetHoodCommand extends CommandBase {
+public class PresetHoodCommand extends Command {
 
     // private final Hood m_hood;
 

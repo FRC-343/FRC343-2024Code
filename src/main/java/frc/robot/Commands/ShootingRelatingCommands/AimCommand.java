@@ -6,13 +6,13 @@ import edu.wpi.first.wpilibj2.command.Command;
 // import frc.robot.subsystems.Drive;
  import frc.robot.subsystems.ShooterAngle;
 // import frc.robot.subsystems.Turret;
-// import frc.robot.subsystems.Vision;
+ import frc.robot.subsystems.Vision;
 
 public class AimCommand extends Command {
 
      private final ShooterAngle m_ShooterAngle;
     // private final Turret m_turret;
-    // private final Vision m_vision;
+     private final Vision m_vision;
 
     private double turretPrecision;
     private double turretSpeed;
@@ -35,7 +35,7 @@ public class AimCommand extends Command {
     public AimCommand() {
          m_ShooterAngle = ShooterAngle.getInstance();
         // m_turret = Turret.getInstance();
-        // m_vision = Vision.getInstance();
+         m_vision = Vision.getInstance();
 
          addRequirements(m_ShooterAngle);
 
@@ -75,15 +75,15 @@ public class AimCommand extends Command {
     }
 
     private void refreshAimValues() {
-        // x = m_vision.getTx(); // left/right displacement angle
-        // y = m_vision.getTy(); // vertical displacement angle
-        // numberOfTargets = m_vision.getTv(); // 0 = no target, 1 = target
+         x = m_vision.getTx(); // left/right displacement angle
+         y = m_vision.getTy(); // vertical displacement angle
+         numberOfTargets = m_vision.getTv(); // 0 = no target, 1 = target
     }
 
     private void refreshIsAimedValues() { // have to use the static values since isAimed needs to be static to access in ShootCommand
          isShooterAngleAimed = m_ShooterAngle.isAimed();
         // isTurretAimed = m_vision.isAimed(turretPrecision);
-        // isTarget = numberOfTargets;
+         isTarget = numberOfTargets;
     }
 
     private void aimShooterAngle() {
