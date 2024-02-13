@@ -1,12 +1,11 @@
 package frc.robot.subsystems;
 
 
-import edu.wpi.first.wpilibj.motorcontrol.Spark;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 
-import edu.wpi.first.util.sendable.SendableRegistry;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 
@@ -17,6 +16,7 @@ public class Intake extends SubsystemBase {
 
     private final CANSparkMax m_intake = new CANSparkMax( 8, MotorType.kBrushed);
 
+    private final DigitalInput m_NoteDetector = new DigitalInput(14);
 
     private static boolean runningIntake = false;
 
@@ -32,15 +32,19 @@ public class Intake extends SubsystemBase {
     public static Intake getInstance() {
         return m_instance;
     }
-
-    public void raise() {
+    
+    public boolean getNoteDetector() {
+        return m_NoteDetector.get(); // true = ball in chamber
     }
 
-    public void lower() {
-    }
 
     public void setIntake(double speed) {
-        m_intake.set(speed);
+
+        if (getNoteDetector() == false){
+            m_intake.set(speed);
+        }
+
+        
         if (speed == 0) {
             runningIntake = false;
         } else {

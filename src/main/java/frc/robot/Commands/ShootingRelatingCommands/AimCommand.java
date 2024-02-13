@@ -4,13 +4,13 @@ import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.Command;
 // import frc.robot.subsystems.Drive;
-// import frc.robot.subsystems.Hood;
+ import frc.robot.subsystems.ShooterAngle;
 // import frc.robot.subsystems.Turret;
 // import frc.robot.subsystems.Vision;
 
 public class AimCommand extends Command {
 
-    // private final Hood m_hood;
+     private final ShooterAngle m_ShooterAngle;
     // private final Turret m_turret;
     // private final Vision m_vision;
 
@@ -24,22 +24,22 @@ public class AimCommand extends Command {
     private double y;
     private double numberOfTargets;
 
-    private static boolean isHoodAimed = false;
+    private static boolean isShooterAngleAimed = false;
     private static boolean isTurretAimed = false;
     private static double isTarget = 0;
 
     private static boolean doesEnd = false;
     private static boolean aimWhileMove = false;
-    private static int aimWhat = 1; // 0 = nothing, 1 = both, 2 = turret only, 3 = hood only
+    private static int aimWhat = 1; // 0 = nothing, 1 = both, 2 = turret only, 3 = ShooterAngle only
 
     public AimCommand() {
-        // m_hood = Hood.getInstance();
+         m_ShooterAngle = ShooterAngle.getInstance();
         // m_turret = Turret.getInstance();
         // m_vision = Vision.getInstance();
 
-        // addRequirements(m_hood, m_turret);
+         addRequirements(m_ShooterAngle);
 
-        // turretPidController.setIntegratorRange(-5, 5);
+        // turretPidContoller.setIntegratorRange(-5, 5);
     }
 
     @Override
@@ -47,18 +47,15 @@ public class AimCommand extends Command {
         refreshAimValues();
         refreshIsAimedValues();
         if (aimWhat == 1) {
-            aimHood();
-            aimTurret();
-        } else if (aimWhat == 2) {
-            aimTurret();
+            aimShooterAngle();
         } else if (aimWhat == 3) {
-            aimHood();
+            aimShooterAngle();
         }
     }
 
     @Override
     public void end(boolean interrupted) {
-        // m_hood.stop();
+         m_ShooterAngle.stop();
         // m_turret.stop();
     }
 
@@ -67,10 +64,8 @@ public class AimCommand extends Command {
         if (doesEnd) { // ends as soon as it is aimed
             if (aimWhat == 1) {
                 return isAimFinished();
-            } else if (aimWhat == 2) {
-                return isTurretAimed();
             } else if (aimWhat == 3) {
-                return isHoodAimed();
+                return isShooterAngleAimed();
             } else {
                 return true;
             }
@@ -86,33 +81,33 @@ public class AimCommand extends Command {
     }
 
     private void refreshIsAimedValues() { // have to use the static values since isAimed needs to be static to access in ShootCommand
-        // isHoodAimed = m_hood.isAimed();
+         isShooterAngleAimed = m_ShooterAngle.isAimed();
         // isTurretAimed = m_vision.isAimed(turretPrecision);
         // isTarget = numberOfTargets;
     }
 
-    private void aimHood() {
+    private void aimShooterAngle() {
         //  if (numberOfTargets == 1) {
         //      if (y > 6.9) { // 55 rps
-        //          m_hood.aim(3581.55 + y * -453.53 + y * y * 25.3331 + y * y * y * -0.5068); 
+        //          m_ShooterAngle.aim(3581.55 + y * -453.53 + y * y * 25.3331 + y * y * y * -0.5068); 
         //     } else if (y > 2.0) { // 60 rps
-        //          m_hood.aim(16.1772 * y * y + -327.65 * y + 2500);
+        //          m_ShooterAngle.aim(16.1772 * y * y + -327.65 * y + 2500);
         //      } else if (y <= 2.0) { // 65 rps
-        //          m_hood.aim(2176.33 + -84.183 * Math.pow(0.77463, y));
+        //          m_ShooterAngle.aim(2176.33 + -84.183 * Math.pow(0.77463, y));
         //       }
         // }
     }
 
-    private void aimTurret() {
-        if (!aimWhileMove) {
-            aimTurretPrototype(x);
-            // aimTurretMain(x);
-        } else {
-            aimTurretWhileMoving();
-        }
-    }
+    // private void aimTurret() {
+    //     if (!aimWhileMove) {
+    //         aimTurretPrototype(x);
+    //         // aimTurretMain(x);
+    //     } else {
+    //         aimTurretWhileMoving();
+    //     }
+    // }
 
-    private void aimTurretPrototype(double tx) {
+ //   private void aimTurretPrototype(double tx) {
         //turret precission 
         // if (y > 10) {
         //     turretPrecision = 4;
@@ -133,16 +128,16 @@ public class AimCommand extends Command {
         //     m_turret.spin(0);
         // }
 
-    }
+   // }
 
-    private void aimTurretMain(double tx) {
-        aimTurretSpeed();
-        refreshTurretPrecision();
+    // private void aimTurretMain(double tx) {
+    //     aimTurretSpeed();
+    //     refreshTurretPrecision();
 
-        if (aimWhileMove) {
-            turretPrecision *=3;
-            turretSpeed = MathUtil.clamp(Math.abs(x) / 25, .22, .6);
-        }
+    //     if (aimWhileMove) {
+    //         turretPrecision *=3;
+    //         turretSpeed = MathUtil.clamp(Math.abs(x) / 25, .22, .6);
+    //     }
 
         // if (tx > turretPrecision) {
         //     m_turret.spin(turretSpeed);
@@ -151,12 +146,12 @@ public class AimCommand extends Command {
         // } else {
         //     m_turret.spin(0.0);
         // }
-    }
+//    }
 
-    private void aimTurretSpeed() {
-        double speed = Math.abs(x) / 50.0; // equivilent to a PID (P only), goes proportionally slower the closer you are
-        turretSpeed = MathUtil.clamp(speed, .22, .6); // min = .22, max = .6
-    }
+    // private void aimTurretSpeed() {
+    //     double speed = Math.abs(x) / 50.0; // equivilent to a PID (P only), goes proportionally slower the closer you are
+    //     turretSpeed = MathUtil.clamp(speed, .22, .6); // min = .22, max = .6
+    // }
 
     private void refreshTurretPrecision() { // designed to get the precision based on speed (on distance)
         if (numberOfTargets > 0) {
@@ -183,16 +178,14 @@ public class AimCommand extends Command {
     }
 
     public static boolean isAimFinished() {
-        return isHoodAimed && isTurretAimed && isTarget == 1;
+        return isShooterAngleAimed  && isTarget == 1;
     }
 
-    public static boolean isHoodAimed() {
-        return isHoodAimed;
+    public static boolean isShooterAngleAimed() {
+        return isShooterAngleAimed;
     }
 
-    public static boolean isTurretAimed() {
-        return isTurretAimed;
-    }
+
 
     // settings to be called by instantCommands
     public static void useCustom(boolean doesItEnd, boolean movingAiming, int aimMode) {

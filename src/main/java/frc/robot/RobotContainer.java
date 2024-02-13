@@ -25,12 +25,14 @@ import frc.robot.Constants.DriveConstants;
 import frc.robot.Constants.OIConstants;
 import frc.robot.subsystems.DriveSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import java.util.List;
 
 import frc.robot.Commands.*;
+import frc.robot.subsystems.*;
 
 import com.pathplanner.lib.auto.AutoBuilder;
 import com.pathplanner.lib.auto.NamedCommands;
@@ -45,6 +47,11 @@ import com.pathplanner.lib.util.PathPlannerLogging;
 public class RobotContainer {
   // The robot's subsystems
   private final DriveSubsystem m_robotDrive = new DriveSubsystem();
+  private final IntakeLift m_IntakeLift = new IntakeLift(); 
+  private final Climber m_Climber = new Climber();
+  private final Shooter m_Shooter = new Shooter();
+  private final Intake m_Intake = new Intake();
+
   private final SendableChooser<Command> autoChooser;
   
   private final Field2d field;
@@ -52,13 +59,15 @@ public class RobotContainer {
 
   // The driver's controller
   XboxController m_driverController = new XboxController(OIConstants.kDriverControllerPort);
-
+  XboxController m_OpController = new XboxController(OIConstants.kOpControllerPort);
   /**
    * The container for the robot. Contains subsystems, OI devices, and commands.
    */
   public RobotContainer() {
 
       NamedCommands.registerCommand("AimShoot", new AimShootCommand());
+      NamedCommands.registerCommand("Intake lift", new IntakeLiftCommand(.3));
+      NamedCommands.registerCommand("Climber", new ClimberCommand(.3));
 
 
       field = new Field2d();
@@ -103,6 +112,20 @@ public class RobotContainer {
                 -MathUtil.applyDeadband(m_driverController.getRightX(), OIConstants.kDriveDeadband),
                 true, true),
             m_robotDrive));
+
+
+            m_IntakeLift.setDefaultCommand(
+              new RunCommand(() -> m_IntakeLift.setIntakeLift(  -m_OpController.getLeftY()/1.5), m_IntakeLift));
+
+            m_Climber.setDefaultCommand(
+              new RunCommand(() -> m_Climber.setCLimber(  -m_OpController.getLeftY()/1.5), m_Climber));
+
+            new JoystickButton(m_OpController, XboxController.Axis.kRightTrigger.value).whileTrue(new IntakeCommand());
+
+
+
+
+
   }
 
   /**

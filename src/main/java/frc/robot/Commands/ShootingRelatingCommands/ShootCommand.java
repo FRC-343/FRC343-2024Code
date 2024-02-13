@@ -100,10 +100,9 @@ public class ShootCommand extends Command {
 
         int w = waitForAim;
         boolean a = AimCommand.isAimFinished(); //both turret and hood
-        boolean t = AimCommand.isTurretAimed();
-        boolean h = AimCommand.isHoodAimed();
+        boolean h = AimCommand.isShooterAngleAimed();
 
-        if (((w == 0) || (w == 1 && a) || (w == 2 && t) || (w == 3 && h)) && isShooterSpeedReady_v2()) {
+        if (((w == 0) || (w == 1 && a) ||  (w == 3 && h)) && isShooterSpeedReady_v2()) {
             activateKicker = 1; //if aimed mode matches what needs to be aimed and shooter speed is ready then turn on kicker
         } else {
             activateKicker = 0;
