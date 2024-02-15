@@ -17,10 +17,8 @@ public class Climber extends SubsystemBase {
     // private final Spark m_intake = new Spark(6);
 
     private final CANSparkMax m_climber1 = new CANSparkMax( 10, MotorType.kBrushed);
-    private final CANSparkMax m_climber2 = new CANSparkMax( 11, MotorType.kBrushed);
 
     private final RelativeEncoder m_climber1Encoder = m_climber1.getEncoder(SparkRelativeEncoder.Type.kHallSensor, 42);
-    private final RelativeEncoder m_climber2Encoder = m_climber2.getEncoder(SparkRelativeEncoder.Type.kHallSensor, 42);
 
 
    private final DigitalInput m_isTop = new DigitalInput(1);
@@ -55,15 +53,12 @@ public class Climber extends SubsystemBase {
         if (speed < 0.0 && getBottomLimit()) {
             m_climber1.set(0.0);
             m_climber1Encoder.setPosition(0);
-            m_climber2.set(0.0);
-            m_climber2Encoder.setPosition(0);
+        
         } else if (speed > 0 && (m_isTop.get())) {
             m_climber1.set(0.0);
-            m_climber2.set(0.0);
 
         } else {
           m_climber1.set(speed);
-          m_climber2.set(speed);
         }
    }
 

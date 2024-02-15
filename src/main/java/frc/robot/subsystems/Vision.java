@@ -38,6 +38,7 @@ public class Vision extends SubsystemBase {
         return Math.abs(getTx()) < precision;
     }
 
+
     public void setLEDS(boolean turnOn) {
         if (turnOn) {
             table.getEntry("ledMode").setNumber(3);

@@ -87,15 +87,15 @@ public class AimCommand extends Command {
     }
 
     private void aimShooterAngle() {
-        //  if (numberOfTargets == 1) {
-        //      if (y > 6.9) { // 55 rps
-        //          m_ShooterAngle.aim(3581.55 + y * -453.53 + y * y * 25.3331 + y * y * y * -0.5068); 
-        //     } else if (y > 2.0) { // 60 rps
-        //          m_ShooterAngle.aim(16.1772 * y * y + -327.65 * y + 2500);
-        //      } else if (y <= 2.0) { // 65 rps
-        //          m_ShooterAngle.aim(2176.33 + -84.183 * Math.pow(0.77463, y));
-        //       }
-        // }
+          if (numberOfTargets == 1) {
+             if (y > 6.9) { // 55 rps
+                 m_ShooterAngle.aim(3581.55 + y * -453.53 + y * y * 25.3331 + y * y * y * -0.5068); 
+            } else if (y > 2.0) { // 60 rps
+                 m_ShooterAngle.aim(16.1772 * y * y + -327.65 * y + 2500);
+             } else if (y <= 2.0) { // 65 rps
+                 m_ShooterAngle.aim(2176.33 + -84.183 * Math.pow(0.77463, y));
+              }
+        }
     }
 
     // private void aimTurret() {
