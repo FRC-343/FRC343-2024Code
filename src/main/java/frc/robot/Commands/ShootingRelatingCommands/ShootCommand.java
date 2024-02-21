@@ -182,6 +182,8 @@ public class ShootCommand extends Command {
         stopShooterAfterTime = false;
     }
 
+    
+
     public static void useStandardAutoAimForAutonomous(double seconds) {
         useStandardAutoAim();
         stopShooterAfterTime = true;

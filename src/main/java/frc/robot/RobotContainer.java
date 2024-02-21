@@ -24,6 +24,7 @@ import frc.robot.Commands.Auto.PPSpecificCommands.waitcommand;
 import frc.robot.Commands.ShootingRelatingCommands.AimCommand;
 import frc.robot.Commands.ShootingRelatingCommands.ShootCommand;
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.AimShootCommand;
+import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.AimShootCommandAuto;
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.ShootSpecificSpeedCommand;
 import frc.robot.Constants.AutoConstants;
 import frc.robot.Constants.DriveConstants;
@@ -136,7 +137,7 @@ public class RobotContainer {
 
 
             new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value)
-            .whileTrue(new ShootSpecificSpeedCommand(10))
+            .whileTrue(new AimShootCommandAuto(2))
             .whileFalse(new ShootSpecificSpeedCommand(0));
             // new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value).whileFalse((new ShootSpecificSpeedCommand(0)));
 

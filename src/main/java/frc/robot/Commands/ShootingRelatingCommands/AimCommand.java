@@ -31,7 +31,7 @@ public class AimCommand extends Command {
 
     private static boolean doesEnd = false;
     private static boolean aimWhileMove = false;
-    private static int aimWhat = 1; // 0 = nothing, 1 = both, 2 = turret only, 3 = ShooterAngle only
+    private static int aimWhat = 3; // 0 = nothing, 1 = both, 2 = turret only, 3 = ShooterAngle only
 
     public AimCommand() {
          m_ShooterAngle = ShooterAngle.getInstance();
