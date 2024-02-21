@@ -36,9 +36,7 @@ public class ClimberCommand extends Command {
                  value = true;
              }
          } else if (m_speed < 0) {
-             if (m_Climber.getTopLimit()) {
-                 value = true;
-             }
+
             }
        if (m_speed == 0) {
              value = true;

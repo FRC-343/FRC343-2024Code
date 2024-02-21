@@ -16,8 +16,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Shooter extends SubsystemBase {
     private static final Shooter m_instance = new Shooter();
 
-    private final CANSparkMax m_bottomShooter = new CANSparkMax(1, MotorType.kBrushless);
-    private final CANSparkMax m_topShooter = new CANSparkMax(2, MotorType.kBrushed );
+    private final CANSparkMax m_bottomShooter = new CANSparkMax(7, MotorType.kBrushless);
+    private final CANSparkMax m_topShooter = new CANSparkMax(16, MotorType.kBrushless );
 
     private final RelativeEncoder m_bottomShooterEncoder = m_bottomShooter
             .getEncoder(SparkRelativeEncoder.Type.kHallSensor, 42);
@@ -36,7 +36,7 @@ public class Shooter extends SubsystemBase {
         m_bottomShooter.setInverted(false);
         m_bottomShooterEncoder.setVelocityConversionFactor(0.01666); // vel deffaults to RPM, this turns it to Rev/sec
 
-        m_topShooter.setInverted(true);
+        m_topShooter.setInverted(false);
         m_topShooterEncoder.setVelocityConversionFactor(0.01666);
 
         SendableRegistry.setSubsystem(m_topShooterPIDController, this.getClass().getSimpleName());
@@ -71,9 +71,10 @@ public class Shooter extends SubsystemBase {
         
         //determiming when to run shooter
 
-        // if (ShootCommand.activateShooter[0] != 0 || ShootCommand.activateShooter[1] != 0) {
-        //     shoot(ShootCommand.activateShooter[0], ShootCommand.activateShooter[1]);
-        // } else if (Kicker.activateShooter[0] != 0 || Kicker.activateShooter[1] != 0) { // eject while intaking
+         if (ShootCommand.activateShooter[0] != 0 || ShootCommand.activateShooter[1] != 0) {
+             shoot(ShootCommand.activateShooter[0], ShootCommand.activateShooter[1]);
+         } 
+        //else if (Kicker.activateShooter[0] != 0 || Kicker.activateShooter[1] != 0) { // eject while intaking
         //     shoot(Kicker.activateShooter[0], Kicker.activateShooter[1]);
         // } else {
         //     shoot(0);
@@ -87,25 +88,28 @@ public class Shooter extends SubsystemBase {
             double shooterOutput = shooterFeedforward + shooterPIDOutput;
 
             m_bottomShooter.setVoltage(shooterOutput);
-        } else {
-            m_bottomShooter.setVoltage(0.0);
-        }
-
-        if (m_topSpeed > 0.01 || m_topSpeed < -0.01) {
-            double shooterFeedforward = m_topShooterFeedforward.calculate(m_topSpeed);
-            double shooterPIDOutput = m_topShooterPIDController.calculate(getTopShooterRPS(), m_topSpeed);
-            double shooterOutput = shooterFeedforward + shooterPIDOutput;
-
             m_topShooter.setVoltage(shooterOutput);
         } else {
-            m_topShooter.setVoltage(0.0);
+            m_bottomShooter.setVoltage(0.0);
+            m_topShooter.setVoltage(0);
         }
 
+        // if (m_topSpeed > 0.01 || m_topSpeed < -0.01) {
+        //     double shooterFeedforward = m_topShooterFeedforward.calculate(m_topSpeed);
+        //     double shooterPIDOutput = m_topShooterPIDController.calculate(getTopShooterRPS(), m_topSpeed);
+        //     double shooterOutput = shooterFeedforward + shooterPIDOutput;
+
+        //     m_topShooter.setVoltage(shooterOutput);
+        // } else {
+        //     m_topShooter.setVoltage(0.0);
+        // }
+
         SmartDashboard.putString("shooter RPS", "" + (int) getBottomShooterRPS() + ", " + (int) getTopShooterRPS());
+        
     }
 
     public void set(double topSpeed, double bottomSpeed) {
-        m_topShooter.set(topSpeed);
+        m_topShooter.set(bottomSpeed);
         m_bottomShooter.set(bottomSpeed);
     }
 }

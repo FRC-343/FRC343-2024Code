@@ -7,17 +7,18 @@ import edu.wpi.first.wpilibj2.command.Command;
  import frc.robot.subsystems.ShooterAngle;
 // import frc.robot.subsystems.Turret;
  import frc.robot.subsystems.Vision;
+import frc.robot.subsystems.Visiontwo;
 
 public class AimCommand extends Command {
 
      private final ShooterAngle m_ShooterAngle;
     // private final Turret m_turret;
-     private final Vision m_vision;
+     private final Visiontwo m_vision;
 
     private double turretPrecision;
     private double turretSpeed;
 
-    private PIDController turretPidController = new PIDController(-0.05, .005, -0.003);
+    // private PIDController turretPidController = new PIDController(0.05, .005, 0.003);
 
     // limelight values
     private double x;
@@ -35,9 +36,9 @@ public class AimCommand extends Command {
     public AimCommand() {
          m_ShooterAngle = ShooterAngle.getInstance();
         // m_turret = Turret.getInstance();
-         m_vision = Vision.getInstance();
+         m_vision = Visiontwo.getInstance();
 
-         addRequirements(m_ShooterAngle);
+         addRequirements(m_ShooterAngle, m_vision);
 
         // turretPidContoller.setIntegratorRange(-5, 5);
     }

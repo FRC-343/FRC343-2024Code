@@ -11,7 +11,7 @@ public class ShootCommand extends Command {
     private double kBottomShootSpeed;
 
     private final Shooter m_shooter;
-    // private final Vision m_vision;
+     private final Vision m_vision;
     // private final Kicker m_kicker;
 
     private static final double lowGoalSpeed[] = { 30, 30 }; // bottom wheel, top wheel
@@ -40,13 +40,13 @@ public class ShootCommand extends Command {
 
         m_shooter = Shooter.getInstance();
         // m_kicker = Kicker.getInstance();
-        // m_vision = Vision.getInstance();
+         m_vision = Vision.getInstance();
 
         addRequirements(); // vision, shooter, and kicker don't run any motors, they just grabs values
 
         refreshAimValues();
 
-        time = 4.0;
+        time = 1.0;
         shooterSpeed = 70;
 
     }

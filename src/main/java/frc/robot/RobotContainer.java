@@ -13,6 +13,7 @@ import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.trajectory.Trajectory;
 import edu.wpi.first.math.trajectory.TrajectoryConfig;
 import edu.wpi.first.math.trajectory.TrajectoryGenerator;
+import edu.wpi.first.wpilibj.PS4Controller;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.smartdashboard.Field2d;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -20,11 +21,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.PS4Controller.Button;
 import frc.robot.Commands.Auto.TestAuto;
 import frc.robot.Commands.Auto.PPSpecificCommands.waitcommand;
+import frc.robot.Commands.ShootingRelatingCommands.AimCommand;
+import frc.robot.Commands.ShootingRelatingCommands.ShootCommand;
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.AimShootCommand;
+import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.ShootSpecificSpeedCommand;
 import frc.robot.Constants.AutoConstants;
 import frc.robot.Constants.DriveConstants;
 import frc.robot.Constants.OIConstants;
-import frc.robot.subsystems.DriveSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.RunCommand;
@@ -48,10 +51,13 @@ import com.pathplanner.lib.util.PathPlannerLogging;
 public class RobotContainer {
   // The robot's subsystems
   private final DriveSubsystem m_robotDrive = new DriveSubsystem();
-  private final IntakeLift m_IntakeLift = new IntakeLift(); 
-  private final Climber m_Climber = new Climber();
-  private final Shooter m_Shooter = new Shooter();
-  private final Intake m_Intake = new Intake();
+  private final IntakeLift m_IntakeLift = IntakeLift.getInstance(); 
+  private final Climber m_Climber = Climber.getInstance();
+  private final Shooter m_Shooter = Shooter.getInstance();
+  private final Intake m_Intake = Intake.getInstance();
+  private final Vision m_Vision = Vision.getInstance();
+
+  private final ShooterAngle m_ShooterAngle = ShooterAngle.getInstance();
 
   private final SendableChooser<Command> autoChooser;
   
@@ -75,6 +81,7 @@ public class RobotContainer {
 
       field = new Field2d();
         SmartDashboard.putData("Field", field);
+        
 
         // Logging callback for current robot pose
         PathPlannerLogging.setLogCurrentPoseCallback((pose) -> {
@@ -117,17 +124,26 @@ public class RobotContainer {
             m_robotDrive));
 
 
-            m_IntakeLift.setDefaultCommand(
-              new RunCommand(() -> m_IntakeLift.setIntakeLift(  -m_OpController.getLeftY()/1.5), m_IntakeLift));
+             m_IntakeLift.setDefaultCommand(
+               new RunCommand(() -> m_IntakeLift.setIntakeLift(  -m_OpController.getLeftY()/1.5), m_IntakeLift));
 
-            m_Climber.setDefaultCommand(
-              new RunCommand(() -> m_Climber.setCLimber(  -m_OpController.getLeftY()/1.5), m_Climber));
+             m_Climber.setDefaultCommand(
+               new RunCommand(() -> m_Climber.setCLimber(  m_OpController.getRightY()/1.5), m_Climber));
 
-            new JoystickButton(m_OpController, XboxController.Axis.kRightTrigger.value).whileTrue(new IntakeCommand());
+            new JoystickButton(m_OpController, XboxController.Button.kRightBumper.value).whileTrue(new IntakeCommand(1));
+
+            new JoystickButton(m_OpController, XboxController.Button.kB.value).whileTrue(new IntakeCommand(-8));
 
 
+            new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value)
+            .whileTrue(new ShootSpecificSpeedCommand(10))
+            .whileFalse(new ShootSpecificSpeedCommand(0));
+            // new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value).whileFalse((new ShootSpecificSpeedCommand(0)));
 
+            // new JoystickButton(m_OpController, XboxController.Button.kA.value).onTrue(new AimCommand());
 
+            m_ShooterAngle.setDefaultCommand(
+            new RunCommand(() -> m_ShooterAngle.move(  m_OpController.getRightX()/1.5), m_ShooterAngle));
 
   }
 

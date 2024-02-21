@@ -13,12 +13,12 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class ShooterAngle extends SubsystemBase {
     private static final ShooterAngle m_instance = new ShooterAngle();
 
-    private final Encoder m_ShooterAngleEncoder = new Encoder(4, 5);
-    private final DigitalInput m_ShooterAngleBack = new DigitalInput(2); // 2 = bottom = back
-    private final DigitalInput m_ShooterAngleFront = new DigitalInput(3);
+    private final Encoder m_ShooterAngleEncoder = new Encoder(0, 1);
+    private final DigitalInput m_ShooterAngleBack = new DigitalInput(5); // 2 = bottom = back
+    private final DigitalInput m_ShooterAngleFront = new DigitalInput(4);
 
 
-    private final CANSparkMax m_ShooterAngleMotor = new CANSparkMax(12,  MotorType.kBrushed);
+    private final CANSparkMax m_ShooterAngleMotor = new CANSparkMax(15,  MotorType.kBrushed);
 
     private boolean m_aimed = false; // if shooter is currently aimed
     private double m_target = 0.0; // where it needs to be aiming
@@ -74,7 +74,14 @@ public class ShooterAngle extends SubsystemBase {
         m_aimed = false;
         m_speed = speed;
     }
+    
+    public boolean getTopLimit() {
+        return m_ShooterAngleFront.get();
+    }
 
+    public boolean getBottomLimit() {
+        return m_ShooterAngleBack.get();
+    }
     @Override
     public void periodic() {
         if (m_aiming) {
@@ -126,5 +133,10 @@ public class ShooterAngle extends SubsystemBase {
             }
 
         }
+
+        SmartDashboard.putBoolean("Shooter Top Limit", getTopLimit());
+        SmartDashboard.putBoolean("Shooter Bottom Limit", getBottomLimit());
+
+        SmartDashboard.putData("Shooter Angle", m_ShooterAngleEncoder);
     }
 }
