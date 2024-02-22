@@ -158,7 +158,7 @@ public class RobotContainer {
 
 
             new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value)
-            .whileTrue(new ShootSpecificSpeedCommand(65));
+            .whileTrue(new AimCommand());
 
             
             // new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value).whileFalse((new ShootSpecificSpeedCommand(0)));

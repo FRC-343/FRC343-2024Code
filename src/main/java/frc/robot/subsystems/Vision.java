@@ -10,9 +10,11 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class Vision extends SubsystemBase {
     private static final Vision m_instance = new Vision();
 
-    private final NetworkTable table1 = NetworkTableInstance.getDefault().getTable("ShooterPipe");
+    private final NetworkTable table1 = NetworkTableInstance.getDefault().getTable("Intake limelight");
     private final NetworkTableEntry tx = table1.getEntry("tx");
     private final NetworkTableEntry ty = table1.getEntry("ty");
+
+    double angle;
 
     public static Vision getInstance() {
         return m_instance;
@@ -38,6 +40,8 @@ public class Vision extends SubsystemBase {
         return true;
     }
 
+
+
     public void setLEDS(boolean turnOn) {
         if (turnOn) {
             table1.getEntry("ledMode").setNumber(3);
@@ -45,7 +49,23 @@ public class Vision extends SubsystemBase {
             table1.getEntry("ledMode").setNumber(1);
         }
     }
+    public double AimMath(){
+  
+        // if (getId() == 3.0){
 
+           
+        if (getTy() > 6.9) { // 55 rps
+         angle = 10;//3581.55 + getTy() * -453.53 + getTy() * getTy() * 25.3331 + getTy() * getTy() * getTy() * -0.5068; 
+           
+       } else if (getTy() > 2.0) { // 60 rps
+         angle = 30;//16.1772 * getTy() * getTy() + -327.65 * getTy() + 2500;
+        } else if (getTy() <= 2.0) { // 65 rps
+           angle = 50;//(2176.33 + -84.183 * Math.pow(0.77463, getTy()));
+         }
+        // }
+
+return angle;
+}
     // public void killYourEnimiesViaLEDS() {
     //     table.getEntry("ledMode").setNumber(2);
     // }

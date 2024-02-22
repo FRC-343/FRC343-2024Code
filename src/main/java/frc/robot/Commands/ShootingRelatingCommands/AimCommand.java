@@ -2,6 +2,7 @@ package frc.robot.Commands.ShootingRelatingCommands;
 
 import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.math.controller.PIDController;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 // import frc.robot.subsystems.Drive;
  import frc.robot.subsystems.ShooterAngle;
@@ -38,7 +39,7 @@ public class AimCommand extends Command {
         // m_turret = Turret.getInstance();
          m_vision = Visiontwo.getInstance();
 
-         addRequirements(m_ShooterAngle, m_vision);
+         addRequirements(m_ShooterAngle);
 
         // turretPidContoller.setIntegratorRange(-5, 5);
     }
@@ -47,11 +48,11 @@ public class AimCommand extends Command {
     public void execute() {
         refreshAimValues();
         refreshIsAimedValues();
-        if (aimWhat == 1) {
+        // if (aimWhat == 1) {
+            // aimShooterAngle();
+        // } else if (aimWhat == 3) {
             aimShooterAngle();
-        } else if (aimWhat == 3) {
-            aimShooterAngle();
-        }
+        // }
     }
 
     @Override
@@ -79,6 +80,7 @@ public class AimCommand extends Command {
          x = m_vision.getTx(); // left/right displacement angle
          y = m_vision.getTy(); // vertical displacement angle
          numberOfTargets = m_vision.getTv(); // 0 = no target, 1 = target
+         SmartDashboard.putNumber("Tv when called", m_vision.getTv());
     }
 
     private void refreshIsAimedValues() { // have to use the static values since isAimed needs to be static to access in ShootCommand
@@ -88,15 +90,10 @@ public class AimCommand extends Command {
     }
 
     private void aimShooterAngle() {
-          if (numberOfTargets == 1) {
-             if (y > 6.9) { // 55 rps
-                 m_ShooterAngle.aim(3581.55 + y * -453.53 + y * y * 25.3331 + y * y * y * -0.5068); 
-            } else if (y > 2.0) { // 60 rps
-                 m_ShooterAngle.aim(16.1772 * y * y + -327.65 * y + 2500);
-             } else if (y <= 2.0) { // 65 rps
-                 m_ShooterAngle.aim(2176.33 + -84.183 * Math.pow(0.77463, y));
-              }
-        }
+          
+                 m_ShooterAngle.aim(m_vision.AimMath()); 
+                
+          
     }
 
     // private void aimTurret() {
@@ -198,7 +195,7 @@ public class AimCommand extends Command {
     public static void useStandardAutoAim() {
         doesEnd = false;
         aimWhileMove = false;
-        aimWhat = 1;
+        aimWhat = 3;
     }
 
     public static void useMovingAutoAim() {
