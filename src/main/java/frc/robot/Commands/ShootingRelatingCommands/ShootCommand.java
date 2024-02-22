@@ -1,18 +1,18 @@
 package frc.robot.Commands.ShootingRelatingCommands;
 
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Robot;
 import frc.robot.subsystems.*;
 
-public class ShootCommand extends Command {
+public class ShootCommand extends CommandBase {
     // in Rev/Sec
     private double kTopShootSpeed;
     private double kBottomShootSpeed;
 
     private final Shooter m_shooter;
-     private final Vision m_vision;
-    // private final Kicker m_kicker;
+    private final Vision m_vision;
+
 
     private static final double lowGoalSpeed[] = { 30, 30 }; // bottom wheel, top wheel
 
@@ -39,14 +39,14 @@ public class ShootCommand extends Command {
     public ShootCommand() {
 
         m_shooter = Shooter.getInstance();
-        // m_kicker = Kicker.getInstance();
-         m_vision = Vision.getInstance();
+ 
+        m_vision = Vision.getInstance();
 
         addRequirements(); // vision, shooter, and kicker don't run any motors, they just grabs values
 
         refreshAimValues();
 
-        time = 1.0;
+        time = 4.0;
         shooterSpeed = 70;
 
     }
@@ -65,15 +65,13 @@ public class ShootCommand extends Command {
     public void execute() {
         refreshAimValues();
         isShooterSpeedReady_v2();
-
-
-             if (useVariableSpeed) {
-                 setShooterSpeed(getShooterSpeed());
-             } else {
-                 setShooterSpeed(shooterDesiredSpeed[0], shooterDesiredSpeed[1]);
-             }
-             shootShooter();
-         
+          if (useVariableSpeed) {
+                setShooterSpeed(getShooterSpeed());
+            } else {
+                setShooterSpeed(shooterDesiredSpeed[0], shooterDesiredSpeed[1]);
+            }
+            shootShooter();
+        
 
     }
 
@@ -102,7 +100,7 @@ public class ShootCommand extends Command {
         boolean a = AimCommand.isAimFinished(); //both turret and hood
         boolean h = AimCommand.isShooterAngleAimed();
 
-        if (((w == 0) || (w == 1 && a) ||  (w == 3 && h)) && isShooterSpeedReady_v2()) {
+        if (((w == 0) || (w == 1 && a) || (w == 3 && h)) && isShooterSpeedReady_v2()) {
             activateKicker = 1; //if aimed mode matches what needs to be aimed and shooter speed is ready then turn on kicker
         } else {
             activateKicker = 0;
@@ -157,8 +155,8 @@ public class ShootCommand extends Command {
     }
 
     private void refreshAimValues() {
-        // v = m_vision.getTv();
-        // y = m_vision.getTy();
+        v = m_vision.getTv();
+        y = m_vision.getTy();
     }
 
     public void ejectBadCargo() {
@@ -181,8 +179,6 @@ public class ShootCommand extends Command {
         waitForAim = 1; // true
         stopShooterAfterTime = false;
     }
-
-    
 
     public static void useStandardAutoAimForAutonomous(double seconds) {
         useStandardAutoAim();

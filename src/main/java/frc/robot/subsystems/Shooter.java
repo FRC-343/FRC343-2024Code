@@ -73,12 +73,9 @@ public class Shooter extends SubsystemBase {
 
          if (ShootCommand.activateShooter[0] != 0 || ShootCommand.activateShooter[1] != 0) {
              shoot(ShootCommand.activateShooter[0], ShootCommand.activateShooter[1]);
-         } 
-        //else if (Kicker.activateShooter[0] != 0 || Kicker.activateShooter[1] != 0) { // eject while intaking
-        //     shoot(Kicker.activateShooter[0], Kicker.activateShooter[1]);
-        // } else {
-        //     shoot(0);
-        // }
+         } else {
+             shoot(0);
+        }
 
         //PID and feed forward when running shooter
 
@@ -94,16 +91,7 @@ public class Shooter extends SubsystemBase {
             m_topShooter.setVoltage(0);
         }
 
-        // if (m_topSpeed > 0.01 || m_topSpeed < -0.01) {
-        //     double shooterFeedforward = m_topShooterFeedforward.calculate(m_topSpeed);
-        //     double shooterPIDOutput = m_topShooterPIDController.calculate(getTopShooterRPS(), m_topSpeed);
-        //     double shooterOutput = shooterFeedforward + shooterPIDOutput;
-
-        //     m_topShooter.setVoltage(shooterOutput);
-        // } else {
-        //     m_topShooter.setVoltage(0.0);
-        // }
-
+  
         SmartDashboard.putString("shooter RPS", "" + (int) getBottomShooterRPS() + ", " + (int) getTopShooterRPS());
         
     }

@@ -35,9 +35,8 @@ public class Vision extends SubsystemBase {
     }
 
     public boolean isAimed(double precision) {
-        return Math.abs(getTx()) < precision;
+        return true;
     }
-
 
     public void setLEDS(boolean turnOn) {
         if (turnOn) {

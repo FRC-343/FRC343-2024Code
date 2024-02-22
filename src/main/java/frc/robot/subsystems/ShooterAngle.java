@@ -58,6 +58,7 @@ public class ShooterAngle extends SubsystemBase {
     }
 
     public void aim(double target) {
+        m_target = target;
         aim(target, false);
     }
 
@@ -66,7 +67,7 @@ public class ShooterAngle extends SubsystemBase {
     }
 
     public boolean isAimed() {
-        return m_aimed;
+        return false;
     }
 
     public void move(double speed) {
@@ -84,9 +85,10 @@ public class ShooterAngle extends SubsystemBase {
     }
     @Override
     public void periodic() {
+     
         if (m_aiming) {
 
-            if (m_ShooterAngleEncoder.getDistance() > 3300 || m_ShooterAngleEncoder.getDistance() < -200) {
+            if (m_ShooterAngleEncoder.getDistance() > 300 || m_ShooterAngleEncoder.getDistance() < -200) {
                 System.err.println("ShooterAngle encoder sent garbage values, zeroing again...");
                 m_zeroing = true;
                 m_aimed = false;
@@ -102,17 +104,17 @@ public class ShooterAngle extends SubsystemBase {
                 m_aimed = false;
             } else {
                 double speed = .8;
-                if (Math.abs(m_ShooterAngleEncoder.getDistance() - m_target) < 600) {
+                if (Math.abs(m_ShooterAngleEncoder.getDistance() - m_target) < 20) {
                     speed = .4;
                 }
 
                 if (m_ShooterAngleFront.get()) {
                     m_zeroing = true;
                     m_ShooterAngleMotor.set(0.0);
-                } else if (m_ShooterAngleEncoder.getDistance() < m_target - 150) {
+                } else if (m_ShooterAngleEncoder.getDistance() < m_target - 5) {
                     m_ShooterAngleMotor.set(-speed);
                     m_aimed = false;
-                } else if (m_ShooterAngleEncoder.getDistance() > m_target + 150) {
+                } else if (m_ShooterAngleEncoder.getDistance() > m_target + 5) {
                     m_ShooterAngleMotor.set(speed);
                     m_aimed = false;
                 } else { // m_ShooterAngleEncoder.getDistance >m_target-50 && < m_target+50
@@ -120,7 +122,7 @@ public class ShooterAngle extends SubsystemBase {
                     m_aimed = true;
                 }
             }
-            SmartDashboard.putBoolean("ShooterAngle aimed", m_aimed);
+            SmartDashboard.putBoolean("Is ShooterAngle aimed", m_aimed);
 
         } else {
             if (m_ShooterAngleBack.get() && m_speed > 0.0) {

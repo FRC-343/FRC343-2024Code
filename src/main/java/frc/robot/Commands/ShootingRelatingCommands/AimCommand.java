@@ -83,7 +83,7 @@ public class AimCommand extends Command {
 
     private void refreshIsAimedValues() { // have to use the static values since isAimed needs to be static to access in ShootCommand
          isShooterAngleAimed = m_ShooterAngle.isAimed();
-        // isTurretAimed = m_vision.isAimed(turretPrecision);
+        isTurretAimed = m_vision.isAimed(turretPrecision);
          isTarget = numberOfTargets;
     }
 
@@ -179,11 +179,11 @@ public class AimCommand extends Command {
     }
 
     public static boolean isAimFinished() {
-        return isShooterAngleAimed  && isTarget == 1;
+        return false;//isShooterAngleAimed  && isTarget == 1;
     }
 
     public static boolean isShooterAngleAimed() {
-        return isShooterAngleAimed;
+        return false; //isShooterAngleAimed;
     }
 
 

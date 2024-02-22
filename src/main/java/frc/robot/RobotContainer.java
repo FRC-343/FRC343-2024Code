@@ -22,6 +22,7 @@ import edu.wpi.first.wpilibj.PS4Controller.Button;
 import frc.robot.Commands.Auto.TestAuto;
 import frc.robot.Commands.Auto.PPSpecificCommands.waitcommand;
 import frc.robot.Commands.ShootingRelatingCommands.AimCommand;
+import frc.robot.Commands.ShootingRelatingCommands.PresetHoodCommand;
 import frc.robot.Commands.ShootingRelatingCommands.ShootCommand;
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.AimShootCommand;
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.AimShootCommandAuto;
@@ -125,26 +126,6 @@ public class RobotContainer {
             m_robotDrive));
 
 
-             m_IntakeLift.setDefaultCommand(
-               new RunCommand(() -> m_IntakeLift.setIntakeLift(  -m_OpController.getLeftY()/1.5), m_IntakeLift));
-
-             m_Climber.setDefaultCommand(
-               new RunCommand(() -> m_Climber.setCLimber(  m_OpController.getRightY()/1.5), m_Climber));
-
-            new JoystickButton(m_OpController, XboxController.Button.kRightBumper.value).whileTrue(new IntakeCommand(1));
-
-            new JoystickButton(m_OpController, XboxController.Button.kB.value).whileTrue(new IntakeCommand(-8));
-
-
-            new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value)
-            .whileTrue(new AimShootCommandAuto(2))
-            .whileFalse(new ShootSpecificSpeedCommand(0));
-            // new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value).whileFalse((new ShootSpecificSpeedCommand(0)));
-
-            // new JoystickButton(m_OpController, XboxController.Button.kA.value).onTrue(new AimCommand());
-
-            m_ShooterAngle.setDefaultCommand(
-            new RunCommand(() -> m_ShooterAngle.move(  m_OpController.getRightX()/1.5), m_ShooterAngle));
 
   }
 
@@ -162,6 +143,30 @@ public class RobotContainer {
         .whileTrue(new RunCommand(
             () -> m_robotDrive.setX(),
             m_robotDrive));
+
+            
+             m_IntakeLift.setDefaultCommand(
+               new RunCommand(() -> m_IntakeLift.setIntakeLift(  -m_OpController.getLeftY()/1.5), m_IntakeLift));
+
+             m_Climber.setDefaultCommand(
+               new RunCommand(() -> m_Climber.setCLimber(  m_OpController.getRightY()/1.5), m_Climber));
+
+            new JoystickButton(m_OpController, XboxController.Button.kRightBumper.value)
+            .whileTrue(new IntakeCommand(1));
+
+            new JoystickButton(m_OpController, XboxController.Button.kB.value).whileTrue(new IntakeCommand(-8));
+
+
+            new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value)
+            .whileTrue(new ShootSpecificSpeedCommand(65));
+
+            
+            // new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value).whileFalse((new ShootSpecificSpeedCommand(0)));
+
+            // new JoystickButton(m_OpController, XboxController.Button.kA.value).onTrue(new AimCommand());
+
+            m_ShooterAngle.setDefaultCommand(
+            new RunCommand(() -> m_ShooterAngle.move(  m_OpController.getRightX()/1.5), m_ShooterAngle));
   }
 //   private void initAutoChooser() {
 //     autoChooser.setDefaultOption("Test", new TestAuto());
