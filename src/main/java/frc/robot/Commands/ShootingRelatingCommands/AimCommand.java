@@ -24,11 +24,11 @@ public class AimCommand extends Command {
     // limelight values
     private double x;
     private double y;
-    private double numberOfTargets;
+    private boolean numberOfTargets;
 
     private static boolean isShooterAngleAimed = false;
     private static boolean isTurretAimed = false;
-    private static double isTarget = 0;
+    private static boolean isTarget = false;
 
     private static boolean doesEnd = false;
     private static boolean aimWhileMove = false;
@@ -80,7 +80,7 @@ public class AimCommand extends Command {
          x = m_vision.getTx(); // left/right displacement angle
          y = m_vision.getTy(); // vertical displacement angle
          numberOfTargets = m_vision.getTv(); // 0 = no target, 1 = target
-         SmartDashboard.putNumber("Tv when called", m_vision.getTv());
+         SmartDashboard.putBoolean("Tv when called", m_vision.getTv());
     }
 
     private void refreshIsAimedValues() { // have to use the static values since isAimed needs to be static to access in ShootCommand
@@ -152,7 +152,7 @@ public class AimCommand extends Command {
     // }
 
     private void refreshTurretPrecision() { // designed to get the precision based on speed (on distance)
-        if (numberOfTargets > 0) {
+        if (numberOfTargets != false) {
             if (y > 10) {
                 turretPrecision = 2;
             } else {

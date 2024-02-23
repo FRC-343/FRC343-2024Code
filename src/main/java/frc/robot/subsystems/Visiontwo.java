@@ -15,6 +15,7 @@ public class Visiontwo extends SubsystemBase {
     private final NetworkTableEntry tx = table.getEntry("tx");
     private final NetworkTableEntry ty = table.getEntry("ty");
 
+
     double angle = 0.0;
 
     public static Visiontwo getInstance() {
@@ -29,8 +30,9 @@ public class Visiontwo extends SubsystemBase {
         return ty.getDouble(0.0);
     }
 
-    public double getTv() {
-        return table.getEntry("tv").getDouble(0.0);
+    public boolean getTv() {
+        NetworkTableEntry tv = table.getEntry("tv");
+        return (tv.getNumber(0).intValue() == 1)? true:false;
     }
 
     public double getThor() { //possibly with a hammer
@@ -55,7 +57,7 @@ public class Visiontwo extends SubsystemBase {
     
     public double AimMath(){
   
-         if (getTv() == 1){
+         if (getTv() == true){
 
            
         if (getTy() > 6.9) { // 55 rps
