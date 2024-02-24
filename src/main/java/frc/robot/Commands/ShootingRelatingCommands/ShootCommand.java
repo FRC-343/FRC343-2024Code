@@ -11,7 +11,7 @@ public class ShootCommand extends CommandBase {
     private double kBottomShootSpeed;
 
     private final Shooter m_shooter;
-    private final Vision m_vision;
+    private final Visiontwo m_vision;
 
 
     private static final double lowGoalSpeed[] = { 30, 30 }; // bottom wheel, top wheel
@@ -40,7 +40,7 @@ public class ShootCommand extends CommandBase {
 
         m_shooter = Shooter.getInstance();
  
-        m_vision = Vision.getInstance();
+        m_vision = Visiontwo.getInstance();
 
         addRequirements(); // vision, shooter, and kicker don't run any motors, they just grabs values
 
@@ -142,11 +142,11 @@ public class ShootCommand extends CommandBase {
 
     private double getShooterSpeed() {
         if (v == 1) {
-            if (y > 6.9) {
+            if (y > 1.5) {
+                shooterSpeed = 45;
+            } else if (y >-8.0) {
                 shooterSpeed = 55;
-            } else if (y > 2.0) {
-                shooterSpeed = 60;
-            } else if (y <= 2.0 ) {
+            } else if (y <= -8.0 ) {
                 shooterSpeed = 65;
              } 
         }

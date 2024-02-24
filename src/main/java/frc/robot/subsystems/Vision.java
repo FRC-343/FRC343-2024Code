@@ -3,6 +3,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 //18.2 degrees
@@ -77,5 +78,10 @@ return angle;
     //this is for second camera plugged into limelight
     public void setCamera(double value) {//vaulue = 0 split, 1 = secondary camera is small, 2 = limelight is small
         table1.getEntry("stream").setNumber(value);
+    }
+
+    public Command killYourEnimiesViaLEDS() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'killYourEnimiesViaLEDS'");
     }
 }

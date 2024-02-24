@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class Visiontwo extends SubsystemBase {
     private static final Visiontwo m_instance = new Visiontwo();
 
-    private final NetworkTable table = NetworkTableInstance.getDefault().getTable("Shooter LimeLight");
+    private final NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight-shooter");
     private final NetworkTableEntry tx = table.getEntry("tx");
     private final NetworkTableEntry ty = table.getEntry("ty");
 
@@ -58,15 +58,12 @@ public class Visiontwo extends SubsystemBase {
          if (getTv() == 1){
 
            
-        if (getTy() > 6.9) { // 55 rps
-         angle = 10;//3581.55 + getTy() * -453.53 + getTy() * getTy() * 25.3331 + getTy() * getTy() * getTy() * -0.5068; 
+         // 55 rps
+         angle = 5.172  * getTy() + 82.63;//3581.55 + getTy() * -453.53 + getTy() * getTy() * 25.3331 + getTy() * getTy() * getTy() * -0.5068; 
            
-       } else if (getTy() > 2.0 && getTy() <= 6.9) { // 60 rps
-         angle = 30;//16.1772 * getTy() * getTy() + -327.65 * getTy() + 2500;
-        } else if (getTy() <= 2.0) { // 65 rps
-           angle = 34;//(2176.33 + -84.183 * Math.pow(0.77463, getTy()));
-           SmartDashboard.putNumber("Ty when called", getTy());
-         }
+        
+        SmartDashboard.putNumber("Ty when called", getTy());
+
          }
 
 return angle;
