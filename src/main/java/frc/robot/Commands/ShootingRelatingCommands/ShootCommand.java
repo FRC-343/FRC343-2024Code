@@ -142,13 +142,10 @@ public class ShootCommand extends CommandBase {
 
     private double getShooterSpeed() {
         if (v == 1) {
-            if (y > 1.5) {
-                shooterSpeed = 45;
-            } else if (y >-8.0) {
-                shooterSpeed = 55;
-            } else if (y <= -8.0 ) {
-                shooterSpeed = 65;
-             } 
+            if(m_vision.getTy() > -3)
+            shooterSpeed = 50;
+        } else {
+            shooterSpeed = 70;
         }
 
         return shooterSpeed;

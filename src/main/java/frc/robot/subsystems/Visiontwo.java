@@ -55,11 +55,11 @@ public class Visiontwo extends SubsystemBase {
     
     public double AimMath(){
   
-         if (getTv() == 1){
+         if (getId() == 1 || getId() == 7){
 
            
          // 55 rps
-         angle = 5.172  * getTy() + 82.63;//3581.55 + getTy() * -453.53 + getTy() * getTy() * 25.3331 + getTy() * getTy() * getTy() * -0.5068; 
+         angle = 4.13614  * getTy() + 56.67256;//3581.55 + getTy() * -453.53 + getTy() * getTy() * 25.3331 + getTy() * getTy() * getTy() * -0.5068; 
            
         
         SmartDashboard.putNumber("Ty when called", getTy());
