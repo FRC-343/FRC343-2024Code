@@ -50,7 +50,7 @@ public class IntakeLift extends SubsystemBase {
 
     public void setIntakeLift(double speed) {
 
-        if (speed < 0.0 && getBottomLimit()) {
+        if (speed < 0.0 && getBottomLimit() == false) {
             m_intakeLiftMotor.set(0.0);
             m_intakeLiftEncoder.setPosition(0);
         } else if (speed > 0 && (m_isTop.get())) {

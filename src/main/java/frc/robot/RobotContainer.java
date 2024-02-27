@@ -152,15 +152,15 @@ public class RobotContainer {
                new RunCommand(() -> m_Climber.setCLimber(  m_OpController.getRightY()/1.5), m_Climber));
 
             new JoystickButton(m_OpController, XboxController.Button.kRightBumper.value)
-            .whileTrue(new IntakeCommand(1));
+            .whileTrue(new IntakeCommand(-8));
 
-            new JoystickButton(m_OpController, XboxController.Button.kB.value).whileTrue(new IntakeCommand(-8));
+            new JoystickButton(m_OpController, XboxController.Button.kB.value).whileTrue(new IntakeCommand(8));
 
-            new JoystickButton(m_driverController, XboxController.Button.kLeftBumper.value).whileTrue(new IntakeCommand(8));
+            new JoystickButton(m_driverController, XboxController.Button.kLeftBumper.value).whileTrue(new IntakeCommand(-8));
 
 
             new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value)
-            .whileTrue(new ShootSpecificSpeedCommand(55));
+            .whileTrue(new ShootSpecificSpeedCommand(20));
 
 
             
