@@ -33,6 +33,8 @@ import frc.robot.subsystems.Visiontwo;
 public class DriveSubsystem extends SubsystemBase {
   private final Visiontwo m_vision;
 
+  private final Vision m_vision2;
+
   boolean toRun;
   Double rot2 = 0.0;
 
@@ -83,6 +85,7 @@ public class DriveSubsystem extends SubsystemBase {
   /** Creates a new DriveSubsystem. */
   public DriveSubsystem() {
           m_vision = Visiontwo.getInstance();
+          m_vision2 = Vision.getInstance();
 
     // Configure AutoBuilder last
     AutoBuilder.configureHolonomic(
