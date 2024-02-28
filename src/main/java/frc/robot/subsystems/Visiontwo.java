@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class Visiontwo extends SubsystemBase {
     private static final Visiontwo m_instance = new Visiontwo();
 
-    private final NetworkTable table = NetworkTableInstance.getDefault().getTable("Shooter LimeLight");
+    private final NetworkTable table = NetworkTableInstance.getDefault().getTable("imelight-shooter");
     private final NetworkTableEntry tx = table.getEntry("tx");
     private final NetworkTableEntry ty = table.getEntry("ty");
 

@@ -118,7 +118,7 @@ public class RobotContainer {
         // The left stick controls translation of the robot.
         // Turning is controlled by the X axis of the right stick.
         new RunCommand(
-            () -> m_robotDrive.drive(
+            () -> m_robotDrive.AimBody(
                 -MathUtil.applyDeadband(m_driverController.getLeftY(), OIConstants.kDriveDeadband),
                 -MathUtil.applyDeadband(m_driverController.getLeftX(), OIConstants.kDriveDeadband),
                 -MathUtil.applyDeadband(m_driverController.getRightX(), OIConstants.kDriveDeadband),
@@ -152,13 +152,17 @@ public class RobotContainer {
                new RunCommand(() -> m_Climber.setCLimber(  m_OpController.getRightY()/1.5), m_Climber));
 
             new JoystickButton(m_OpController, XboxController.Button.kRightBumper.value)
-            .whileTrue(new IntakeCommand(1));
+            .whileTrue(new IntakeCommand(-8));
 
-            new JoystickButton(m_OpController, XboxController.Button.kB.value).whileTrue(new IntakeCommand(-8));
+            new JoystickButton(m_OpController, XboxController.Button.kB.value).whileTrue(new IntakeCommand(8));
+
+            new JoystickButton(m_driverController, XboxController.Button.kLeftBumper.value).whileTrue(new IntakeCommand(-8));
 
 
             new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value)
-            .whileTrue(new AimCommand());
+            .whileTrue(new AimShootCommand());
+
+             new JoystickButton(m_driverController, XboxController.Button.kA.value).whileTrue( new RunCommand(() -> m_robotDrive.resetGyro(), m_robotDrive));
 
             
             // new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value).whileFalse((new ShootSpecificSpeedCommand(0)));

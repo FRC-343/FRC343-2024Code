@@ -27,9 +27,15 @@ import frc.utils.SwerveUtils;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 import frc.robot.Constants.DriveConstants;
+import frc.robot.subsystems.Visiontwo;
 
 
 public class DriveSubsystem extends SubsystemBase {
+  private final Visiontwo m_vision;
+
+  boolean toRun;
+  Double rot2 = 0.0;
+
   // Create MAXSwerveModules
   private final MAXSwerveModule m_frontLeft = new MAXSwerveModule(
       DriveConstants.kFrontLeftDrivingCanId,
@@ -76,7 +82,8 @@ public class DriveSubsystem extends SubsystemBase {
 
   /** Creates a new DriveSubsystem. */
   public DriveSubsystem() {
-    
+          m_vision = Visiontwo.getInstance();
+
     // Configure AutoBuilder last
     AutoBuilder.configureHolonomic(
             this::getPose, // Robot pose supplier
@@ -192,6 +199,10 @@ public class DriveSubsystem extends SubsystemBase {
             m_rearRight.getPosition()
         },
         pose);
+  }
+  
+  public void resetGyro(){
+    m_gyro.reset();
   }
 
   /**
@@ -330,5 +341,22 @@ public class DriveSubsystem extends SubsystemBase {
    */
   public double getTurnRate() {
     return m_gyro.getRate(IMUAxis.kZ) * (DriveConstants.kGyroReversed ? -1.0 : 1.0);
+  }
+
+  public void AimBody(double xSpeed, double ySpeed, double rot, boolean fieldRelative, boolean rateLimit){
+    if((m_vision.getTx()> 0.9 || m_vision.getTx() < -0.9)){
+      toRun = true;
+       if (m_vision.getTx() > 1.5 && toRun == true){
+        rot2 = -.05;
+      } if (m_vision.getTx() < -1.5 && toRun == true) {
+         rot2 =.05;
+     } 
+    
+  } else {
+    toRun = false;
+    rot2 = rot;
+  }
+      drive(xSpeed, ySpeed, rot2, fieldRelative, rateLimit );
+  
   }
 }
