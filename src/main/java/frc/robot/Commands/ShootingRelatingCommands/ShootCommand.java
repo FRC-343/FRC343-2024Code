@@ -1,11 +1,11 @@
 package frc.robot.Commands.ShootingRelatingCommands;
 
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Robot;
 import frc.robot.subsystems.*;
 
-public class ShootCommand extends CommandBase {
+public class ShootCommand extends Command {
     // in Rev/Sec
     private double kTopShootSpeed;
     private double kBottomShootSpeed;
@@ -145,7 +145,7 @@ public class ShootCommand extends CommandBase {
             if(m_vision.getTy() > -3)
             shooterSpeed = 50;
         } else {
-            shooterSpeed = 70;
+            shooterSpeed = 63;
         }
 
         return shooterSpeed;

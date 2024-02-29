@@ -145,6 +145,8 @@ public class RobotContainer {
             m_robotDrive));
 
             
+            new JoystickButton(m_driverController, XboxController.Button.kX.value).whileTrue(new RunCommand(()-> m_robotDrive.Centerbot(), m_robotDrive));
+
              m_IntakeLift.setDefaultCommand(
                new RunCommand(() -> m_IntakeLift.setIntakeLift(  -m_OpController.getLeftY()/1.5), m_IntakeLift));
 

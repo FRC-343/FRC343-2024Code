@@ -16,11 +16,11 @@
     },
     {
       "anchor": {
-        "x": 4.0,
+        "x": 2.895296810271618,
         "y": 5.5
       },
       "prevControl": {
-        "x": 3.0,
+        "x": 1.895296810271618,
         "y": 5.5
       },
       "nextControl": null,
@@ -29,25 +29,31 @@
     }
   ],
   "rotationTargets": [],
-  "constraintZones": [],
+  "constraintZones": [
+    {
+      "name": "New Constraints Zone",
+      "minWaypointRelativePos": 0.05,
+      "maxWaypointRelativePos": 0,
+      "constraints": {
+        "maxVelocity": 3.0,
+        "maxAcceleration": 3.0,
+        "maxAngularVelocity": 540.0,
+        "maxAngularAcceleration": 720.0
+      }
+    }
+  ],
   "eventMarkers": [
     {
       "name": "Shoot preLoad",
       "waypointRelativePos": 0.0,
       "command": {
-        "type": "deadline",
+        "type": "sequential",
         "data": {
           "commands": [
             {
               "type": "named",
               "data": {
                 "name": "AimShoot"
-              }
-            },
-            {
-              "type": "wait",
-              "data": {
-                "waitTime": 0.5
               }
             }
           ]
@@ -58,7 +64,7 @@
       "name": "Intake new note",
       "waypointRelativePos": 0.1,
       "command": {
-        "type": "sequential",
+        "type": "parallel",
         "data": {
           "commands": [
             {

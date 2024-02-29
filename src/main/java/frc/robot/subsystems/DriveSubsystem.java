@@ -362,4 +362,13 @@ public class DriveSubsystem extends SubsystemBase {
       drive(xSpeed, ySpeed, rot2, fieldRelative, rateLimit );
   
   }
+
+  public void Centerbot(){
+    if (m_vision2.getTy() > .5){
+      drive(0, .2, 0, false, true);
+    } else if (m_vision2.getTy() < -.5){
+      drive(0, -.2, 0, false, true);
+    }
+  }
+
 }
