@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class Intake extends SubsystemBase {
     private static final Intake m_instance = new Intake();
 
+    private LEDs m_LEDs = LEDs.getInstance();
 
     private final CANSparkMax m_intake = new CANSparkMax( 1, MotorType.kBrushed);
 
@@ -45,18 +46,29 @@ public class Intake extends SubsystemBase {
 
     public void setIntake(double speed) {
 
-        // if (getNoteDetector() == true){
-            
-        // }
+        if (getNoteDetector() == false){
+            m_intake.set(0);           
+         } else{
 
         m_intake.set(speed);
-        
+         }
         if (speed == 0) {
             runningIntake = false;
         } else {
             runningIntake = true;
         }
     } 
+
+    public void setIntakeAuto(double speed){
+          m_intake.set(speed);
+        
+        if (speed == 0) {
+            runningIntake = false;
+        } else {
+            runningIntake = true;
+        }
+
+    }
 
     public static boolean isRunning() {
         return runningIntake;
@@ -65,7 +77,11 @@ public class Intake extends SubsystemBase {
     public void periodic() {
               SmartDashboard.putBoolean("Note detector 1", getNoteDetector());
               SmartDashboard.putBoolean("Note detector 2", getNoteDetector2());
-
+         if (getNoteDetector() == false){
+            m_LEDs.HaveNote();           
+         } else {
+            m_LEDs.noNote();
+         }
 
     }
 

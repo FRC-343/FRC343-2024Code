@@ -180,7 +180,7 @@ public class AimCommand extends Command {
     }
 
     public static boolean isShooterAngleAimed() {
-        return false; //isShooterAngleAimed;
+        return isShooterAngleAimed;
     }
 
 
@@ -198,9 +198,9 @@ public class AimCommand extends Command {
         aimWhat = 3;
     }
 
-    public static void useMovingAutoAim() {
-        doesEnd = false;
-        aimWhileMove = true;
-        aimWhat = 1;
+    public static void useAutoAutoAim() {
+        doesEnd = true;
+        aimWhileMove = false;
+        aimWhat = 3;
     }
 }

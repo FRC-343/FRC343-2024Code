@@ -27,11 +27,11 @@ public final class Constants {
   public static final class DriveConstants {
     // Driving Parameters - Note that these are not the maximum capable speeds of
     // the robot, rather the allowed maximum speeds
-    public static final double kMaxSpeedMetersPerSecond = 3.8;
+    public static final double kMaxSpeedMetersPerSecond = 5;
     public static final double kMaxAngularSpeed = 2 * Math.PI; // radians per second
 
-    public static final double kDirectionSlewRate = 2.9; // radians per second
-    public static final double kMagnitudeSlewRate = 3.8; // percent per second (1 = 100%)
+    public static final double kDirectionSlewRate = 5; // radians per second
+    public static final double kMagnitudeSlewRate = 5; // percent per second (1 = 100%)
     public static final double kRotationalSlewRate = 4.0; // percent per second (1 = 100%)
 
     // Chassis configuration
@@ -49,7 +49,7 @@ public final class Constants {
     public static final double kFrontLeftChassisAngularOffset = -Math.PI / 1.86;
     public static final double kFrontRightChassisAngularOffset = -.08;
     public static final double kBackLeftChassisAngularOffset = -Math.PI / 3;
-    public static final double kBackRightChassisAngularOffset = -Math.PI / 4.8;
+    public static final double kBackRightChassisAngularOffset = -Math.PI / 3.3;
 
     // SPARK MAX CAN IDs
     public static final int kFrontLeftDrivingCanId = 4;

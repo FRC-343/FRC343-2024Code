@@ -11,6 +11,8 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class Visiontwo extends SubsystemBase {
     private static final Visiontwo m_instance = new Visiontwo();
 
+    private LEDs m_LEDs = LEDs.getInstance();
+
     private final NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight-shooter");
     private final NetworkTableEntry tx = table.getEntry("tx");
     private final NetworkTableEntry ty = table.getEntry("ty");
@@ -59,7 +61,13 @@ public class Visiontwo extends SubsystemBase {
   
          if (getId() == 1 || getId() == 7){
             angle = 4.13614  * getTy() + 56.67256;
+
          }
+                     if (getTv() == true){
+                setLEDS(true);
+            } else {
+                setLEDS(false);
+            }
 
 return angle;
 }
@@ -75,4 +83,11 @@ return angle;
     public void setCamera(double value) {//vaulue = 0 split, 1 = secondary camera is small, 2 = limelight is small
         table.getEntry("stream").setNumber(0);
     }
+    @Override
+    public void periodic() {
+    
+    if(getTv() == true){
+        m_LEDs.target();
+    }
+    }    
 }

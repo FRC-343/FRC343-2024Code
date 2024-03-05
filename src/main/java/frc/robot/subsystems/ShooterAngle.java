@@ -13,6 +13,8 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class ShooterAngle extends SubsystemBase {
     private static final ShooterAngle m_instance = new ShooterAngle();
 
+    private LEDs m_LEDs = LEDs.getInstance();
+
     private final Encoder m_ShooterAngleEncoder = new Encoder(0, 1);
     private final DigitalInput m_ShooterAngleBack = new DigitalInput(5); // 2 = bottom = back
     private final DigitalInput m_ShooterAngleFront = new DigitalInput(4);
@@ -26,7 +28,7 @@ public class ShooterAngle extends SubsystemBase {
     private boolean m_aiming = false; // if currently aiming (for automatic)
     private boolean m_zeroing = false; // resetting ShooterAngle
 
-    private double kMaxShooterAngleSpeed = .4;
+    private double kMaxShooterAngleSpeed = .8;
 
     public ShooterAngle() {
         SendableRegistry.setSubsystem(m_ShooterAngleEncoder, this.getClass().getSimpleName());
@@ -59,7 +61,7 @@ public class ShooterAngle extends SubsystemBase {
 
     public void aim(double target) {
         m_target = target;
-        aim(target, false);
+        aim(target, true);
     }
 
     public void stop() {
@@ -67,7 +69,7 @@ public class ShooterAngle extends SubsystemBase {
     }
 
     public boolean isAimed() {
-        return false;
+        return m_ShooterAngleEncoder.getDistance() == m_target;
     }
 
     public void move(double speed) {
@@ -133,8 +135,10 @@ public class ShooterAngle extends SubsystemBase {
             } else {
                 m_ShooterAngleMotor.set(m_speed);
             }
-
+            
         }
+
+      
 
         SmartDashboard.putBoolean("Shooter Top Limit", getTopLimit());
         SmartDashboard.putBoolean("Shooter Bottom Limit", getBottomLimit());

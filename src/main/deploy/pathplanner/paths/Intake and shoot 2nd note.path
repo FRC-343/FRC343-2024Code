@@ -35,7 +35,7 @@
       "name": "Intake note",
       "waypointRelativePos": 0.95,
       "command": {
-        "type": "deadline",
+        "type": "parallel",
         "data": {
           "commands": [
             {

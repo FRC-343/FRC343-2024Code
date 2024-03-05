@@ -59,6 +59,8 @@ public class RobotContainer {
   private final Intake m_Intake = Intake.getInstance();
   private final Vision m_Vision = Vision.getInstance();
 
+  private final LEDs m_LEDs = LEDs.getInstance();
+
   private final ShooterAngle m_ShooterAngle = ShooterAngle.getInstance();
 
   private final SendableChooser<Command> autoChooser;
@@ -74,11 +76,16 @@ public class RobotContainer {
    */
   public RobotContainer() {
 
-      NamedCommands.registerCommand("AimShoot", new AimShootCommand());
+    
+
+      NamedCommands.registerCommand("AimShoot", new AimShootCommandAuto());
       NamedCommands.registerCommand("Intake lift", new IntakeLiftCommand(.3));
       NamedCommands.registerCommand("Climber", new ClimberCommand(.3));
-      NamedCommands.registerCommand("Intake not timed", new IntakeTimedCommand());
-      NamedCommands .registerCommand("Wait", new waitcommand());
+      NamedCommands.registerCommand("Intake with stop", new IntakeCommand());
+      NamedCommands.registerCommand("Wait", new waitcommand());
+      NamedCommands.registerCommand("Shoot",new ShootCommand());
+      NamedCommands.registerCommand("Intake for Auto", new IntakeCommandAuto());
+      NamedCommands.registerCommand("Timed Intake", new IntakeTimedCommand(-8, .9));
 
 
       field = new Field2d();
@@ -118,7 +125,7 @@ public class RobotContainer {
         // The left stick controls translation of the robot.
         // Turning is controlled by the X axis of the right stick.
         new RunCommand(
-            () -> m_robotDrive.AimBody(
+            () -> m_robotDrive.drive(
                 -MathUtil.applyDeadband(m_driverController.getLeftY(), OIConstants.kDriveDeadband),
                 -MathUtil.applyDeadband(m_driverController.getLeftX(), OIConstants.kDriveDeadband),
                 -MathUtil.applyDeadband(m_driverController.getRightX(), OIConstants.kDriveDeadband),
@@ -144,19 +151,23 @@ public class RobotContainer {
             () -> m_robotDrive.setX(),
             m_robotDrive));
 
-            
+            new JoystickButton(m_OpController, XboxController.Button.kY.value).whileTrue(new RunCommand(() -> m_LEDs.wantNote(), m_LEDs));
+
+            new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value).whileTrue(new RunCommand(()-> m_robotDrive.AimBody(0, 0, 0, false, false), m_robotDrive));
+
+
             new JoystickButton(m_driverController, XboxController.Button.kX.value).whileTrue(new RunCommand(()-> m_robotDrive.Centerbot(), m_robotDrive));
 
              m_IntakeLift.setDefaultCommand(
-               new RunCommand(() -> m_IntakeLift.setIntakeLift(  -m_OpController.getLeftY()/1.5), m_IntakeLift));
+               new RunCommand(() -> m_IntakeLift.setIntakeLift(  -m_OpController.getLeftY()), m_IntakeLift));
 
              m_Climber.setDefaultCommand(
                new RunCommand(() -> m_Climber.setCLimber(  m_OpController.getRightY()/1.5), m_Climber));
 
             new JoystickButton(m_OpController, XboxController.Button.kRightBumper.value)
-            .whileTrue(new IntakeCommand(-8));
+            .whileTrue(new IntakeCommandAuto(-8));
 
-            new JoystickButton(m_OpController, XboxController.Button.kB.value).whileTrue(new IntakeCommand(8));
+            new JoystickButton(m_OpController, XboxController.Button.kB.value).whileTrue(new IntakeCommandAuto(8));
 
             new JoystickButton(m_driverController, XboxController.Button.kLeftBumper.value).whileTrue(new IntakeCommand(-8));
 

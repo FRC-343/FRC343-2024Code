@@ -143,9 +143,9 @@ public class ShootCommand extends Command {
     private double getShooterSpeed() {
         if (v == true) {
             if(m_vision.getTy() > -3)
-            shooterSpeed = 50;
+            shooterSpeed = 65;
         } else {
-            shooterSpeed = 63;
+            shooterSpeed = 65;
         }
 
         return shooterSpeed;

@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.IntakeLift;
+import frc.robot.subsystems.LEDs;
 import frc.robot.subsystems.Shooter;
 
 
@@ -22,6 +23,9 @@ import frc.robot.subsystems.Shooter;
  */
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
+
+  private final LEDs m_LEDs = LEDs.getInstance();
+
 
   private RobotContainer m_robotContainer;
 
@@ -59,7 +63,9 @@ public class Robot extends TimedRobot {
   public void disabledInit() {}
 
   @Override
-  public void disabledPeriodic() {}
+  public void disabledPeriodic() {
+    // m_LEDs.rainbow();
+  }
 
   /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class. */
   @Override
