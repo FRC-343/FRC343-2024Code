@@ -1,31 +1,32 @@
+<<<<<<< Updated upstream:src/main/deploy/pathplanner/paths/To wing.path
 {
   "version": 1.0,
   "waypoints": [
     {
       "anchor": {
-        "x": 2.23,
-        "y": 5.5
+        "x": 1.35,
+        "y": 6.96
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.1756983764414763,
-        "y": 5.507130871149041
+        "x": 1.36106693490745,
+        "y": 6.96
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 2.8512397633024253,
-        "y": 5.5
+        "x": 2.020574041148082,
+        "y": 6.96
       },
       "prevControl": {
-        "x": 2.8512397633024253,
-        "y": 5.492445188825977
+        "x": 2.007583729453173,
+        "y": 6.950905330382089
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "Top preload angled"
     }
   ],
   "rotationTargets": [],
@@ -39,14 +40,16 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0,
+    "rotation": 42.10459390784262,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": null,
+  "folder": "Global Paths",
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0
   },
   "useDefaultConstraints": true
 }
+=======
+>>>>>>> Stashed changes:src/main/deploy/pathplanner/paths/intake 3rd note left (ref Blue POV).path

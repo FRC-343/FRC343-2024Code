@@ -2,10 +2,19 @@
   "robotWidth": 0.9,
   "robotLength": 0.9,
   "holonomicMode": true,
-  "pathFolders": [],
+  "pathFolders": [
+    "2 Note left (ref Blue POV)",
+    "2 note right (blue POV)",
+    "3 Note ccenter start Right (ref Blue POV)",
+    "3 note center start left (ref Blue POV)",
+    "Global Paths"
+  ],
   "autoFolders": [
-    "New Folder",
-    "New New Folder"
+    "2 note Center",
+    "2 note top (Ref bule POV)",
+    "3 note center then left (Ref POV From Blue)",
+    "3 note center then right (Ref POV from blue)",
+    "2 note Bottom(blue POV)"
   ],
   "defaultMaxVel": 3.0,
   "defaultMaxAccel": 3.0,

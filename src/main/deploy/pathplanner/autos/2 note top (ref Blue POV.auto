@@ -8,7 +8,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "preLoad right (ref Blue POV)"
+            "pathName": "preLoad left (ref blue POV)"
           }
         },
         {
@@ -36,13 +36,13 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Intake with stop"
+                  "name": "Timed Intake"
                 }
               },
               {
                 "type": "path",
                 "data": {
-                  "pathName": "intake 2nd note Right (blue POV)"
+                  "pathName": "Intake 2nd note left (ref Blue POV) "
                 }
               }
             ]
@@ -51,30 +51,18 @@
         {
           "type": "wait",
           "data": {
-            "waitTime": 0.2
+            "waitTime": 0.3
           }
         },
         {
           "type": "path",
           "data": {
-            "pathName": "rotate 3 Note right spec"
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.5
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "AimShoot"
+            "pathName": "rotate CCW"
           }
         }
       ]
     }
   },
-  "folder": "2 note Bottom(blue POV)",
+  "folder": "2 note top (Ref bule POV)",
   "choreoAuto": false
 }

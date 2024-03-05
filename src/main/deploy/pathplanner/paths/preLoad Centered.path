@@ -3,34 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.0,
-        "y": 3.9
+        "x": 1.3533001663498863,
+        "y": 5.5
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.9933432074656354,
-        "y": 3.9046482092964188
+        "x": 1.3492869842882542,
+        "y": 5.487499546427665
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-<<<<<<< Updated upstream:src/main/deploy/pathplanner/paths/Intake and shoot 2nd note.path
-        "x": 2.433126944175966,
-        "y": 4.1
+        "x": 2.234441105733733,
+        "y": 5.5
       },
       "prevControl": {
-        "x": 2.433126944175966,
-        "y": 4.1
-=======
-        "x": 2.571029427773141,
-        "y": 3.9
-      },
-      "prevControl": {
-        "x": 2.571029427773141,
-        "y": 3.9
->>>>>>> Stashed changes:src/main/deploy/pathplanner/paths/Move to intake 3rd note.path
+        "x": 2.263812470379861,
+        "y": 5.507130871149041
       },
       "nextControl": null,
       "isLocked": false,
@@ -52,7 +43,7 @@
     "rotateFast": false
   },
   "reversed": false,
-  "folder": null,
+  "folder": "Global Paths",
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0

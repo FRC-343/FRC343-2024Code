@@ -3,34 +3,32 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 5.311711402643584,
-        "y": 1.35933154983193
+        "x": 2.23,
+        "y": 5.5
       },
       "prevControl": null,
       "nextControl": {
-        "x": 6.311711402643584,
-        "y": 1.35933154983193
+        "x": 2.1756983764414763,
+        "y": 5.507130871149041
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 14.573823433361152,
-        "y": 1.1061227317259816
+        "x": 2.8512397633024253,
+        "y": 5.5
       },
       "prevControl": {
-<<<<<<< Updated upstream:src/main/deploy/pathplanner/paths/To source.path
         "x": 13.573823433361152,
         "y": 1.1061227317259816
-=======
         "x": 1.9934269692183788,
         "y": 4.025371650199077
->>>>>>> Stashed changes:src/main/deploy/pathplanner/paths/preLoad right (ref Blue POV).path
+
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "On Top Center Note"
     }
   ],
   "rotationTargets": [],
@@ -44,15 +42,15 @@
   },
   "goalEndState": {
     "velocity": 0,
-<<<<<<< Updated upstream:src/main/deploy/pathplanner/paths/To source.path
+
     "rotation": -44.99999999999996,
-=======
+
     "rotation": -35.13419305691567,
->>>>>>> Stashed changes:src/main/deploy/pathplanner/paths/preLoad right (ref Blue POV).path
+
     "rotateFast": false
   },
   "reversed": false,
-  "folder": null,
+  "folder": "3 Note ccenter start Right (ref Blue POV)",
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0

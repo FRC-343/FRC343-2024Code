@@ -1,32 +1,31 @@
-<<<<<<< Updated upstream:src/main/deploy/pathplanner/paths/To wing.path
 {
   "version": 1.0,
   "waypoints": [
     {
       "anchor": {
-        "x": 14.906992930868979,
-        "y": 1.226063750828799
+        "x": 2.8512397633024253,
+        "y": 5.5
       },
       "prevControl": null,
       "nextControl": {
-        "x": 15.906992930868977,
-        "y": 1.226063750828799
+        "x": 2.2622373816176204,
+        "y": 6.1856380855618855
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "On Top Center Note"
     },
     {
       "anchor": {
-        "x": 5.37834530214515,
-        "y": 1.3859851096325564
+        "x": 1.9668710765992958,
+        "y": 6.957618200950688
       },
       "prevControl": {
-        "x": 4.37834530214515,
-        "y": 1.3859851096325564
+        "x": 2.060851264559672,
+        "y": 6.172212344424689
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "Left Note line-up (ref Blue POV)"
     }
   ],
   "rotationTargets": [],
@@ -41,15 +40,13 @@
   "goalEndState": {
     "velocity": 0,
     "rotation": 0,
-    "rotateFast": true
+    "rotateFast": false
   },
   "reversed": false,
-  "folder": null,
+  "folder": "3 note center start left (ref Blue POV)",
   "previewStartingState": {
-    "rotation": -61.47688139368805,
+    "rotation": 0,
     "velocity": 0
   },
   "useDefaultConstraints": true
 }
-=======
->>>>>>> Stashed changes:src/main/deploy/pathplanner/paths/intake 3rd note left (ref Blue POV).path
