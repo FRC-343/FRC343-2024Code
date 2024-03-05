@@ -1,0 +1,58 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 2.8462571210856704,
+        "y": 6.957618200950688
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 2.8462571210856704,
+        "y": 6.957618200950688
+      },
+      "isLocked": false,
+      "linkedName": "On Top Left note (ref blue POV)"
+    },
+    {
+      "anchor": {
+        "x": 2.8462571210856704,
+        "y": 6.957618200950688
+      },
+      "prevControl": {
+        "x": 2.873108603360064,
+        "y": 6.944192459813491
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "On Top Left note (ref blue POV)"
+    }
+  ],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 0.0,
+      "rotationDegrees": 25.0,
+      "rotateFast": true
+    }
+  ],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "3 note center start left (ref Blue POV)",
+  "previewStartingState": {
+    "rotation": 0,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

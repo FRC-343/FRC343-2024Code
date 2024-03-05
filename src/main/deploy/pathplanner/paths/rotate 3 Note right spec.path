@@ -3,32 +3,38 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 14.906992930868979,
-        "y": 1.226063750828799
+        "x": 2.47,
+        "y": 4.097935338727821
       },
       "prevControl": null,
       "nextControl": {
-        "x": 15.906992930868977,
-        "y": 1.226063750828799
+        "x": 2.4770492398127653,
+        "y": 4.091222468159223
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 5.37834530214515,
-        "y": 1.3859851096325564
+        "x": 2.47,
+        "y": 4.1
       },
       "prevControl": {
-        "x": 4.37834530214515,
-        "y": 1.3859851096325564
+        "x": 2.470336369244167,
+        "y": 4.091222468159223
       },
       "nextControl": null,
       "isLocked": false,
       "linkedName": null
     }
   ],
-  "rotationTargets": [],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 0.0,
+      "rotationDegrees": -25.0,
+      "rotateFast": false
+    }
+  ],
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
@@ -40,13 +46,13 @@
   "goalEndState": {
     "velocity": 0,
     "rotation": 0,
-    "rotateFast": true
+    "rotateFast": false
   },
   "reversed": false,
-  "folder": null,
+  "folder": "3 Note ccenter start Right (ref Blue POV)",
   "previewStartingState": {
-    "rotation": -61.47688139368805,
+    "rotation": 0,
     "velocity": 0
   },
-  "useDefaultConstraints": true
+  "useDefaultConstraints": false
 }

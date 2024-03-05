@@ -14,7 +14,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Shoot preLoad"
+            "pathName": "preLoad Centered"
           }
         },
         {
@@ -55,7 +55,7 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "Intake 2nd Note"
+                  "pathName": "Intake 2nd Note Centered"
                 }
               }
             ]
@@ -66,22 +66,10 @@
           "data": {
             "name": "AimShoot"
           }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.8
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "To note 2"
-          }
         }
       ]
     }
   },
-  "folder": null,
+  "folder": "2 note Center",
   "choreoAuto": false
 }

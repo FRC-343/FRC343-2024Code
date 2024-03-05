@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 5.311711402643584,
-        "y": 1.35933154983193
+        "x": 2.85,
+        "y": 5.5
       },
       "prevControl": null,
       "nextControl": {
-        "x": 6.311711402643584,
-        "y": 1.35933154983193
+        "x": 2.478154752195015,
+        "y": 5.507130871149041
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 14.573823433361152,
-        "y": 1.1061227317259816
+        "x": 2.0,
+        "y": 4.1
       },
       "prevControl": {
-        "x": 13.573823433361152,
-        "y": 1.1061227317259816
+        "x": 2.4597805039765923,
+        "y": 5.11748348172021
       },
       "nextControl": null,
       "isLocked": false,
@@ -39,11 +39,11 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -44.99999999999996,
+    "rotation": 0,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": null,
+  "folder": "3 Note ccenter start Right (ref Blue POV)",
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0
