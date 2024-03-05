@@ -42,7 +42,7 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "Intake 2nd Note Centered"
+                  "pathName": "intake center Note"
                 }
               }
             ]
@@ -112,6 +112,6 @@
       ]
     }
   },
-  "folder": null,
+  "folder": "3 note center then left (Ref POV From Blue)",
   "choreoAuto": false
 }
