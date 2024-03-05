@@ -14,13 +14,13 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Shoot preLoad"
+            "pathName": "preLoad Centered"
           }
         },
         {
           "type": "wait",
           "data": {
-            "waitTime": 0.5
+            "waitTime": 0.2
           }
         },
         {
@@ -39,7 +39,7 @@
         {
           "type": "wait",
           "data": {
-            "waitTime": 1.0
+            "waitTime": 0.5
           }
         },
         {
@@ -47,24 +47,18 @@
           "data": {
             "commands": [
               {
-                "type": "path",
-                "data": {
-                  "pathName": "Intake 2nd Note"
-                }
-              },
-              {
                 "type": "named",
                 "data": {
                   "name": "Intake with stop"
                 }
+              },
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Intake 2nd Note Centered"
+                }
               }
             ]
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.5
           }
         },
         {
@@ -76,13 +70,62 @@
         {
           "type": "wait",
           "data": {
-            "waitTime": 0.8
+            "waitTime": 0.5
           }
         },
         {
           "type": "path",
           "data": {
-            "pathName": "To note 2"
+            "pathName": "To rigth note 3(ref Blue POV)"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.2
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Intake with stop"
+                }
+              },
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Move to intake 3rd note"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.2
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "rotate 3 Note right spec"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.2
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "AimShoot"
           }
         }
       ]

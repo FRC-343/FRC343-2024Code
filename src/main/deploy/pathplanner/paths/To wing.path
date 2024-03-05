@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:src/main/deploy/pathplanner/paths/To wing.path
 {
   "version": 1.0,
   "waypoints": [
@@ -50,3 +51,5 @@
   },
   "useDefaultConstraints": true
 }
+=======
+>>>>>>> Stashed changes:src/main/deploy/pathplanner/paths/intake 3rd note left (ref Blue POV).path

@@ -4,7 +4,9 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
+import frc.robot.Commands.BodyTurnTest;
 import frc.robot.Commands.IntakeCommandAuto;
+import frc.robot.Commands.IntakeCommandWait;
 import frc.robot.Commands.IntakeTimedCommand;
 import frc.robot.Commands.Auto.PPSpecificCommands.waitcommand;
 import frc.robot.Commands.ShootingRelatingCommands.AimCommand;
@@ -19,9 +21,10 @@ public class AimShootCommand extends SequentialCommandGroup {
         new ParallelDeadlineGroup(
             new ShootCommand(),  
             new AimCommand(),
+            new BodyTurnTest(),
         new SequentialCommandGroup(
-          new WaitCommand(.6),
-          new IntakeTimedCommand()
+          new WaitCommand(.4),
+          new IntakeCommandWait()
         ))
         
 

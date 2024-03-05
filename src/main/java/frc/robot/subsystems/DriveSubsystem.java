@@ -33,6 +33,8 @@ import frc.robot.subsystems.Visiontwo;
 public class DriveSubsystem extends SubsystemBase {
   private final Visiontwo m_vision;
 
+  private static final DriveSubsystem m_instance = new DriveSubsystem();
+
   private final Vision m_vision2;
 
   boolean toRun;
@@ -114,6 +116,9 @@ public class DriveSubsystem extends SubsystemBase {
             this // Reference to this subsystem to set requirements
     );
   }
+  public static DriveSubsystem getInstance() {
+    return m_instance;
+}
 
   @Override
   public void periodic() {
@@ -346,7 +351,7 @@ public class DriveSubsystem extends SubsystemBase {
     return m_gyro.getRate(IMUAxis.kZ) * (DriveConstants.kGyroReversed ? -1.0 : 1.0);
   }
 
-  public void AimBody(double xSpeed, double ySpeed, double rot, boolean fieldRelative, boolean rateLimit){
+  public void AimBody(){
     if((m_vision.getTx()> 0.9 || m_vision.getTx() < -0.9)){
       toRun = true;
        if (m_vision.getTx() > 1.5 && toRun == true){
@@ -357,9 +362,9 @@ public class DriveSubsystem extends SubsystemBase {
     
   } else {
     toRun = false;
-    rot2 = rot;
+    rot2 = 0.0;
   }
-      drive(xSpeed, ySpeed, rot2, fieldRelative, rateLimit );
+      drive(0, 0, rot2, true, true );
   
   }
 

@@ -110,7 +110,15 @@ public class BodyTurnTest extends Command implements Runnable{
 
     @Override
     public boolean isFinished() {
+<<<<<<< Updated upstream
         return false;
+=======
+        boolean value = false;
+        if(m_vision.getTx() <= .9 && m_vision.getTx() >= -.9){
+            value = true;
+        }
+        return value;
+>>>>>>> Stashed changes
     }
 
     @Override

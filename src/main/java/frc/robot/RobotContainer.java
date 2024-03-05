@@ -52,7 +52,7 @@ import com.pathplanner.lib.util.PathPlannerLogging;
  */
 public class RobotContainer {
   // The robot's subsystems
-  private final DriveSubsystem m_robotDrive = new DriveSubsystem();
+  private final DriveSubsystem m_robotDrive = DriveSubsystem.getInstance();
   private final IntakeLift m_IntakeLift = IntakeLift.getInstance(); 
   private final Climber m_Climber = Climber.getInstance();
   private final Shooter m_Shooter = Shooter.getInstance();
@@ -114,7 +114,7 @@ public class RobotContainer {
     // Build an auto chooser. This will use Commands.none() as the default option.
   //  initAutoChooser();
     autoChooser = AutoBuilder.buildAutoChooser();
-    autoChooser.setDefaultOption("Test", new TestAuto());
+    // autoChooser.setDefaultOption("Test", new TestAuto());
     
     // Another option that allows you to specify the default auto by its name
     // autoChooser = AutoBuilder.buildAutoChooser("My Default Auto");
@@ -153,7 +153,7 @@ public class RobotContainer {
 
             new JoystickButton(m_OpController, XboxController.Button.kY.value).whileTrue(new RunCommand(() -> m_LEDs.wantNote(), m_LEDs));
 
-            new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value).whileTrue(new RunCommand(()-> m_robotDrive.AimBody(0, 0, 0, false, false), m_robotDrive));
+            // new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value).whileTrue(new RunCommand(()-> m_robotDrive.AimBody(), m_robotDrive));
 
 
             new JoystickButton(m_driverController, XboxController.Button.kX.value).whileTrue(new RunCommand(()-> m_robotDrive.Centerbot(), m_robotDrive));

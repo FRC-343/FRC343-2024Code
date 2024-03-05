@@ -20,8 +20,13 @@
         "y": 1.1061227317259816
       },
       "prevControl": {
+<<<<<<< Updated upstream:src/main/deploy/pathplanner/paths/To source.path
         "x": 13.573823433361152,
         "y": 1.1061227317259816
+=======
+        "x": 1.9934269692183788,
+        "y": 4.025371650199077
+>>>>>>> Stashed changes:src/main/deploy/pathplanner/paths/preLoad right (ref Blue POV).path
       },
       "nextControl": null,
       "isLocked": false,
@@ -39,7 +44,11 @@
   },
   "goalEndState": {
     "velocity": 0,
+<<<<<<< Updated upstream:src/main/deploy/pathplanner/paths/To source.path
     "rotation": -44.99999999999996,
+=======
+    "rotation": -35.13419305691567,
+>>>>>>> Stashed changes:src/main/deploy/pathplanner/paths/preLoad right (ref Blue POV).path
     "rotateFast": false
   },
   "reversed": false,
