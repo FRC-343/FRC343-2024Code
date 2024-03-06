@@ -3,50 +3,50 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.35,
-        "y": 4.017380891904641
+        "x": 2.8462571210856704,
+        "y": 6.7
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.3492869842882542,
-        "y": 4.010668021336043
+        "x": 3.8462571210856704,
+        "y": 6.7
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "CWR endpoint"
     },
     {
       "anchor": {
-        "x": 2.0,
-        "y": 4.017380891904641
+        "x": 7.815000388498094,
+        "y": 6.065186799425477
       },
       "prevControl": {
-        "x": 2.026851042095021,
-        "y": 4.0106662608638315
+        "x": 6.815000388498094,
+        "y": 6.065186799425477
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Bottom preLoad angled (blue POV)"
+      "linkedName": "Outer note line up"
     }
   ],
   "rotationTargets": [],
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 3.0,
-    "maxAcceleration": 3.0,
+    "maxVelocity": 5.0,
+    "maxAcceleration": 5.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -32.99210587387488,
+    "rotation": -25.709953780811176,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "Global Paths",
+  "folder": null,
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0
   },
-  "useDefaultConstraints": true
+  "useDefaultConstraints": false
 }

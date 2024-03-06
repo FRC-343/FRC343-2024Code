@@ -78,9 +78,11 @@ public class Intake extends SubsystemBase {
               SmartDashboard.putBoolean("Note detector 1", getNoteDetector());
               SmartDashboard.putBoolean("Note detector 2", getNoteDetector2());
          if (getNoteDetector() == false){
-            m_LEDs.HaveNote();           
+            // m_LEDs.HaveNote(); 
+            m_LEDs.rainbow();          
          } else {
-            m_LEDs.noNote();
+            // m_LEDs.noNote();
+            m_LEDs.rainbow();
          }
 
     }
