@@ -1,0 +1,64 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 8.867702021118328,
+        "y": 2.4398563082840448
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 7.941325882651766,
+        "y": 3.1581334591240613
+      },
+      "isLocked": false,
+      "linkedName": "2nd from BM intake end"
+    },
+    {
+      "anchor": {
+        "x": 3.6786530715918575,
+        "y": 5.131717406291956
+      },
+      "prevControl": {
+        "x": 3.6115243659058747,
+        "y": 4.990747124351392
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Mid note shoot"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [
+    {
+      "name": "New Constraints Zone",
+      "minWaypointRelativePos": 0.6,
+      "maxWaypointRelativePos": 1.0,
+      "constraints": {
+        "maxVelocity": 3.0,
+        "maxAcceleration": 3.0,
+        "maxAngularVelocity": 540.0,
+        "maxAngularAcceleration": 720.0
+      }
+    }
+  ],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 5.0,
+    "maxAcceleration": 5.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -0.5787255656077318,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "# mid note",
+  "previewStartingState": {
+    "rotation": 0,
+    "velocity": 0
+  },
+  "useDefaultConstraints": false
+}

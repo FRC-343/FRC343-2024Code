@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.9802968177364926,
+        "x": 2.584455168910338,
         "y": 4.124786821002214
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.9797670063011998,
-        "y": 4.10180695429114
+        "x": 2.591504408723103,
+        "y": 4.118073950433616
       },
       "isLocked": false,
-      "linkedName": "Bottom preLoad angled (blue POV)"
+      "linkedName": "Stage intake End"
     },
     {
       "anchor": {
-        "x": 2.584455168910338,
-        "y": 4.124786821002214
+        "x": 2.47,
+        "y": 4.5
       },
       "prevControl": {
-        "x": 2.556666968074545,
-        "y": 4.116492636614204
+        "x": 2.470336369244167,
+        "y": 4.491222468159223
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Stage intake End"
+      "linkedName": "CW/Stage Rotation"
     }
   ],
   "rotationTargets": [],
@@ -39,7 +39,7 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0,
+    "rotation": -25.0,
     "rotateFast": true
   },
   "reversed": false,
@@ -48,5 +48,5 @@
     "rotation": 0,
     "velocity": 0
   },
-  "useDefaultConstraints": true
+  "useDefaultConstraints": false
 }

@@ -113,7 +113,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "rotate 3 Note right spec"
+            "pathName": "CWR from stage"
           }
         },
         {
@@ -131,6 +131,6 @@
       ]
     }
   },
-  "folder": "3 note center then right (Ref POV from blue)",
+  "folder": "3 note center Stage fin",
   "choreoAuto": false
 }

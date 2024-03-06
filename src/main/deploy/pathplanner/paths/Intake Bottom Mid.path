@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.9802968177364926,
-        "y": 4.124786821002214
+        "x": 7.659385318770638,
+        "y": 0.7549257955658759
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.9797670063011998,
-        "y": 4.10180695429114
+        "x": 8.659385318770639,
+        "y": 0.7549257955658764
       },
       "isLocked": false,
-      "linkedName": "Bottom preLoad angled (blue POV)"
+      "linkedName": "Bottom Mid note"
     },
     {
       "anchor": {
-        "x": 2.584455168910338,
-        "y": 4.124786821002214
+        "x": 8.632751551217387,
+        "y": 0.7549257955658759
       },
       "prevControl": {
-        "x": 2.556666968074545,
-        "y": 4.116492636614204
+        "x": 7.632751551217387,
+        "y": 0.7549257955658759
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Stage intake End"
+      "linkedName": "Bottom After intake"
     }
   ],
   "rotationTargets": [],
@@ -40,10 +40,10 @@
   "goalEndState": {
     "velocity": 0,
     "rotation": 0,
-    "rotateFast": true
+    "rotateFast": false
   },
   "reversed": false,
-  "folder": "3 Note center start Stage finish",
+  "folder": "# mid note",
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0

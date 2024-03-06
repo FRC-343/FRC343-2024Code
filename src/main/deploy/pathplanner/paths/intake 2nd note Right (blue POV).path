@@ -3,13 +3,13 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.0,
-        "y": 4.017380891904641
+        "x": 1.9802968177364926,
+        "y": 4.124786821002214
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.9907901685422038,
-        "y": 4.019683991351147
+        "x": 1.9710869862786964,
+        "y": 4.12708992044872
       },
       "isLocked": false,
       "linkedName": "Bottom preLoad angled (blue POV)"
@@ -49,7 +49,7 @@
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "2 note right (blue POV)",
+  "folder": "2 note stage",
   "previewStartingState": {
     "rotation": -34.64218970753854,
     "velocity": 0

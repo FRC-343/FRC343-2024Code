@@ -16,16 +16,16 @@
     },
     {
       "anchor": {
-        "x": 2.0,
-        "y": 3.9
+        "x": 1.9802968177364926,
+        "y": 4.124786821002214
       },
       "prevControl": {
-        "x": 2.4597805039765923,
-        "y": 4.917483481720211
+        "x": 2.440077321713085,
+        "y": 5.142270302722426
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "Bottom preLoad angled (blue POV)"
     }
   ],
   "rotationTargets": [],
@@ -43,7 +43,7 @@
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "3 Note ccenter start Right (ref Blue POV)",
+  "folder": "3 Note center start Stage finish",
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0

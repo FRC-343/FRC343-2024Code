@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 7.815000388498094,
-        "y": 6.065186799425477
+        "x": 7.773504118436808,
+        "y": 5.990964839072535
       },
       "prevControl": null,
       "nextControl": {
-        "x": 7.829686070821158,
-        "y": 6.065186799425477
+        "x": 7.788189800759873,
+        "y": 5.990964839072535
       },
       "isLocked": false,
       "linkedName": "Outer note line up"
     },
     {
       "anchor": {
-        "x": 8.94579792737403,
-        "y": 5.624616329733554
+        "x": 8.914692115098514,
+        "y": 5.581479734388041
       },
       "prevControl": {
-        "x": 8.94579792737403,
-        "y": 5.624616329733554
+        "x": 8.914692115098514,
+        "y": 5.581479734388041
       },
       "nextControl": null,
       "isLocked": false,
@@ -43,7 +43,7 @@
     "rotateFast": false
   },
   "reversed": false,
-  "folder": null,
+  "folder": "3 note Amp side mid note",
   "previewStartingState": {
     "rotation": -20.323136829662833,
     "velocity": 0

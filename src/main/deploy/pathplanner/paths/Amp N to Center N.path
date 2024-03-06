@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.35,
-        "y": 4.017380891904641
+        "x": 2.8462571210856704,
+        "y": 6.7
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.3492869842882542,
-        "y": 4.010668021336043
+        "x": 1.899742370913313,
+        "y": 6.2393410501106725
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "CCWR end angled"
     },
     {
       "anchor": {
-        "x": 2.0,
-        "y": 4.017380891904641
+        "x": 2.234441105733733,
+        "y": 5.5
       },
       "prevControl": {
-        "x": 2.026851042095021,
-        "y": 4.0106662608638315
+        "x": 2.2152472876374323,
+        "y": 5.876846039406365
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Bottom preLoad angled (blue POV)"
+      "linkedName": "Center preload"
     }
   ],
   "rotationTargets": [],
@@ -39,11 +39,11 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -32.99210587387488,
+    "rotation": 0,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "Global Paths",
+  "folder": "4 note Amp down",
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0

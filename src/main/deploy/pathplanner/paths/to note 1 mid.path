@@ -1,0 +1,64 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 3.1751877789469862,
+        "y": 3.238687905947241
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 4.699009398018795,
+        "y": 1.3590841467397223
+      },
+      "isLocked": false,
+      "linkedName": "Mid preload shot"
+    },
+    {
+      "anchor": {
+        "x": 7.659385318770638,
+        "y": 0.7549257955658759
+      },
+      "prevControl": {
+        "x": 6.659385318770638,
+        "y": 0.7549257955658764
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Bottom Mid note"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [
+    {
+      "name": "New Constraints Zone",
+      "minWaypointRelativePos": 0.6,
+      "maxWaypointRelativePos": 1.0,
+      "constraints": {
+        "maxVelocity": 3.0,
+        "maxAcceleration": 3.0,
+        "maxAngularVelocity": 540.0,
+        "maxAngularAcceleration": 720.0
+      }
+    }
+  ],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 5.0,
+    "maxAcceleration": 5.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "# mid note",
+  "previewStartingState": {
+    "rotation": -30.78414652632638,
+    "velocity": 0
+  },
+  "useDefaultConstraints": false
+}

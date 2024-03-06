@@ -3,7 +3,7 @@
   "startingPose": {
     "position": {
       "x": 1.35,
-      "y": 4.02
+      "y": 5.5
     },
     "rotation": 0
   },
@@ -14,13 +14,13 @@
         {
           "type": "path",
           "data": {
-            "pathName": "preLoad right (ref Blue POV)"
+            "pathName": "preLoad Centered"
           }
         },
         {
           "type": "wait",
           "data": {
-            "waitTime": 0.2
+            "waitTime": 0.1
           }
         },
         {
@@ -32,7 +32,7 @@
         {
           "type": "wait",
           "data": {
-            "waitTime": 0.5
+            "waitTime": 0.1
           }
         },
         {
@@ -48,7 +48,7 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "intake 2nd note Right (blue POV)"
+                  "pathName": "intake center Note"
                 }
               }
             ]
@@ -57,19 +57,68 @@
         {
           "type": "wait",
           "data": {
-            "waitTime": 0.2
+            "waitTime": 0.1
           }
         },
         {
-          "type": "path",
+          "type": "named",
           "data": {
-            "pathName": "rotate 3 Note right spec"
+            "name": "AimShoot"
           }
         },
         {
           "type": "wait",
           "data": {
-            "waitTime": 0.5
+            "waitTime": 0.1
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "To Amp note from center"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.1
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Intake with stop"
+                }
+              },
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Intake top note"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.1
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "rotate CCW"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.1
           }
         },
         {
@@ -81,6 +130,6 @@
       ]
     }
   },
-  "folder": "2 note Bottom(blue POV)",
+  "folder": "3 note center Amp fin",
   "choreoAuto": false
 }

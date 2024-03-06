@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.47,
-        "y": 3.9
+        "x": 8.914692115098514,
+        "y": 5.581479734388041
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.4770492398127653,
-        "y": 3.893287129431402
+        "x": 7.313952741884528,
+        "y": 5.845822016203194
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "Go back"
     },
     {
       "anchor": {
-        "x": 2.47,
-        "y": 4.5
+        "x": 3.7323807026862714,
+        "y": 5.815530199933388
       },
       "prevControl": {
-        "x": 2.470336369244167,
-        "y": 4.491222468159223
+        "x": 3.7176950203632075,
+        "y": 7.137241609009159
       },
       "nextControl": null,
       "isLocked": false,
@@ -32,18 +32,18 @@
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 3.0,
-    "maxAcceleration": 3.0,
+    "maxVelocity": 5.0,
+    "maxAcceleration": 5.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -25.0,
-    "rotateFast": true
+    "rotation": 0,
+    "rotateFast": false
   },
   "reversed": false,
-  "folder": "3 Note ccenter start Right (ref Blue POV)",
+  "folder": "3 note Amp side mid note",
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0

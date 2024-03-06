@@ -3,50 +3,50 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.9668710765992958,
-        "y": 6.957618200950688
+        "x": 0.4161979752530934,
+        "y": 1.976668239050764
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.9668710765992958,
-        "y": 6.937479589244893
+        "x": 1.409702819405639,
+        "y": 2.527123625675823
       },
       "isLocked": false,
-      "linkedName": "Left Note line-up (ref Blue POV)"
+      "linkedName": null
     },
     {
       "anchor": {
-        "x": 2.8462571210856704,
-        "y": 6.957618200950688
+        "x": 3.1751877789469862,
+        "y": 3.238687905947241
       },
       "prevControl": {
-        "x": 2.8194056388112774,
-        "y": 6.950905330382089
+        "x": 2.3293660873036033,
+        "y": 2.8896186363801304
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "On Top Left note (ref blue POV)"
+      "linkedName": "Mid preload shot"
     }
   ],
   "rotationTargets": [],
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 3.0,
-    "maxAcceleration": 3.0,
+    "maxVelocity": 5.0,
+    "maxAcceleration": 5.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0,
+    "rotation": -30.827662299868027,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "3 note center start left (ref Blue POV)",
+  "folder": "# mid note",
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0
   },
-  "useDefaultConstraints": true
+  "useDefaultConstraints": false
 }

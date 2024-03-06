@@ -33,9 +33,9 @@ import frc.robot.subsystems.Visiontwo;
 public class DriveSubsystem extends SubsystemBase {
   private final Visiontwo m_vision;
 
-  private static final DriveSubsystem m_instance = new DriveSubsystem();
-
   private final Vision m_vision2;
+
+  private static DriveSubsystem m_instance = new DriveSubsystem();
 
   boolean toRun;
   Double rot2 = 0.0;
@@ -116,9 +116,11 @@ public class DriveSubsystem extends SubsystemBase {
             this // Reference to this subsystem to set requirements
     );
   }
+
   public static DriveSubsystem getInstance() {
     return m_instance;
 }
+
 
   @Override
   public void periodic() {
@@ -354,9 +356,9 @@ public class DriveSubsystem extends SubsystemBase {
   public void AimBody(){
     if((m_vision.getTx()> 0.9 || m_vision.getTx() < -0.9)){
       toRun = true;
-       if (m_vision.getTx() > 1.5 && toRun == true){
+       if (m_vision.getTx() > 1 && toRun == true){
         rot2 = -.05;
-      } if (m_vision.getTx() < -1.5 && toRun == true) {
+      } if (m_vision.getTx() < -1 && toRun == true) {
          rot2 =.05;
      } 
     

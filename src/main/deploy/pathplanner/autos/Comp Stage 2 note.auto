@@ -2,8 +2,8 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 1.35,
-      "y": 6.96
+      "x": 0.44,
+      "y": 4.19
     },
     "rotation": 0
   },
@@ -14,7 +14,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "preLoad left (ref blue POV)"
+            "pathName": "preLoad Stage"
           }
         },
         {
@@ -48,7 +48,7 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "Intake top note"
+                  "pathName": "intake 2nd note Right (blue POV)"
                 }
               }
             ]
@@ -57,13 +57,13 @@
         {
           "type": "wait",
           "data": {
-            "waitTime": 0.3
+            "waitTime": 0.2
           }
         },
         {
           "type": "path",
           "data": {
-            "pathName": "rotate CCW"
+            "pathName": "CWR from stage"
           }
         },
         {
@@ -81,6 +81,6 @@
       ]
     }
   },
-  "folder": "2 note top (Ref bule POV)",
+  "folder": "2 note Stage",
   "choreoAuto": false
 }
