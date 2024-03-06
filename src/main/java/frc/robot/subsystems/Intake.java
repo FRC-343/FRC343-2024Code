@@ -20,6 +20,8 @@ public class Intake extends SubsystemBase {
     private final DigitalInput m_NoteDetector = new DigitalInput(7);
     private final DigitalInput m_NoteDetector2 = new DigitalInput(8);
 
+    private boolean flashNote = false;
+
 
     private static boolean runningIntake = false;
 
@@ -34,6 +36,14 @@ public class Intake extends SubsystemBase {
 
     public static Intake getInstance() {
         return m_instance;
+    }
+
+    public void Updater(){
+        flashNote = true;
+    }
+
+    public void deUpdater(){
+        flashNote = false;
     }
     
     public boolean getNoteDetector() {
@@ -78,11 +88,13 @@ public class Intake extends SubsystemBase {
               SmartDashboard.putBoolean("Note detector 1", getNoteDetector());
               SmartDashboard.putBoolean("Note detector 2", getNoteDetector2());
          if (getNoteDetector() == false){
-            // m_LEDs.HaveNote(); 
-            m_LEDs.rainbow();          
+            m_LEDs.HaveNote(); 
          } else {
-            // m_LEDs.noNote();
-            m_LEDs.rainbow();
+            if(flashNote = false){
+            m_LEDs.noNote();
+            } else if(flashNote = true){
+                m_LEDs.wantNote();
+            }
          }
 
     }
