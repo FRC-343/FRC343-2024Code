@@ -7,7 +7,7 @@ import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.ShooterAngle;
 import frc.robot.subsystems.Visiontwo;
 
-public class IntakeCommandWait extends Command{
+public class inatkeCommandFD extends Command{
         private final Intake m_intake;
         private final ShooterAngle m_ShooterAngle;
         private final Visiontwo m_vision;
@@ -16,7 +16,7 @@ public class IntakeCommandWait extends Command{
     private double kIntakeSpeed;
  
 
-    public IntakeCommandWait(double intakeSpeed, boolean raise) {
+    public inatkeCommandFD(double intakeSpeed, boolean raise) {
         m_intake = Intake.getInstance();
         m_ShooterAngle = ShooterAngle.getInstance();
         m_vision = Visiontwo.getInstance();
@@ -27,11 +27,11 @@ public class IntakeCommandWait extends Command{
 
 
 
-    public IntakeCommandWait() {
+    public inatkeCommandFD() {
         this(-8, true); // defaults to .8 speed
     }
 
-    public IntakeCommandWait(double intakeSpeed) {
+    public inatkeCommandFD(double intakeSpeed) {
         this(intakeSpeed, true);
     }
 
@@ -45,7 +45,7 @@ public class IntakeCommandWait extends Command{
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-              if(( (m_vision.getTx() <=1 && m_vision.getTx() >= -1))){
+              if(( m_ShooterAngle.isAimed() == true &&(m_vision.getTx() <=1 && m_vision.getTx() >= -1))){
             m_intake.setIntakeAuto(kIntakeSpeed);
         }
 

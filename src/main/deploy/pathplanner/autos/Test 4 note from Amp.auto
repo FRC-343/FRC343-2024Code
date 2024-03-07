@@ -2,8 +2,8 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 0.44,
-      "y": 7.2
+      "x": 0.42,
+      "y": 7.39
     },
     "rotation": 0
   },
@@ -125,6 +125,6 @@
       ]
     }
   },
-  "folder": "4 note from amp",
+  "folder": null,
   "choreoAuto": false
 }

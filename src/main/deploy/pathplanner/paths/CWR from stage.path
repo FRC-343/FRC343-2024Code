@@ -3,16 +3,16 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.584455168910338,
-        "y": 4.124786821002214
+        "x": 2.665009615733517,
+        "y": 4.09
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.591504408723103,
-        "y": 4.118073950433616
+        "x": 2.672058855546282,
+        "y": 4.083287129431402
       },
       "isLocked": false,
-      "linkedName": "Stage intake End"
+      "linkedName": "On top Stage note"
     },
     {
       "anchor": {
@@ -39,7 +39,7 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -25.0,
+    "rotation": -15.953084678732592,
     "rotateFast": true
   },
   "reversed": false,

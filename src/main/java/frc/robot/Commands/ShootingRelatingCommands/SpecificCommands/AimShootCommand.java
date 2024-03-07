@@ -9,6 +9,7 @@ import frc.robot.Commands.BodyTurnTest;
 import frc.robot.Commands.IntakeCommandAuto;
 import frc.robot.Commands.IntakeCommandWait;
 import frc.robot.Commands.IntakeTimedCommand;
+import frc.robot.Commands.inatkeCommandFD;
 import frc.robot.Commands.Auto.PPSpecificCommands.waitcommand;
 import frc.robot.Commands.ShootingRelatingCommands.AimCommand;
 import frc.robot.Commands.ShootingRelatingCommands.ShootCommand;
@@ -24,9 +25,9 @@ public class AimShootCommand extends SequentialCommandGroup {
         new ParallelDeadlineGroup(
             new ShootCommand(),  
             new AimCommand(),
-            new BodyTurnTest(),
         new SequentialCommandGroup(
-          new IntakeCommandWait()
+          new BodyTurnTest(),
+          new inatkeCommandFD()
         ))
         
 

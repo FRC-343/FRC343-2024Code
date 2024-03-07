@@ -12,6 +12,7 @@ public class ShootCommand extends Command {
 
     private final Shooter m_shooter;
     private final Visiontwo m_vision;
+    private final Intake m_Intake;
 
 
     private static final double lowGoalSpeed[] = { 30, 30 }; // bottom wheel, top wheel
@@ -41,6 +42,8 @@ public class ShootCommand extends Command {
         m_shooter = Shooter.getInstance();
  
         m_vision = Visiontwo.getInstance();
+
+        m_Intake = Intake.getInstance();
 
         addRequirements(); // vision, shooter, and kicker don't run any motors, they just grabs values
 
@@ -85,8 +88,8 @@ public class ShootCommand extends Command {
     // Returns true when the command should end.
     @Override
     public boolean isFinished() {
-        if (stopShooterAfterTime) {
-            return endTimer.get() >= time;
+        if (m_Intake.getNoteDetector() == true && stopShooterAfterTime) {
+            return (endTimer.get() >= time || m_Intake.getNoteDetector() == true);
         } else {
             return false;
         }
@@ -143,9 +146,9 @@ public class ShootCommand extends Command {
     private double getShooterSpeed() {
         if (v == true) {
             if(m_vision.getTy() > -3)
-            shooterSpeed = 30;
+            shooterSpeed = 65;
         } else {
-            shooterSpeed = 30;
+            shooterSpeed = 65;
         }
 
         return shooterSpeed;

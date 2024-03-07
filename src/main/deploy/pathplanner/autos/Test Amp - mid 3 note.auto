@@ -36,6 +36,12 @@
           }
         },
         {
+          "type": "path",
+          "data": {
+            "pathName": "Amp note reset to 0"
+          }
+        },
+        {
           "type": "parallel",
           "data": {
             "commands": [

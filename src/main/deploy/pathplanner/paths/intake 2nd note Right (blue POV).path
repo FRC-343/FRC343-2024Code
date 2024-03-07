@@ -4,12 +4,12 @@
     {
       "anchor": {
         "x": 1.9802968177364926,
-        "y": 4.124786821002214
+        "y": 4.16
       },
       "prevControl": null,
       "nextControl": {
         "x": 1.9710869862786964,
-        "y": 4.12708992044872
+        "y": 4.162303099446506
       },
       "isLocked": false,
       "linkedName": "Bottom preLoad angled (blue POV)"
@@ -17,15 +17,15 @@
     {
       "anchor": {
         "x": 2.665009615733517,
-        "y": 4.017380891904641
+        "y": 4.09
       },
       "prevControl": {
         "x": 2.6582967451649187,
-        "y": 4.003955150767444
+        "y": 4.076574258862803
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "On top Stage note"
     }
   ],
   "rotationTargets": [
@@ -38,8 +38,8 @@
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 3.0,
-    "maxAcceleration": 3.0,
+    "maxVelocity": 4.0,
+    "maxAcceleration": 4.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
   },
@@ -51,7 +51,7 @@
   "reversed": false,
   "folder": "2 note stage",
   "previewStartingState": {
-    "rotation": -34.64218970753854,
+    "rotation": 0.22823916007769102,
     "velocity": 0
   },
   "useDefaultConstraints": true

@@ -3,13 +3,13 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.8462571210856704,
-        "y": 6.957618200950688
+        "x": 3.44,
+        "y": 6.96
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.8462571210856704,
-        "y": 6.957618200950688
+        "x": 3.44,
+        "y": 6.96
       },
       "isLocked": false,
       "linkedName": "On Top Left note (ref blue POV)"
@@ -32,8 +32,8 @@
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 3.0,
-    "maxAcceleration": 3.0,
+    "maxVelocity": 4.0,
+    "maxAcceleration": 4.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
   },

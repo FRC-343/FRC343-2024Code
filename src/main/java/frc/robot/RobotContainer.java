@@ -151,7 +151,7 @@ public class RobotContainer {
             () -> m_robotDrive.setX(),
             m_robotDrive));
 
-            new JoystickButton(m_OpController, XboxController.Button.kY.value).whileTrue(new RunCommand(() -> m_LEDs.wantNote(), m_LEDs));
+            new JoystickButton(m_OpController, XboxController.Button.kY.value).whileTrue(new Wantnote());
 
             // new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value).whileTrue(new RunCommand(()-> m_robotDrive.AimBody(), m_robotDrive));
 

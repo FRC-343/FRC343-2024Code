@@ -4,36 +4,36 @@
     {
       "anchor": {
         "x": 1.9802968177364926,
-        "y": 4.124786821002214
+        "y": 4.15
       },
       "prevControl": null,
       "nextControl": {
         "x": 1.9797670063011998,
-        "y": 4.10180695429114
+        "y": 4.1270201332889265
       },
       "isLocked": false,
       "linkedName": "Bottom preLoad angled (blue POV)"
     },
     {
       "anchor": {
-        "x": 2.584455168910338,
-        "y": 4.124786821002214
+        "x": 2.665009615733517,
+        "y": 4.09
       },
       "prevControl": {
-        "x": 2.556666968074545,
-        "y": 4.116492636614204
+        "x": 2.637221414897724,
+        "y": 4.08170581561199
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Stage intake End"
+      "linkedName": "On top Stage note"
     }
   ],
   "rotationTargets": [],
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 3.0,
-    "maxAcceleration": 3.0,
+    "maxVelocity": 4.0,
+    "maxAcceleration": 4.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
   },
