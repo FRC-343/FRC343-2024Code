@@ -3,6 +3,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -16,6 +17,8 @@ public class Visiontwo extends SubsystemBase {
     private final NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight-shooter");
     private final NetworkTableEntry tx = table.getEntry("tx");
     private final NetworkTableEntry ty = table.getEntry("ty");
+
+
 
 
     double angle = 0.0;
@@ -59,15 +62,11 @@ public class Visiontwo extends SubsystemBase {
     
     public double AimMath(){
   
-         if (getId() == 1 || getId() == 7){
-            angle = 4.13614  * getTy() + 56.67256;
+         if (getId() == 4 || getId() == 7){
+            angle = (4.13614  * getTy() + 56.67256) + 6;
 
          }
-                     if (getTv() == true){
-                setLEDS(true);
-            } else {
-                setLEDS(false);
-            }
+              
 
 return angle;
 }
@@ -83,11 +82,25 @@ return angle;
     public void setCamera(double value) {//vaulue = 0 split, 1 = secondary camera is small, 2 = limelight is small
         table.getEntry("stream").setNumber(0);
     }
+
+
     @Override
     public void periodic() {
     
     if(getTv() == true){
         m_LEDs.target();
     }
-    }    
+                  var alliance = DriverStation.getAlliance();
+              if (alliance.isPresent()) {
+                if (alliance.get() == DriverStation.Alliance.Red){
+                  NetworkTableEntry pipline = table.getEntry("pipeline");
+                  pipline.setNumber(0);
+                } else if (alliance.get() == DriverStation.Alliance.Blue){
+                  NetworkTableEntry pipline = table.getEntry("pipeline");
+                  pipline.setNumber(1);                    
+              }
+            }
+    }
+    
+
 }
