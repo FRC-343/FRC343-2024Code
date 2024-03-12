@@ -77,15 +77,15 @@ public class AimCommand extends Command {
     }
 
     private void refreshAimValues() {
-         x = m_vision.getTx(); // left/right displacement angle
-         y = m_vision.getTy(); // vertical displacement angle
-         numberOfTargets = m_vision.getTv(); // 0 = no target, 1 = target
-         SmartDashboard.putBoolean("Tv when called", m_vision.getTv());
+        //  x = m_vision.getTx(); // left/right displacement angle
+        //  y = m_vision.getTy(); // vertical displacement angle
+        //  numberOfTargets = m_vision.getTv(); // 0 = no target, 1 = target
+          // SmartDashboard.putBoolean("Tv when called", m_vision.getTv());
     }
 
     private void refreshIsAimedValues() { // have to use the static values since isAimed needs to be static to access in ShootCommand
          isShooterAngleAimed = m_ShooterAngle.isAimed();
-        isTurretAimed = m_vision.isAimed(turretPrecision);
+        // isTurretAimed = m_vision.isAimed(turretPrecision);
          isTarget = numberOfTargets;
     }
 

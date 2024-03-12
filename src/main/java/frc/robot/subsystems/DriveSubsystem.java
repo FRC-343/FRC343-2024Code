@@ -21,6 +21,7 @@ import edu.wpi.first.math.util.Units;
 import edu.wpi.first.util.WPIUtilJNI;
 import edu.wpi.first.wpilibj.ADIS16470_IMU;
 import edu.wpi.first.wpilibj.ADIS16470_IMU.IMUAxis;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.DriverStation;
 import frc.robot.Constants.DriveConstants;
 import frc.utils.SwerveUtils;
@@ -354,15 +355,14 @@ public class DriveSubsystem extends SubsystemBase {
   }
 
   public void AimBody(){
-    if((m_vision.getTx()> 1 || m_vision.getTx() < -1)){
+    if((m_vision.getTx()> -2 || m_vision.getTx() < -4)){
       toRun = true;
-       if (m_vision.getTx() > 1 && toRun == true){
+       if (m_vision.getTx() > -2 && toRun == true){
         rot2 = -.05;
-      } if (m_vision.getTx() < - 1 && toRun == true) {
+      } if (m_vision.getTx() < -4 && toRun == true) {
          rot2 =.05;
      } 
-    
-  } else {
+  } else if(m_vision.getTx()< -2 || m_vision.getTx() > -4) {
     toRun = false;
     rot2 = 0.0;
   }

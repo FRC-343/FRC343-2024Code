@@ -47,7 +47,7 @@ public class ShootCommand extends Command {
 
         addRequirements(); // vision, shooter, and kicker don't run any motors, they just grabs values
 
-        refreshAimValues();
+        
 
         time = 4.0;
         shooterSpeed = 70;
@@ -66,7 +66,7 @@ public class ShootCommand extends Command {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        refreshAimValues();
+
         isShooterSpeedReady_v2();
           if (useVariableSpeed) {
                 setShooterSpeed(getShooterSpeed());
@@ -144,20 +144,11 @@ public class ShootCommand extends Command {
     }
 
     private double getShooterSpeed() {
-        if (v == true) {
-            if(m_vision.getTy() > -3)
-            shooterSpeed = 65;
-        } else {
-            shooterSpeed = 65;
-        }
 
-        return shooterSpeed;
+        return 70;
     }
 
-    private void refreshAimValues() {
-        v = m_vision.getTv();
-        y = m_vision.getTy();
-    }
+
 
     public void ejectBadCargo() {
         if (shooterDesiredSpeed == lowGoalSpeed) { // low goal
