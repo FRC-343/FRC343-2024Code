@@ -3,6 +3,7 @@
   "robotLength": 0.7112,
   "holonomicMode": true,
   "pathFolders": [
+    "# mid note",
     "2 Note Amp ",
     "2 note stage",
     "3 Note center start Stage finish",
@@ -11,7 +12,7 @@
     "3 note center Amp fin",
     "4 note Amp down",
     "Global Paths",
-    "# mid note"
+    "Center to Mid"
   ],
   "autoFolders": [
     "2 note Amp fin",

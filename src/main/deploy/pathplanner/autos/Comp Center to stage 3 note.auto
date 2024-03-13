@@ -18,13 +18,25 @@
           }
         },
         {
-          "type": "sequential",
+          "type": "parallel",
           "data": {
             "commands": [
               {
                 "type": "named",
                 "data": {
-                  "name": "AimShoot"
+                  "name": "Center Preload"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Auto Shot Speed"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Timed Intake"
                 }
               }
             ]
@@ -62,9 +74,28 @@
           }
         },
         {
-          "type": "named",
+          "type": "parallel",
           "data": {
-            "name": "AimShoot"
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Center Note"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Auto Shot Speed"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Timed Intake"
+                }
+              }
+            ]
           }
         },
         {
@@ -123,15 +154,34 @@
           }
         },
         {
-          "type": "named",
+          "type": "parallel",
           "data": {
-            "name": "AimShoot"
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Stage note shot"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Auto Shot Speed"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Timed Intake"
+                }
+              }
+            ]
           }
         },
         {
-          "type": "named",
+          "type": "wait",
           "data": {
-            "name": "AimShoot"
+            "waitTime": 1.0
           }
         }
       ]

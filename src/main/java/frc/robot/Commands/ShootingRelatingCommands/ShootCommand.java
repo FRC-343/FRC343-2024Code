@@ -115,7 +115,7 @@ public class ShootCommand extends Command {
         activateShooter[1] = topSpeed;
     }
 
-    private boolean isShooterSpeedReady() {
+    public boolean isShooterSpeedReady() {
         double marginOfSpeedError = 3.0;
         return (m_shooter.getBottomShooterRPS() > kBottomShootSpeed - marginOfSpeedError && m_shooter.getBottomShooterRPS() < kBottomShootSpeed + marginOfSpeedError 
                 && m_shooter.getTopShooterRPS() > kTopShootSpeed - marginOfSpeedError && m_shooter.getTopShooterRPS() < kTopShootSpeed + marginOfSpeedError);

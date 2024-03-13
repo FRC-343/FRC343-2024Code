@@ -27,6 +27,7 @@ import frc.robot.Commands.ShootingRelatingCommands.ShootCommand;
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.AimShootCommand;
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.AimShootCommandAuto;
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.ShootSpecificSpeedCommand;
+import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.ShootSpecificSpeedCommandAuto;
 import frc.robot.Constants.AutoConstants;
 import frc.robot.Constants.DriveConstants;
 import frc.robot.Constants.OIConstants;
@@ -87,7 +88,21 @@ public class RobotContainer {
       NamedCommands.registerCommand("Wait", new waitcommand());
       NamedCommands.registerCommand("Shoot",new ShootCommand());
       NamedCommands.registerCommand("Intake for Auto", new IntakeCommandAuto());
-      NamedCommands.registerCommand("Timed Intake", new IntakeTimedCommand(-8, .9));
+      NamedCommands.registerCommand("Timed Intake", new IntakeTimedCommand(-10, .9));
+
+
+      // Auto fire speed
+      NamedCommands.registerCommand("Auto Shot Speed", new ShootSpecificSpeedCommandAuto(80));
+
+      // Auto Preset Shots
+      NamedCommands.registerCommand("Stage 2 note Preload", new PresetHoodCommand(148.25));
+      NamedCommands.registerCommand("Stage note shot", new PresetHoodCommand(127.25));
+      NamedCommands.registerCommand("Center Preload", new PresetHoodCommand(146.5));
+      NamedCommands.registerCommand("Center Note", new PresetHoodCommand(106.5));
+      NamedCommands.registerCommand("Zero", new PresetHoodCommand(0));
+      NamedCommands.registerCommand("Center Wing 1", new PresetHoodCommand(34.5));
+      
+
 
 
       field = new Field2d();

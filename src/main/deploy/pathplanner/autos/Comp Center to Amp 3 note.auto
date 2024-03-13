@@ -24,9 +24,28 @@
           }
         },
         {
-          "type": "named",
+          "type": "parallel",
           "data": {
-            "name": "AimShoot"
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Center Preload"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Auto Shot Speed"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Timed Intake"
+                }
+              }
+            ]
           }
         },
         {
@@ -61,9 +80,28 @@
           }
         },
         {
-          "type": "named",
+          "type": "parallel",
           "data": {
-            "name": "AimShoot"
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Center Note"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Auto Shot Speed"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Timed Intake"
+                }
+              }
+            ]
           }
         },
         {
@@ -122,9 +160,34 @@
           }
         },
         {
-          "type": "named",
+          "type": "parallel",
           "data": {
-            "name": "AimShoot"
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Auto Shot Speed"
+                }
+              },
+              {
+                "type": "wait",
+                "data": {
+                  "waitTime": 0.3
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Intake for Auto"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 1.0
           }
         }
       ]

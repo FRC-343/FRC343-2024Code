@@ -64,12 +64,18 @@ public class ShooterAngle extends SubsystemBase {
         aim(target, true);
     }
 
+    public double angle(){
+        return m_ShooterAngleEncoder.getDistance();
+    }
+
     public void stop() {
         m_ShooterAngleMotor.set(0.0);
     }
 
     public boolean isAimed() {
+        if (m_target != 0)
         return (m_ShooterAngleEncoder.getDistance() >= m_target - 2 && m_ShooterAngleEncoder.getDistance() <= m_target + 2 && m_zeroing != true);
+        return false;
     }
 
     public void move(double speed) {

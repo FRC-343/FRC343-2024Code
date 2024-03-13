@@ -2,8 +2,8 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 0.44,
-      "y": 4.19
+      "x": 1.36,
+      "y": 5.5
     },
     "rotation": 0
   },
@@ -14,13 +14,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "preLoad Stage"
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.2
+            "pathName": "preLoad Centered"
           }
         },
         {
@@ -30,7 +24,7 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Stage 2 note Preload"
+                  "name": "Center Preload"
                 }
               },
               {
@@ -46,12 +40,6 @@
                 }
               }
             ]
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.5
           }
         },
         {
@@ -67,28 +55,10 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "intake 2nd note Right (blue POV)"
+                  "pathName": "intake center Note"
                 }
               }
             ]
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.2
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "CWR from stage"
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.5
           }
         },
         {
@@ -98,13 +68,13 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Stage note shot"
+                  "name": "Auto Shot Speed"
                 }
               },
               {
                 "type": "named",
                 "data": {
-                  "name": "Auto Shot Speed"
+                  "name": "Center Note"
                 }
               },
               {
@@ -117,14 +87,64 @@
           }
         },
         {
-          "type": "wait",
+          "type": "path",
           "data": {
-            "waitTime": 1.0
+            "pathName": "Center to mid"
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Intake with stop"
+                }
+              },
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Mid Intake1"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "To wing"
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Auto Shot Speed"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Center Wing 1"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Timed Intake"
+                }
+              }
+            ]
           }
         }
       ]
     }
   },
-  "folder": "2 note Stage",
+  "folder": null,
   "choreoAuto": false
 }

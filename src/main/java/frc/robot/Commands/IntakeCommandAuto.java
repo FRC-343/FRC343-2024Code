@@ -17,7 +17,7 @@ public class IntakeCommandAuto extends Command {
     }
 
     public IntakeCommandAuto() {
-        this(-8, true); // defaults to .8 speed
+        this(-10, true); // defaults to .8 speed
     }
 
     public IntakeCommandAuto(double intakeSpeed) {

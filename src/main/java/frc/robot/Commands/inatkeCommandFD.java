@@ -28,7 +28,7 @@ public class inatkeCommandFD extends Command{
 
 
     public inatkeCommandFD() {
-        this(-8, true); // defaults to .8 speed
+        this(-10, true); // defaults to .8 speed
     }
 
     public inatkeCommandFD(double intakeSpeed) {

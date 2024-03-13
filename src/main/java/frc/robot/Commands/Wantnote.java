@@ -19,9 +19,7 @@ public class Wantnote extends Command {
     @Override
     public void execute() {
         m_intake.Updater();
-        if(t.get() > 1.0){
-            m_intake.deUpdater();
-        }
+
     }
 
     @Override
@@ -40,6 +38,8 @@ public class Wantnote extends Command {
         boolean value = false;
         if(t.get() > 2.0){
             value = true;
+            m_intake.deUpdater();
+            
         }
         return value;
 

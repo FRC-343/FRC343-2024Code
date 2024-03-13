@@ -3,49 +3,49 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.84,
-        "y": 4.09
+        "x": 7.756257659205837,
+        "y": 6.461700222148208
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.847049239812765,
-        "y": 4.083287129431402
+        "x": 7.770943341528901,
+        "y": 6.43232885750208
       },
       "isLocked": false,
-      "linkedName": "On top Stage note"
+      "linkedName": "center-Mid"
     },
     {
       "anchor": {
-        "x": 2.47,
-        "y": 4.5
+        "x": 8.94579792737403,
+        "y": 5.712730423671939
       },
       "prevControl": {
-        "x": 2.470336369244167,
-        "y": 4.491222468159223
+        "x": 8.931112245050967,
+        "y": 5.742101788318067
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "CW/Stage Rotation"
+      "linkedName": "Center Mid after Intake1"
     }
   ],
   "rotationTargets": [],
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 3.0,
-    "maxAcceleration": 3.0,
+    "maxVelocity": 2.0,
+    "maxAcceleration": 2.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -25.0,
-    "rotateFast": true
+    "rotation": -27.552811576717666,
+    "rotateFast": false
   },
   "reversed": false,
-  "folder": "3 Note center start Stage finish",
+  "folder": "Center to Mid",
   "previewStartingState": {
-    "rotation": 0,
+    "rotation": -30.256437163529213,
     "velocity": 0
   },
   "useDefaultConstraints": false
