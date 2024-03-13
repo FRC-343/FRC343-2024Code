@@ -19,7 +19,9 @@ public class BodyTurnTest extends Command {
 
     @Override
     public void execute() {
+        if(m_vision.getTv() == true){
         m_DriveSubsystem.AimBody();
+        }
         
     }
 
@@ -31,7 +33,7 @@ public class BodyTurnTest extends Command {
     @Override
     public boolean isFinished() {
         boolean value = false;
-        if(m_vision.getTx() <= 1 && m_vision.getTx() >= -1){
+        if(m_vision.getTx() <= -2 && m_vision.getTx() >= -4){
             value = true;
         }
         return value;

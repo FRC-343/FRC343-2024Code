@@ -48,18 +48,18 @@ public class Climber extends SubsystemBase {
 
     public void setCLimber(double speed) {
 
-        if (speed > 0.0 && getBottomLimit()) {
-            m_climber1.set(0.0);
-            m_climber1Encoder.setPosition(0);
+        // if (speed > 0.0) {
+        //     m_climber1.set(0.0);
+        //     m_climber1Encoder.setPosition(0);
         
-        } 
+        // } 
         // else if (speed > 0) {
             // m_climber1.set(0.0);
 
         // } 
-        else {
+        // else {
           m_climber1.set(speed);
-        }
+        // }
    }
 
     public static boolean isRunning() {

@@ -35,6 +35,8 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import edu.wpi.first.wpilibj2.command.button.POVButton;
+
 import java.util.List;
 
 import frc.robot.Commands.*;
@@ -151,7 +153,6 @@ public class RobotContainer {
             () -> m_robotDrive.setX(),
             m_robotDrive));
 
-            new JoystickButton(m_OpController, XboxController.Button.kY.value).whileTrue(new Wantnote());
 
             // new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value).whileTrue(new RunCommand(()-> m_robotDrive.AimBody(), m_robotDrive));
 
@@ -162,7 +163,7 @@ public class RobotContainer {
                new RunCommand(() -> m_IntakeLift.setIntakeLift(  -m_OpController.getLeftY()), m_IntakeLift));
 
              m_Climber.setDefaultCommand(
-               new RunCommand(() -> m_Climber.setCLimber(  m_OpController.getRightY()/1.5), m_Climber));
+               new RunCommand(() -> m_Climber.setCLimber(  m_OpController.getRightY() * 2), m_Climber));
 
             new JoystickButton(m_OpController, XboxController.Button.kRightBumper.value)
             .whileTrue(new IntakeCommandAuto(-8));
@@ -171,12 +172,15 @@ public class RobotContainer {
 
             new JoystickButton(m_driverController, XboxController.Button.kLeftBumper.value).whileTrue(new IntakeCommand(-8));
 
-
+            
             new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value)
             .whileTrue(new AimShootCommand());
-
+ 
              new JoystickButton(m_driverController, XboxController.Button.kA.value).whileTrue( new RunCommand(() -> m_robotDrive.resetGyro(), m_robotDrive));
 
+             new JoystickButton(m_OpController, XboxController.Button.kX.value).onTrue(new PresetHoodCommand(165));
+
+             new JoystickButton(m_OpController, XboxController.Button.kY.value).whileTrue(new ShootSpecificSpeedCommand(80));
             
             // new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value).whileFalse((new ShootSpecificSpeedCommand(0)));
 
