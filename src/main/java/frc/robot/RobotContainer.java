@@ -187,13 +187,18 @@ public class RobotContainer {
 
             new JoystickButton(m_driverController, XboxController.Button.kLeftBumper.value).whileTrue(new IntakeCommand(-8));
 
+            new JoystickButton(m_OpController, XboxController.Button.kA.value)
+            .onTrue( new PresetHoodCommand(100.5));
+
+            new POVButton(m_OpController, 90).onTrue(new PresetHoodCommand(22));
             
             new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value)
             .whileTrue(new AimShootCommand());
  
              new JoystickButton(m_driverController, XboxController.Button.kA.value).whileTrue( new RunCommand(() -> m_robotDrive.resetGyro(), m_robotDrive));
 
-             new JoystickButton(m_OpController, XboxController.Button.kX.value).onTrue(new PresetHoodCommand(165));
+             new JoystickButton(m_OpController, XboxController.Button.kX.value)
+             .onTrue(new PresetHoodCommand(165));
 
              new JoystickButton(m_OpController, XboxController.Button.kY.value).whileTrue(new ShootSpecificSpeedCommand(80));
             

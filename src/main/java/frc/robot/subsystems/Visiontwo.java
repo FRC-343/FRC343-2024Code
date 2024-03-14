@@ -40,7 +40,7 @@ public class Visiontwo extends SubsystemBase {
     }
 
     public double getTx() {
-        if(camera.getLatestResult().hasTargets() == true && (getId() == (4) || getId() == 7)){
+        if(camera.getLatestResult().hasTargets() == true){//} && (getId() == (4) || getId() == 7)){
         return camera.getLatestResult().getBestTarget().getYaw();
         } else {
             return 0;
@@ -48,7 +48,7 @@ public class Visiontwo extends SubsystemBase {
     }
 
     public double getTy() {
-       if (camera.getLatestResult().hasTargets() == true && (getId() == (4) || getId() == 7)){
+       if (camera.getLatestResult().hasTargets() == true){// && (getId() == (4) || getId() == 7)){
         return camera.getLatestResult().getBestTarget().getPitch();
        } else {
         return 0.0;
@@ -56,7 +56,7 @@ public class Visiontwo extends SubsystemBase {
     }
 
     public boolean getTv() {
-        if (camera.getLatestResult().hasTargets() == true && (getId() == (4) || getId() == 7))
+        if (camera.getLatestResult().hasTargets() == true )//&& (getId() == (4) || getId() == 7))
         return camera.getLatestResult().hasTargets();
         return false;
     }
@@ -67,7 +67,7 @@ public class Visiontwo extends SubsystemBase {
     // // }
 
     public boolean isAimed(double precision) {
-        if (camera.getLatestResult().hasTargets() == true && (getId() == (4) || getId() == 7))
+        if (camera.getLatestResult().hasTargets() == true)// && (getId() == (4) || getId() == 7))
         return Math.abs(getTx()) < precision;
         return false;
     }
@@ -89,7 +89,7 @@ public class Visiontwo extends SubsystemBase {
     // }
     
     public double AimMath(){
-            if (camera.getLatestResult().hasTargets() == true && (getId() == (4) || getId() == 7))
+            if (camera.getLatestResult().hasTargets() == true )//&& (getId() == (4) || getId() == 7))
             angle = (4.13614  * getTy() + 56.67256) + 6;
 
          SmartDashboard.putNumber("Ty", getTy());

@@ -50,7 +50,7 @@ public class ShootCommand extends Command {
         
 
         time = 4.0;
-        shooterSpeed = 70;
+        shooterSpeed = 80;
 
     }
 

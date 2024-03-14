@@ -73,8 +73,9 @@ public class ShooterAngle extends SubsystemBase {
     }
 
     public boolean isAimed() {
-        if (m_target != 0)
+        if (m_target != 0){
         return (m_ShooterAngleEncoder.getDistance() >= m_target - 2 && m_ShooterAngleEncoder.getDistance() <= m_target + 2 && m_zeroing != true);
+        }
         return false;
     }
 
