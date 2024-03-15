@@ -4,8 +4,12 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 
 import com.revrobotics.CANSparkLowLevel.MotorType;
+
+import java.lang.annotation.Target;
+
 import com.revrobotics.CANSparkMax;
 
+import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.util.sendable.SendableRegistry;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -28,7 +32,8 @@ public class ShooterAngle extends SubsystemBase {
     private boolean m_aiming = false; // if currently aiming (for automatic)
     private boolean m_zeroing = false; // resetting ShooterAngle
 
-    private double kMaxShooterAngleSpeed = .8;
+    private double kMaxShooterAngleSpeed = .4;
+    
 
     public ShooterAngle() {
         SendableRegistry.setSubsystem(m_ShooterAngleEncoder, this.getClass().getSimpleName());
@@ -74,7 +79,7 @@ public class ShooterAngle extends SubsystemBase {
 
     public boolean isAimed() {
         if (m_target != 0){
-        return (m_ShooterAngleEncoder.getDistance() >= m_target - 2 && m_ShooterAngleEncoder.getDistance() <= m_target + 2 && m_zeroing != true);
+        return (m_ShooterAngleEncoder.getDistance() >= m_target - 1 && m_ShooterAngleEncoder.getDistance() <= m_target + 1 && m_zeroing != true);
         }
         return false;
     }
@@ -112,18 +117,16 @@ public class ShooterAngle extends SubsystemBase {
                 m_ShooterAngleMotor.set(kMaxShooterAngleSpeed);
                 m_aimed = false;
             } else {
-                double speed = .8;
-                if (Math.abs(m_ShooterAngleEncoder.getDistance() - m_target) < 20) {
-                    speed = .4;
-                }
+            double speed = Math.abs(m_target-m_ShooterAngleEncoder.getDistance()) / 100.0; // equivilent to a PID (P only), goes proportionally slower the closer you are
+          speed = MathUtil.clamp(speed, .2, .4); // min = .22, max = .6
 
                 if (m_ShooterAngleFront.get()) {
                     m_zeroing = true;
                     m_ShooterAngleMotor.set(0.0);
-                } else if (m_ShooterAngleEncoder.getDistance() < m_target - 5) {
+                } else if (m_ShooterAngleEncoder.getDistance() < m_target - 1) {
                     m_ShooterAngleMotor.set(-speed);
                     m_aimed = false;
-                } else if (m_ShooterAngleEncoder.getDistance() > m_target + 5) {
+                } else if (m_ShooterAngleEncoder.getDistance() > m_target + 1) {
                     m_ShooterAngleMotor.set(speed);
                     m_aimed = false;
                 } else { // m_ShooterAngleEncoder.getDistance >m_target-50 && < m_target+50

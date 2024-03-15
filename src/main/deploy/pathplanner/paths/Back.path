@@ -16,16 +16,16 @@
     },
     {
       "anchor": {
-        "x": 3.7323807026862714,
-        "y": 5.815530199933388
+        "x": 5.803061910238311,
+        "y": 6.417643175179016
       },
       "prevControl": {
-        "x": 3.7176950203632075,
-        "y": 7.137241609009159
+        "x": 6.155518285991849,
+        "y": 6.740728186286426
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "Mid wing shot1"
     }
   ],
   "rotationTargets": [],
@@ -39,7 +39,7 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 13.626994859891534,
+    "rotation": 10.124671655397787,
     "rotateFast": false
   },
   "reversed": false,

@@ -90,10 +90,10 @@ public class Visiontwo extends SubsystemBase {
     
     public double AimMath(){
             if (camera.getLatestResult().hasTargets() == true )//&& (getId() == (4) || getId() == 7))
-            angle = (4.13614  * getTy() + 56.67256) + 6;
+            angle = (7.97224  * getTy() + 86.37707)-6;
 
-         SmartDashboard.putNumber("Ty", getTy());
-         SmartDashboard.putNumber("Tx", getTx());
+        //  SmartDashboard.putNumber("Ty", getTy());
+        //  SmartDashboard.putNumber("Tx", getTx());
         
 
 return angle;
@@ -118,9 +118,10 @@ return angle;
         // if (target.getFiducialId() == 3 || target.getFiducialId() == 7){
 
         // }
-
-    
-
+        if (getTv() == true){
+         SmartDashboard.putNumber("Ty", getTy());
+         SmartDashboard.putNumber("Tx", getTx());    
+        }
      if(getTv() == true){
          m_LEDs.target();
      }

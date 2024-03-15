@@ -1,5 +1,6 @@
 package frc.robot.Commands;
 
+import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.wpilibj2.command.Command;
 
 
@@ -10,17 +11,19 @@ public class ClimberCommand extends Command {
     private double m_speed;
     private final Climber m_Climber;
 
-    public ClimberCommand(double speed) {
+    public ClimberCommand() {
         m_Climber = Climber.getInstance();
-        m_speed = speed;
+   
         addRequirements(m_Climber);
     }
     
 
     @Override
     public void execute() {
-        m_Climber.setCLimber(m_speed);
-        
+       
+        double speed = (Math.abs(m_Climber.Encoder())+35) / 100.0; // equivilent to a PID (P only), goes proportionally slower the closer you are
+          speed = MathUtil.clamp(speed, .01, 1); 
+         m_Climber.setCLimber(speed);
     }
 
     @Override
@@ -30,18 +33,7 @@ public class ClimberCommand extends Command {
 
     @Override
     public boolean isFinished() {
-        boolean value = false;
-         if (m_speed > 0) { // positive speed is going down
-             if (m_Climber.getBottomLimit()) {
-                 value = true;
-             }
-         } else if (m_speed < 0) {
-
-            }
-       if (m_speed == 0) {
-             value = true;
-         }
-
-        return value;
+       
+        return false;
     }
 }

@@ -48,13 +48,17 @@ public class Climber extends SubsystemBase {
 
     public void setCLimber(double speed) {
 
-        if (speed > 0.0 && getBottomLimit() == true) {
+        if (speed > 0.0 && getBottomLimit() == true && m_climber1Encoder.getPosition() > -1 ) {
             m_climber1.set(0.0);
             m_climber1Encoder.setPosition(0);
         
         } else {
           m_climber1.set(speed);
         }
+   }
+
+   public double Encoder(){
+    return m_climber1Encoder.getPosition();
    }
 
     public static boolean isRunning() {
@@ -64,6 +68,7 @@ public class Climber extends SubsystemBase {
     @Override
     public void periodic(){
         SmartDashboard.putBoolean("Climber Bottom Limit",getBottomLimit());
+        SmartDashboard.putNumber("ClimberEncoder", m_climber1Encoder.getPosition());
     }
 
 

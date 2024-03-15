@@ -19,7 +19,7 @@ public class AimCommand extends Command {
     private double turretPrecision;
     private double turretSpeed;
 
-    // private PIDController turretPidController = new PIDController(0.05, .005, 0.003);
+     private PIDController turretPidController = new PIDController(0.05, .005, 0.003);
 
     // limelight values
     private double x;
@@ -41,7 +41,7 @@ public class AimCommand extends Command {
 
          addRequirements(m_ShooterAngle);
 
-        // turretPidContoller.setIntegratorRange(-5, 5);
+         turretPidController.setIntegratorRange(-5, 5);
     }
 
     @Override
@@ -78,7 +78,7 @@ public class AimCommand extends Command {
 
     private void refreshAimValues() {
         //  x = m_vision.getTx(); // left/right displacement angle
-        //  y = m_vision.getTy(); // vertical displacement angle
+          y = m_vision.getTy(); // vertical displacement angle
         //  numberOfTargets = m_vision.getTv(); // 0 = no target, 1 = target
           // SmartDashboard.putBoolean("Tv when called", m_vision.getTv());
     }

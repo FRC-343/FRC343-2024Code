@@ -83,7 +83,6 @@ public class RobotContainer {
 
       NamedCommands.registerCommand("AimShoot", new AimShootCommandAuto());
       NamedCommands.registerCommand("Intake lift", new IntakeLiftCommand(.3));
-      NamedCommands.registerCommand("Climber", new ClimberCommand(.3));
       NamedCommands.registerCommand("Intake with stop", new IntakeCommand());
       NamedCommands.registerCommand("Wait", new waitcommand());
       NamedCommands.registerCommand("Shoot",new ShootCommand());
@@ -101,6 +100,7 @@ public class RobotContainer {
       NamedCommands.registerCommand("Center Note", new PresetHoodCommand(106.5));
       NamedCommands.registerCommand("Zero", new PresetHoodCommand(0));
       NamedCommands.registerCommand("Center Wing 1", new PresetHoodCommand(34.5));
+      NamedCommands.registerCommand("Amp Preload", new PresetHoodCommand(156));
       
 
 
@@ -173,6 +173,8 @@ public class RobotContainer {
 
 
             new JoystickButton(m_driverController, XboxController.Button.kX.value).whileTrue(new RunCommand(()-> m_robotDrive.Centerbot(), m_robotDrive));
+
+          new POVButton(m_OpController, 45).onTrue(new ClimberCommand());
 
              m_IntakeLift.setDefaultCommand(
                new RunCommand(() -> m_IntakeLift.setIntakeLift(  -m_OpController.getLeftY()), m_IntakeLift));
