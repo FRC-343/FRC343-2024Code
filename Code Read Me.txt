@@ -1,0 +1,15 @@
+This is a doccument detailing the Importaint code locations.
+
+    Part 1 General Speeds for different applications
+
+The location for changing Maximum theoretical Speeds of the robot is in Constants.java 
+lines 30, 31, 33, 34, and 35
+
+The location for changing Intake speed, for manual control, is in RobotContainer.java 
+lines 185, 186, 188, and 190. For autonomous control it is in RobotContainer.java line 90
+
+The location for changing shooter speed is in ShootCommand.java line 53
+
+  Part 2 Importaint equation locations
+
+The location for auto aim is in Visiontwo.java line 93
