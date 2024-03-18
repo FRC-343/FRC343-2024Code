@@ -145,7 +145,7 @@ public class ShootCommand extends Command {
 
     private double getShooterSpeed() {
 
-        return 70;
+        return shooterSpeed;
     }
 
 
