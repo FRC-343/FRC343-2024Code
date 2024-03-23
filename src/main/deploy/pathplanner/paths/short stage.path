@@ -3,50 +3,50 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.6750115754256556,
-        "y": 6.99
+        "x": 0.52,
+        "y": 4.1
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.6539077228422805,
-        "y": 6.991013421132389
+        "x": 1.0008437905963476,
+        "y": 3.657992169150707
       },
       "isLocked": false,
-      "linkedName": "reset 0 end"
+      "linkedName": null
     },
     {
       "anchor": {
-        "x": 3.44,
-        "y": 6.96
+        "x": 0.87,
+        "y": 4.18
       },
       "prevControl": {
-        "x": 3.430296959893691,
-        "y": 6.963395220181701
+        "x": 0.884685682323064,
+        "y": 4.018457494446294
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "On Top Left note (ref blue POV)"
+      "linkedName": "stage end"
     }
   ],
   "rotationTargets": [],
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 2.0,
-    "maxAcceleration": 2.0,
+    "maxVelocity": 4.0,
+    "maxAcceleration": 4.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0,
+    "rotation": -60.524110996754274,
     "rotateFast": true
   },
   "reversed": false,
-  "folder": "2 Note Amp ",
+  "folder": "soruce shot",
   "previewStartingState": {
-    "rotation": 0.1337425792096282,
+    "rotation": 0,
     "velocity": 0
   },
-  "useDefaultConstraints": false
+  "useDefaultConstraints": true
 }

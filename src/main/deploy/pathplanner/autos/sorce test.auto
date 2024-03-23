@@ -2,8 +2,8 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 1.3533001663498863,
-      "y": 5.5
+      "x": 0.5,
+      "y": 4.1
     },
     "rotation": 0
   },
@@ -18,16 +18,22 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "preLoad Centered"
+                  "pathName": "short stage"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Top anlge"
+                }
+              },
+              {
+                "type": "parallel",
+                "data": {
+                  "commands": []
                 }
               }
             ]
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.5
           }
         },
         {
@@ -37,13 +43,19 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Center Preload"
+                  "name": "Top anlge"
                 }
               },
               {
                 "type": "named",
                 "data": {
                   "name": "Auto Shot Speed"
+                }
+              },
+              {
+                "type": "wait",
+                "data": {
+                  "waitTime": 1.0
                 }
               },
               {
@@ -56,9 +68,9 @@
           }
         },
         {
-          "type": "wait",
+          "type": "path",
           "data": {
-            "waitTime": 1.0
+            "pathName": "source start"
           }
         },
         {
@@ -74,28 +86,22 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "intake center Note"
+                  "pathName": "Intake Bottom Mid"
                 }
               }
             ]
           }
         },
         {
-          "type": "wait",
+          "type": "path",
           "data": {
-            "waitTime": 0.5
+            "pathName": "Source shot"
           }
         },
         {
           "type": "parallel",
           "data": {
             "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Center Note"
-                }
-              },
               {
                 "type": "named",
                 "data": {
@@ -114,6 +120,6 @@
       ]
     }
   },
-  "folder": "2 note Center",
+  "folder": null,
   "choreoAuto": false
 }

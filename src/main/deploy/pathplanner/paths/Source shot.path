@@ -3,49 +3,49 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.6750115754256556,
-        "y": 6.99
+        "x": 8.632751551217387,
+        "y": 0.6
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.6539077228422805,
-        "y": 6.991013421132389
+        "x": 6.9926021784065036,
+        "y": 1.923824384321399
       },
       "isLocked": false,
-      "linkedName": "reset 0 end"
+      "linkedName": "Bottom After intake"
     },
     {
       "anchor": {
-        "x": 3.44,
-        "y": 6.96
+        "x": 0.87,
+        "y": 4.18
       },
       "prevControl": {
-        "x": 3.430296959893691,
-        "y": 6.963395220181701
+        "x": 1.295884787365303,
+        "y": 2.3589753919392153
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "On Top Left note (ref blue POV)"
+      "linkedName": "stage end"
     }
   ],
   "rotationTargets": [],
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 2.0,
-    "maxAcceleration": 2.0,
+    "maxVelocity": 2.5,
+    "maxAcceleration": 4.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0,
+    "rotation": -60.52411099675428,
     "rotateFast": true
   },
   "reversed": false,
-  "folder": "2 Note Amp ",
+  "folder": "soruce shot",
   "previewStartingState": {
-    "rotation": 0.1337425792096282,
+    "rotation": 0,
     "velocity": 0
   },
   "useDefaultConstraints": false

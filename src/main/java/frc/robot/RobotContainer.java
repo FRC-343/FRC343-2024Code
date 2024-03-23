@@ -94,13 +94,14 @@ public class RobotContainer {
       NamedCommands.registerCommand("Auto Shot Speed", new ShootSpecificSpeedCommandAuto(80));
 
       // Auto Preset Shots
-      NamedCommands.registerCommand("Stage 2 note Preload", new PresetHoodCommand(148.25));
-      NamedCommands.registerCommand("Stage note shot", new PresetHoodCommand(127.25));
-      NamedCommands.registerCommand("Center Preload", new PresetHoodCommand(146.5));
-      NamedCommands.registerCommand("Center Note", new PresetHoodCommand(106.5));
+      NamedCommands.registerCommand("Stage 2 note Preload", new PresetHoodCommand(136.25));
+      NamedCommands.registerCommand("Stage note shot", new PresetHoodCommand(119.25));
+      NamedCommands.registerCommand("Center Preload", new PresetHoodCommand(134.75));// Correct
+      NamedCommands.registerCommand("Center Note", new PresetHoodCommand(96.5)); // correct
       NamedCommands.registerCommand("Zero", new PresetHoodCommand(0));
-      NamedCommands.registerCommand("Center Wing 1", new PresetHoodCommand(34.5));
-      NamedCommands.registerCommand("Amp Preload", new PresetHoodCommand(156));
+      NamedCommands.registerCommand("Center Wing 1", new PresetHoodCommand(10));  
+      NamedCommands.registerCommand("Amp Preload", new PresetHoodCommand(142));
+      NamedCommands.registerCommand("Top anlge", new PresetHoodCommand(170));
       
 
 
@@ -190,9 +191,9 @@ public class RobotContainer {
             new JoystickButton(m_driverController, XboxController.Button.kLeftBumper.value).whileTrue(new IntakeCommand(-8));
 
             new JoystickButton(m_OpController, XboxController.Button.kA.value)
-            .onTrue( new PresetHoodCommand(100.5));
+            .onTrue( new PresetHoodCommand(97.5));
 
-            new POVButton(m_OpController, 90).onTrue(new PresetHoodCommand(22));
+            new POVButton(m_OpController, 90).onTrue(new PresetHoodCommand(17));
             
             new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value)
             .whileTrue(new AimShootCommand());
@@ -200,7 +201,7 @@ public class RobotContainer {
              new JoystickButton(m_driverController, XboxController.Button.kA.value).whileTrue( new RunCommand(() -> m_robotDrive.resetGyro(), m_robotDrive));
 
              new JoystickButton(m_OpController, XboxController.Button.kX.value)
-             .onTrue(new PresetHoodCommand(165));
+             .onTrue(new PresetHoodCommand(170));
 
              new JoystickButton(m_OpController, XboxController.Button.kY.value).whileTrue(new ShootSpecificSpeedCommand(80));
             

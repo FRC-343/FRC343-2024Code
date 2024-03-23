@@ -2,8 +2,8 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 0.42,
-      "y": 7.39
+      "x": 0.47,
+      "y": 6.97
     },
     "rotation": 0
   },
@@ -18,9 +18,28 @@
           }
         },
         {
-          "type": "named",
+          "type": "parallel",
           "data": {
-            "name": "AimShoot"
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Amp Preload"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Auto Shot Speed"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Timed Intake"
+                }
+              }
+            ]
           }
         },
         {
@@ -49,9 +68,28 @@
           }
         },
         {
-          "type": "named",
+          "type": "parallel",
           "data": {
-            "name": "AimShoot"
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Center Note"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Auto Shot Speed"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Timed Intake"
+                }
+              }
+            ]
           }
         },
         {
@@ -80,9 +118,28 @@
           }
         },
         {
-          "type": "named",
+          "type": "parallel",
           "data": {
-            "name": "AimShoot"
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Center Note"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Auto Shot Speed"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Timed Intake"
+                }
+              }
+            ]
           }
         },
         {
@@ -117,9 +174,28 @@
           }
         },
         {
-          "type": "named",
+          "type": "parallel",
           "data": {
-            "name": "AimShoot"
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Stage note shot"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Auto Shot Speed"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Timed Intake"
+                }
+              }
+            ]
           }
         }
       ]

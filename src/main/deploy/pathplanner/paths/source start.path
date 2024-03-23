@@ -3,16 +3,16 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 3.1751877789469862,
-        "y": 3.238687905947241
+        "x": 0.87,
+        "y": 4.18
       },
       "prevControl": null,
       "nextControl": {
-        "x": 4.699009398018795,
-        "y": 1.3590841467397223
+        "x": 4.306449663596999,
+        "y": 1.5635391494754367
       },
       "isLocked": false,
-      "linkedName": "Mid preload shot"
+      "linkedName": "stage end"
     },
     {
       "anchor": {
@@ -20,8 +20,8 @@
         "y": 0.6
       },
       "prevControl": {
-        "x": 6.659385318770638,
-        "y": 0.6000000000000004
+        "x": 5.935233051145888,
+        "y": 0.5646726382642665
       },
       "nextControl": null,
       "isLocked": false,
@@ -29,35 +29,23 @@
     }
   ],
   "rotationTargets": [],
-  "constraintZones": [
-    {
-      "name": "New Constraints Zone",
-      "minWaypointRelativePos": 0.6,
-      "maxWaypointRelativePos": 1.0,
-      "constraints": {
-        "maxVelocity": 3.0,
-        "maxAcceleration": 3.0,
-        "maxAngularVelocity": 540.0,
-        "maxAngularAcceleration": 720.0
-      }
-    }
-  ],
+  "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 5.0,
-    "maxAcceleration": 5.0,
+    "maxVelocity": 2.5,
+    "maxAcceleration": 4.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
   },
   "goalEndState": {
     "velocity": 0,
     "rotation": 0,
-    "rotateFast": false
+    "rotateFast": true
   },
   "reversed": false,
-  "folder": "# mid note",
+  "folder": "soruce shot",
   "previewStartingState": {
-    "rotation": -30.78414652632638,
+    "rotation": -62.52556837435486,
     "velocity": 0
   },
   "useDefaultConstraints": false

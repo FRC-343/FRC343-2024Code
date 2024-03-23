@@ -4,12 +4,12 @@
     {
       "anchor": {
         "x": 8.632751551217387,
-        "y": 0.7549257955658759
+        "y": 0.6
       },
       "prevControl": null,
       "nextControl": {
         "x": 8.330672375630465,
-        "y": 2.1243513915599266
+        "y": 1.9694255959940516
       },
       "isLocked": false,
       "linkedName": "Bottom After intake"
