@@ -90,7 +90,7 @@ public class Visiontwo extends SubsystemBase {
     
     public double AimMath(){
             if (camera.getLatestResult().hasTargets() == true )//&& (getId() == (4) || getId() == 7))
-            angle = (7.97224  * getTy() + 86.37707)-6;
+            angle = (7.97224  * getTy() + 86.37707)-12;
 
         //  SmartDashboard.putNumber("Ty", getTy());
         //  SmartDashboard.putNumber("Tx", getTx());
