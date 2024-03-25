@@ -28,6 +28,11 @@ import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.AimShootComm
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.AimShootCommandAuto;
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.ShootSpecificSpeedCommand;
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.ShootSpecificSpeedCommandAuto;
+import frc.robot.Commands.intakeCommands.IntakeCommand;
+import frc.robot.Commands.intakeCommands.IntakeCommandAuto;
+import frc.robot.Commands.intakeCommands.IntakeLiftCommand;
+import frc.robot.Commands.intakeCommands.IntakeTimedCommand;
+import frc.robot.Commands.intakeCommands.IntakeTimedStopCommand;
 import frc.robot.Constants.AutoConstants;
 import frc.robot.Constants.DriveConstants;
 import frc.robot.Constants.OIConstants;
