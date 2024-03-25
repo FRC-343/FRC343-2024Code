@@ -3,36 +3,36 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 7.64595957763344,
-        "y": 2.4398563082840448
+        "x": 0.87,
+        "y": 4.18
       },
       "prevControl": null,
       "nextControl": {
-        "x": 7.64595957763344,
-        "y": 2.4331434377154473
+        "x": 3.6518015893174556,
+        "y": 3.2722522587910445
       },
       "isLocked": false,
-      "linkedName": "2nd from bottom mid"
+      "linkedName": "stage end"
     },
     {
       "anchor": {
-        "x": 8.632751551217387,
+        "x": 7.64595957763344,
         "y": 2.4398563082840448
       },
       "prevControl": {
-        "x": 8.626038680648788,
-        "y": 2.4331434377154473
+        "x": 4.786276715410564,
+        "y": 0.3857179142937815
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "2nd from BM intake end"
+      "linkedName": "2nd from bottom mid"
     }
   ],
   "rotationTargets": [],
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 4.0,
+    "maxVelocity": 2.5,
     "maxAcceleration": 4.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
@@ -43,10 +43,10 @@
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "# mid note",
+  "folder": "soruce autos",
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0
   },
-  "useDefaultConstraints": true
+  "useDefaultConstraints": false
 }

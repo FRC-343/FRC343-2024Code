@@ -13,9 +13,10 @@
     "4 note Amp down",
     "Center to Mid",
     "Global Paths",
-    "soruce shot"
+    "soruce autos"
   ],
   "autoFolders": [
+    "# mid notes",
     "2 note Amp fin",
     "2 note Center",
     "2 note Stage",
@@ -24,7 +25,7 @@
     "3 note center Stage fin",
     "3 note stage",
     "4 note from amp",
-    "# mid notes"
+    "Sorce autos"
   ],
   "defaultMaxVel": 4.0,
   "defaultMaxAccel": 4.0,

@@ -88,6 +88,7 @@ public class RobotContainer {
       NamedCommands.registerCommand("Shoot",new ShootCommand());
       NamedCommands.registerCommand("Intake for Auto", new IntakeCommandAuto());
       NamedCommands.registerCommand("Timed Intake", new IntakeTimedCommand(-10, .9));
+      NamedCommands.registerCommand("Auto Intake command", new IntakeTimedStopCommand());
 
 
       // Auto fire speed

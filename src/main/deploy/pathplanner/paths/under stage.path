@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 7.64595957763344,
+        "x": 8.632751551217387,
         "y": 2.4398563082840448
       },
       "prevControl": null,
       "nextControl": {
-        "x": 7.64595957763344,
-        "y": 2.4331434377154473
+        "x": 6.6323161217751,
+        "y": 3.399796799593599
       },
       "isLocked": false,
-      "linkedName": "2nd from bottom mid"
+      "linkedName": "2nd from BM intake end"
     },
     {
       "anchor": {
-        "x": 8.632751551217387,
-        "y": 2.4398563082840448
+        "x": 5.746217206720128,
+        "y": 4.514133313980914
       },
       "prevControl": {
-        "x": 8.626038680648788,
-        "y": 2.4331434377154473
+        "x": 7.7936427301426034,
+        "y": 3.0507275300264896
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "2nd from BM intake end"
+      "linkedName": null
     }
   ],
   "rotationTargets": [],
@@ -39,11 +39,11 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0,
+    "rotation": -5.815626529491281,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "# mid note",
+  "folder": "soruce autos",
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0

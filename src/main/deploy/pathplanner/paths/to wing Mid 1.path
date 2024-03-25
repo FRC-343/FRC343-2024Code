@@ -3,13 +3,13 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 8.632751551217387,
-        "y": 0.6
+        "x": 8.639464421785986,
+        "y": 0.7415000544286795
       },
       "prevControl": null,
       "nextControl": {
-        "x": 8.330672375630465,
-        "y": 1.9694255959940516
+        "x": 8.337385246199064,
+        "y": 2.110925650422731
       },
       "isLocked": false,
       "linkedName": "Bottom After intake"
