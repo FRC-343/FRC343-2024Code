@@ -4,12 +4,12 @@
     {
       "anchor": {
         "x": 3.03,
-        "y": 5.51
+        "y": 5.5
       },
       "prevControl": null,
       "nextControl": {
         "x": 2.440997618315195,
-        "y": 6.195638085561885
+        "y": 6.1856380855618855
       },
       "isLocked": false,
       "linkedName": "On Top Center Note"

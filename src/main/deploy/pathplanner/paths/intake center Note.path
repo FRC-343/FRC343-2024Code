@@ -8,8 +8,8 @@
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.234441105733733,
-        "y": 5.477759506502913
+        "x": 2.2566815992308196,
+        "y": 5.5
       },
       "isLocked": false,
       "linkedName": "Center preload"
@@ -20,8 +20,8 @@
         "y": 5.5
       },
       "prevControl": {
-        "x": 3.0446856823230637,
-        "y": 5.492445188825977
+        "x": 3.0134850238519975,
+        "y": 5.5
       },
       "nextControl": null,
       "isLocked": false,

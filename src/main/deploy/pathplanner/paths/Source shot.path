@@ -3,13 +3,13 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 8.632751551217387,
-        "y": 0.6
+        "x": 8.639464421785986,
+        "y": 0.7415000544286795
       },
       "prevControl": null,
       "nextControl": {
-        "x": 6.9926021784065036,
-        "y": 1.923824384321399
+        "x": 4.289524293334301,
+        "y": 2.3593018614608665
       },
       "isLocked": false,
       "linkedName": "Bottom After intake"
@@ -20,8 +20,8 @@
         "y": 4.18
       },
       "prevControl": {
-        "x": 1.295884787365303,
-        "y": 2.3589753919392153
+        "x": 6.430930004717152,
+        "y": 0.6743713487426976
       },
       "nextControl": null,
       "isLocked": false,
@@ -43,7 +43,7 @@
     "rotateFast": true
   },
   "reversed": false,
-  "folder": "soruce shot",
+  "folder": "soruce autos",
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0

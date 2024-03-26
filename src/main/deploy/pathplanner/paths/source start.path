@@ -16,12 +16,12 @@
     },
     {
       "anchor": {
-        "x": 7.659385318770638,
-        "y": 0.6
+        "x": 7.679523930476432,
+        "y": 0.7280743132914831
       },
       "prevControl": {
-        "x": 5.935233051145888,
-        "y": 0.5646726382642665
+        "x": 5.9553716628516815,
+        "y": 0.6927469515557496
       },
       "nextControl": null,
       "isLocked": false,
@@ -43,7 +43,7 @@
     "rotateFast": true
   },
   "reversed": false,
-  "folder": "soruce shot",
+  "folder": "soruce autos",
   "previewStartingState": {
     "rotation": -62.52556837435486,
     "velocity": 0

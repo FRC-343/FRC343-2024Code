@@ -2,7 +2,7 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 0.5,
+      "x": 0.52,
       "y": 4.1
     },
     "rotation": 0
@@ -120,6 +120,6 @@
       ]
     }
   },
-  "folder": null,
+  "folder": "Sorce autos",
   "choreoAuto": false
 }

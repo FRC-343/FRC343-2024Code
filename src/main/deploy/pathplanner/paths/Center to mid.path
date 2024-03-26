@@ -4,12 +4,12 @@
     {
       "anchor": {
         "x": 3.03,
-        "y": 5.51
+        "y": 5.5
       },
       "prevControl": null,
       "nextControl": {
         "x": 3.9673516198552976,
-        "y": 6.476385904471273
+        "y": 6.466385904471273
       },
       "isLocked": false,
       "linkedName": "On Top Center Note"
@@ -39,7 +39,7 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -18.434948822921974,
+    "rotation": 0.0,
     "rotateFast": false
   },
   "reversed": false,
