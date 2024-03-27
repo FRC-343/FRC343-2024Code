@@ -3,36 +3,36 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.9802968177364926,
-        "y": 4.09
+        "x": 2.8462571210856704,
+        "y": 6.7
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.9797670063011998,
-        "y": 4.067020133288926
+        "x": 2.0675641351282703,
+        "y": 5.6687470517798175
       },
       "isLocked": false,
-      "linkedName": "Bottom preLoad angled (blue POV)"
+      "linkedName": "CCWR end angled"
     },
     {
       "anchor": {
-        "x": 2.84,
-        "y": 4.09
+        "x": 1.9802968177364926,
+        "y": 4.08
       },
       "prevControl": {
-        "x": 2.812211799164207,
-        "y": 4.08170581561199
+        "x": 1.4298414311114338,
+        "y": 4.924172865488588
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "On top Stage note"
+      "linkedName": "Bottom preLoad angled (blue POV)"
     }
   ],
   "rotationTargets": [],
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 4.0,
+    "maxVelocity": 3.0,
     "maxAcceleration": 4.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
@@ -40,13 +40,13 @@
   "goalEndState": {
     "velocity": 0,
     "rotation": 0,
-    "rotateFast": true
+    "rotateFast": false
   },
   "reversed": false,
-  "folder": "3 Note center start Stage finish",
+  "folder": "4 note center",
   "previewStartingState": {
     "rotation": 0,
     "velocity": 0
   },
-  "useDefaultConstraints": true
+  "useDefaultConstraints": false
 }
