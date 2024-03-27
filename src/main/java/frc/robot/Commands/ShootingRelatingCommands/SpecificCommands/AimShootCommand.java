@@ -13,6 +13,9 @@ import frc.robot.Commands.intakeCommands.inatkeCommandFD;
 import frc.robot.Commands.Auto.PPSpecificCommands.waitcommand;
 import frc.robot.Commands.ShootingRelatingCommands.AimCommand;
 import frc.robot.Commands.ShootingRelatingCommands.ShootCommand;
+import frc.robot.Commands.intakeCommands.IntakeCommandAuto;
+import frc.robot.Commands.intakeCommands.IntakeCommandWait;
+import frc.robot.Commands.intakeCommands.IntakeTimedCommand;
 import frc.robot.Commands.BodyTurnTest;
 
 public class AimShootCommand extends SequentialCommandGroup {
