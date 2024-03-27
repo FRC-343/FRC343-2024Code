@@ -355,14 +355,14 @@ public class DriveSubsystem extends SubsystemBase {
   }
 
   public void AimBody(){
-    if((m_vision.getTx()> -2 || m_vision.getTx() < -4)){
+    if((m_vision.getTx()> 1 || m_vision.getTx() < -1)){
       toRun = true;
-       if (m_vision.getTx() > -2 && toRun == true){
+       if (m_vision.getTx() > 1 && toRun == true){
         rot2 = -.05;
-      } if (m_vision.getTx() < -4 && toRun == true) {
+      } if (m_vision.getTx() < -1 && toRun == true) {
          rot2 =.05;
      } 
-  } else if(m_vision.getTx()< -2 || m_vision.getTx() > -4) {
+  } else if(m_vision.getTx()< 1 || m_vision.getTx() > -1) {
     toRun = false;
     rot2 = 0.0;
   }

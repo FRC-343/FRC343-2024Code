@@ -46,7 +46,7 @@ public class inatkeCommandFD extends Command{
     @Override
     public void execute() {
             if (m_vision.camera.getLatestResult().hasTargets() == true){
-              if(( m_ShooterAngle.isAimed() == true &&(m_vision.getTx() <=-2 && m_vision.getTx() >= -4))){
+              if(( m_ShooterAngle.isAimed() == true &&(m_vision.getTx() <=1 && m_vision.getTx() >= -1))){
             m_intake.setIntakeAuto(kIntakeSpeed);
         }
       }

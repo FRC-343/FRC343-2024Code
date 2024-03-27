@@ -33,7 +33,7 @@ public class BodyTurnTest extends Command {
     @Override
     public boolean isFinished() {
         boolean value = false;
-        if(m_vision.getTx() <= -2 && m_vision.getTx() >= -4){
+        if(m_vision.getTx() <= 1 && m_vision.getTx() >= -1){
             value = true;
         }
         return value;

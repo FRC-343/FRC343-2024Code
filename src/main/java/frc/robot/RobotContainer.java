@@ -102,8 +102,8 @@ public class RobotContainer {
       // Auto Preset Shots
       NamedCommands.registerCommand("Stage 2 note Preload", new PresetHoodCommand(136.25));
       NamedCommands.registerCommand("Stage note shot", new PresetHoodCommand(119.25));
-      NamedCommands.registerCommand("Center Preload", new PresetHoodCommand(164.5));// Correct
-      NamedCommands.registerCommand("Center Note", new PresetHoodCommand(116)); // correct
+      NamedCommands.registerCommand("Center Preload", new PresetHoodCommand(160.5));// Correct
+      NamedCommands.registerCommand("Center Note", new PresetHoodCommand(110)); // correct
       NamedCommands.registerCommand("Zero", new PresetHoodCommand(0));
       NamedCommands.registerCommand("Center Wing 1", new PresetHoodCommand(36));  
       NamedCommands.registerCommand("Amp Preload", new PresetHoodCommand(142));
@@ -199,7 +199,7 @@ public class RobotContainer {
             new JoystickButton(m_OpController, XboxController.Button.kA.value)
             .onTrue( new PresetHoodCommand(97.5));
 
-            new POVButton(m_OpController, 90).onTrue(new PresetHoodCommand(37.25));
+            new POVButton(m_OpController, 90).onTrue(new PresetHoodCommand(35));
             
             new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value)
             .whileTrue(new AimShootCommand());
@@ -217,6 +217,8 @@ public class RobotContainer {
 
             m_ShooterAngle.setDefaultCommand(
             new RunCommand(() -> m_ShooterAngle.move(  m_OpController.getRightX()/1.5), m_ShooterAngle));
+
+            new POVButton(m_driverController, 0).whileTrue(new Wantnote());
   }
 //   private void initAutoChooser() {
 //     autoChooser.setDefaultOption("Test", new TestAuto());

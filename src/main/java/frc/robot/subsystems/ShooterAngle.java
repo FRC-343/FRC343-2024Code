@@ -32,7 +32,7 @@ public class ShooterAngle extends SubsystemBase {
     private boolean m_aiming = false; // if currently aiming (for automatic)
     private boolean m_zeroing = false; // resetting ShooterAngle
 
-    private double kMaxShooterAngleSpeed = .4;
+    private double kMaxShooterAngleSpeed = .8;
     
 
     public ShooterAngle() {

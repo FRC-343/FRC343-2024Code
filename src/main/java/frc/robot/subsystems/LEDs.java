@@ -56,13 +56,13 @@ public class LEDs extends SubsystemBase{
 
       public void HaveNote(){
         for (var i = 0; i < m_ledBuffer.getLength(); i++){
-            m_ledBuffer.setRGB(i, 255, 127, 0);
+            m_ledBuffer.setRGB(i, 255, 0, 255);
         }
         m_led.setData(m_ledBuffer);
       }
       public void noNote(){
         for (var i = 0; i < m_ledBuffer.getLength(); i++){
-            m_ledBuffer.setRGB(i, 52, 52, 52);
+            m_ledBuffer.setRGB(i, 0, 0, 0);
         }
         m_led.setData(m_ledBuffer);
       }
@@ -76,6 +76,13 @@ public class LEDs extends SubsystemBase{
       public void wantNote(){
         for (var i = 0; i < m_ledBuffer.getLength(); i++){
             m_ledBuffer.setRGB(i, 255, 0, 0);
+        }
+        m_led.setData(m_ledBuffer);
+      }
+
+      public void blue(){
+      for (var i = 0; i < m_ledBuffer.getLength(); i++){
+            m_ledBuffer.setRGB(i, 0, 0, 255);
         }
         m_led.setData(m_ledBuffer);
       }

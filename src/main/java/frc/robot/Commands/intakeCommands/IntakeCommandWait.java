@@ -45,7 +45,7 @@ public class IntakeCommandWait extends Command{
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-              if(( (m_vision.getTx() <=-2 && m_vision.getTx() >= -4))){
+              if(( (m_vision.getTx() <=1 && m_vision.getTx() >= -1))){
             m_intake.setIntakeAuto(kIntakeSpeed);
         }
 

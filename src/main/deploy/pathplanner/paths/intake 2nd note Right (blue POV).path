@@ -4,12 +4,12 @@
     {
       "anchor": {
         "x": 1.9802968177364926,
-        "y": 4.16
+        "y": 4.09
       },
       "prevControl": null,
       "nextControl": {
         "x": 1.9710869862786964,
-        "y": 4.162303099446506
+        "y": 4.0923030994465055
       },
       "isLocked": false,
       "linkedName": "Bottom preLoad angled (blue POV)"

@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 8.652084280912748,
-        "y": 5.419016777210657
+        "x": 8.79894110414339,
+        "y": 5.89
       },
       "prevControl": null,
       "nextControl": {
-        "x": 8.123399717282439,
-        "y": 5.947701340840966
+        "x": 8.270256540513081,
+        "y": 6.4186845636303085
       },
       "isLocked": false,
       "linkedName": "Center Mid after Intake1"
     },
     {
       "anchor": {
-        "x": 5.803061910238311,
-        "y": 6.417643175179016
+        "x": 5.9499187334689525,
+        "y": 6.4910715867943365
       },
       "prevControl": {
-        "x": 5.920547368822824,
-        "y": 6.358900445886759
+        "x": 6.067404192053465,
+        "y": 6.432328857502079
       },
       "nextControl": null,
       "isLocked": false,
@@ -39,7 +39,7 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 10.954062643398384,
+    "rotation": 8.13010235415598,
     "rotateFast": false
   },
   "reversed": false,

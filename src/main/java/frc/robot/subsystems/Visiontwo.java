@@ -122,9 +122,11 @@ return angle;
          SmartDashboard.putNumber("Ty", getTy());
          SmartDashboard.putNumber("Tx", getTx());    
         }
-     if(getTv() == true){
+    if (getTv() == true){
+     if((getTx() <1 && getTx() > -1) && getTv() == true){
          m_LEDs.target();
      }
+    }
     //               var alliance = DriverStation.getAlliance();
     //           if (alliance.isPresent()) {
     //             if (alliance.get() == DriverStation.Alliance.Red){

@@ -116,7 +116,7 @@ public class ShootCommand extends Command {
     }
 
     public boolean isShooterSpeedReady() {
-        double marginOfSpeedError = 3.0;
+        double marginOfSpeedError = 4.0;
         return (m_shooter.getBottomShooterRPS() > kBottomShootSpeed - marginOfSpeedError && m_shooter.getBottomShooterRPS() < kBottomShootSpeed + marginOfSpeedError 
                 && m_shooter.getTopShooterRPS() > kTopShootSpeed - marginOfSpeedError && m_shooter.getTopShooterRPS() < kTopShootSpeed + marginOfSpeedError);
                 // if speed is within the margin of error it will return true
