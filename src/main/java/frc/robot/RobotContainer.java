@@ -41,7 +41,7 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-import edu.wpi.first.wpilibj2.command.button.POVButton;
+import edu.wpi.first.wpilibj2.command.button.POVButton
 
 import java.util.List;
 
@@ -97,13 +97,14 @@ public class RobotContainer {
 
 
       // Auto fire speed
-      NamedCommands.registerCommand("Auto Shot Speed", new ShootSpecificSpeedCommandAuto(80));
+      NamedCommands.registerCommand("Auto Shot Speed", new ShootSpecificSpeedCommand(80));
 
       // Auto Preset Shots
       NamedCommands.registerCommand("Stage 2 note Preload", new PresetHoodCommand(136.25));
       NamedCommands.registerCommand("Stage note shot", new PresetHoodCommand(119.25));
-      NamedCommands.registerCommand("Center Preload", new PresetHoodCommand(160.5));// Correct
-      NamedCommands.registerCommand("Center Note", new PresetHoodCommand(110)); // correct
+      NamedCommands.registerCommand("Center Preload", new PresetHoodCommand(156.5));// Correct
+      NamedCommands.registerCommand("Amp note", new PresetHoodCommand(100.5));
+      NamedCommands.registerCommand("Center Note", new PresetHoodCommand(108)); // correct
       NamedCommands.registerCommand("Zero", new PresetHoodCommand(0));
       NamedCommands.registerCommand("Center Wing 1", new PresetHoodCommand(36));  
       NamedCommands.registerCommand("Amp Preload", new PresetHoodCommand(142));

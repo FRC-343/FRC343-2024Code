@@ -45,34 +45,15 @@
                       }
                     },
                     {
-                      "type": "parallel",
+                      "type": "named",
                       "data": {
-                        "commands": [
-                          {
-                            "type": "named",
-                            "data": {
-                              "name": "Center Preload"
-                            }
-                          },
-                          {
-                            "type": "named",
-                            "data": {
-                              "name": "Timed Intake"
-                            }
-                          }
-                        ]
+                        "name": "Timed Intake"
                       }
                     },
                     {
                       "type": "parallel",
                       "data": {
                         "commands": [
-                          {
-                            "type": "named",
-                            "data": {
-                              "name": "Center Note"
-                            }
-                          },
                           {
                             "type": "path",
                             "data": {
@@ -120,7 +101,7 @@
                           {
                             "type": "named",
                             "data": {
-                              "name": "Center Note"
+                              "name": "Amp note"
                             }
                           }
                         ]
@@ -139,7 +120,7 @@
                           {
                             "type": "named",
                             "data": {
-                              "name": "Center Note"
+                              "name": "Amp note"
                             }
                           },
                           {
@@ -159,6 +140,12 @@
                             "type": "path",
                             "data": {
                               "pathName": "rotate CCW"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Amp note"
                             }
                           }
                         ]
