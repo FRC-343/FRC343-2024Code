@@ -36,12 +36,6 @@
           }
         },
         {
-          "type": "path",
-          "data": {
-            "pathName": "Amp note reset to 0"
-          }
-        },
-        {
           "type": "parallel",
           "data": {
             "commands": [
@@ -54,7 +48,7 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "Intake top note"
+                  "pathName": "intake Amp note"
                 }
               }
             ]

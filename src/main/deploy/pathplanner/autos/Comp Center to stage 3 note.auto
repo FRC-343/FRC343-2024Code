@@ -12,21 +12,9 @@
     "data": {
       "commands": [
         {
-          "type": "path",
-          "data": {
-            "pathName": "preLoad Centered"
-          }
-        },
-        {
           "type": "parallel",
           "data": {
             "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Center Preload"
-                }
-              },
               {
                 "type": "named",
                 "data": {
@@ -34,154 +22,164 @@
                 }
               },
               {
-                "type": "named",
+                "type": "sequential",
                 "data": {
-                  "name": "Timed Intake"
+                  "commands": [
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "preLoad Centered"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Center Preload"
+                            }
+                          },
+                          {
+                            "type": "parallel",
+                            "data": {
+                              "commands": [
+                                {
+                                  "type": "named",
+                                  "data": {
+                                    "name": "Center Preload"
+                                  }
+                                },
+                                {
+                                  "type": "named",
+                                  "data": {
+                                    "name": "Timed Intake"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "intake center Note"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Auto Intake command"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Center Note"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Center Note"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Timed Intake"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "To rigth note 3(ref Blue POV)"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Stage note shot"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "intake 2nd note Right (blue POV)"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Auto Intake command"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Stage note shot"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "CWR from stage"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Stage note shot"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "Timed Intake"
+                      }
+                    }
+                  ]
                 }
               }
             ]
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.1
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Auto Intake command"
-                }
-              },
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "intake center Note"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.1
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Center Note"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Auto Shot Speed"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Timed Intake"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.1
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "To rigth note 3(ref Blue POV)"
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.1
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Auto Intake command"
-                }
-              },
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "intake 2nd note Right (blue POV)"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.1
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "CWR from stage"
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 0.1
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Stage note shot"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Auto Shot Speed"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Timed Intake"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 1.0
           }
         }
       ]

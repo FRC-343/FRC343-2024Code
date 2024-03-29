@@ -12,21 +12,9 @@
     "data": {
       "commands": [
         {
-          "type": "path",
-          "data": {
-            "pathName": "preLoad Amp"
-          }
-        },
-        {
           "type": "parallel",
           "data": {
             "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Amp Preload"
-                }
-              },
               {
                 "type": "named",
                 "data": {
@@ -34,165 +22,231 @@
                 }
               },
               {
-                "type": "named",
+                "type": "sequential",
                 "data": {
-                  "name": "Timed Intake"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Auto Intake command"
-                }
-              },
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "intake Amp note"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "rotate CCW"
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Center Note"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Auto Shot Speed"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Timed Intake"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "Amp N to Center N"
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Auto Intake command"
-                }
-              },
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "intake center Note"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Center Note"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Auto Shot Speed"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Timed Intake"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "To rigth note 3(ref Blue POV)"
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Auto Intake command"
-                }
-              },
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "Intake right note 3(ref Blue POV)"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "CWR from stage"
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Stage note shot"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Auto Shot Speed"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Timed Intake"
+                  "commands": [
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "preLoad Amp"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Amp Preload"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Amp Preload"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Timed Intake"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "intake Amp note"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Auto Intake command"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Amp note"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "rotate CCW"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Amp note"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Amp note"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Timed Intake"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "sequential",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "Amp N to Center N"
+                            }
+                          },
+                          {
+                            "type": "parallel",
+                            "data": {
+                              "commands": [
+                                {
+                                  "type": "path",
+                                  "data": {
+                                    "pathName": "intake center Note"
+                                  }
+                                },
+                                {
+                                  "type": "named",
+                                  "data": {
+                                    "name": "Auto Intake command"
+                                  }
+                                },
+                                {
+                                  "type": "named",
+                                  "data": {
+                                    "name": "Center Note"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Center Note"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Timed Intake"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "sequential",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "To rigth note 3(ref Blue POV)"
+                            }
+                          },
+                          {
+                            "type": "parallel",
+                            "data": {
+                              "commands": [
+                                {
+                                  "type": "path",
+                                  "data": {
+                                    "pathName": "intake 2nd note Right (blue POV)"
+                                  }
+                                },
+                                {
+                                  "type": "named",
+                                  "data": {
+                                    "name": "Stage note shot"
+                                  }
+                                },
+                                {
+                                  "type": "named",
+                                  "data": {
+                                    "name": "Auto Intake command"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "CWR from stage"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Stage note shot"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Timed Intake"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
                 }
               }
             ]

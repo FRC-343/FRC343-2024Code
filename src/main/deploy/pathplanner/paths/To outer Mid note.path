@@ -8,20 +8,20 @@
       },
       "prevControl": null,
       "nextControl": {
-        "x": 3.8462571210856704,
-        "y": 6.7
+        "x": 4.0881381762763525,
+        "y": 7.252984505969012
       },
       "isLocked": false,
       "linkedName": "CWR endpoint"
     },
     {
       "anchor": {
-        "x": 7.653457882944388,
-        "y": 5.918329976194836
+        "x": 7.598969483653252,
+        "y": 5.7828658514459885
       },
       "prevControl": {
-        "x": 6.653457882944388,
-        "y": 5.918329976194836
+        "x": 6.598969483653252,
+        "y": 5.7828658514459885
       },
       "nextControl": null,
       "isLocked": false,
@@ -32,15 +32,15 @@
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 5.0,
-    "maxAcceleration": 5.0,
+    "maxVelocity": 2.5,
+    "maxAcceleration": 4.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -25.709953780811176,
-    "rotateFast": false
+    "rotation": -0.5545746868850837,
+    "rotateFast": true
   },
   "reversed": false,
   "folder": "3 note Amp side mid note",
@@ -48,5 +48,5 @@
     "rotation": 0,
     "velocity": 0
   },
-  "useDefaultConstraints": false
+  "useDefaultConstraints": true
 }

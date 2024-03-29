@@ -3,13 +3,13 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.9802968177364926,
-        "y": 3.9499999999999997
+        "x": 1.9668710765992958,
+        "y": 4.09
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.9710869862786964,
-        "y": 3.9523030994465054
+        "x": 1.9576612451414996,
+        "y": 4.0923030994465055
       },
       "isLocked": false,
       "linkedName": "Bottom preLoad angled (blue POV)"

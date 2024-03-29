@@ -12,56 +12,6 @@
     "data": {
       "commands": [
         {
-          "type": "path",
-          "data": {
-            "pathName": "preLoad Centered"
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Center Preload"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Auto Shot Speed"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Timed Intake"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Auto Intake command"
-                }
-              },
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "intake center Note"
-                }
-              }
-            ]
-          }
-        },
-        {
           "type": "parallel",
           "data": {
             "commands": [
@@ -72,71 +22,129 @@
                 }
               },
               {
-                "type": "named",
+                "type": "sequential",
                 "data": {
-                  "name": "Center Note"
+                  "commands": [
+                    {
+                      "type": "path",
+                      "data": {
+                        "pathName": "preLoad Centered"
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Center Preload"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Timed Intake"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "intake center Note"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Auto Intake command"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Center Note"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "Timed Intake"
+                      }
+                    }
+                  ]
                 }
               },
               {
-                "type": "named",
+                "type": "sequential",
                 "data": {
-                  "name": "Timed Intake"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "Center to mid"
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Auto Intake command"
-                }
-              },
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "Mid Intake1"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "To wing"
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Auto Shot Speed"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Center Wing 1"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Timed Intake"
+                  "commands": [
+                    {
+                      "type": "path",
+                      "data": {
+                        "pathName": "Center to mid"
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Auto Intake command"
+                            }
+                          },
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "Mid Intake1"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Center Wing 1"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "path",
+                      "data": {
+                        "pathName": "To wing"
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Center Wing 1"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Timed Intake"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
                 }
               }
             ]
