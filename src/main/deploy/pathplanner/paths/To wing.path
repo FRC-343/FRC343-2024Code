@@ -3,13 +3,13 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 8.79894110414339,
-        "y": 5.89
+        "x": 8.813999056569541,
+        "y": 5.762727239740194
       },
       "prevControl": null,
       "nextControl": {
-        "x": 8.270256540513081,
-        "y": 6.4186845636303085
+        "x": 8.285314492939232,
+        "y": 6.291411803370503
       },
       "isLocked": false,
       "linkedName": "Center Mid after Intake1"

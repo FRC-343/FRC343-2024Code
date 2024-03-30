@@ -3,13 +3,13 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.47,
-        "y": 4.5
+        "x": 2.564316557204543,
+        "y": 4.29260858521717
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.131641329472284,
-        "y": 4.596618567119067
+        "x": 2.225957886676827,
+        "y": 4.389227152336237
       },
       "isLocked": false,
       "linkedName": "CW/Stage Rotation"

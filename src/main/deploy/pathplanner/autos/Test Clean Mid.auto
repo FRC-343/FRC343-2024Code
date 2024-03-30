@@ -2,8 +2,8 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 0.42,
-      "y": 1.98
+      "x": 0.4967524220762727,
+      "y": 2.11
     },
     "rotation": 0
   },
@@ -12,89 +12,118 @@
     "data": {
       "commands": [
         {
-          "type": "path",
-          "data": {
-            "pathName": "Ops Source"
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "AimShoot"
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "to note 1 mid"
-          }
-        },
-        {
           "type": "parallel",
           "data": {
             "commands": [
               {
-                "type": "path",
+                "type": "named",
                 "data": {
-                  "pathName": "Intake Bottom Mid"
+                  "name": "Auto Shot Speed"
                 }
               },
               {
-                "type": "named",
+                "type": "sequential",
                 "data": {
-                  "name": "Intake with stop"
+                  "commands": [
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "Ops Source"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": []
+                      }
+                    },
+                    {
+                      "type": "path",
+                      "data": {
+                        "pathName": "to note 1 mid"
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Auto Intake command"
+                            }
+                          },
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "Intake Bottom Mid"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "to wing Mid 1"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "path",
+                      "data": {
+                        "pathName": "To 2nd from bottom Mid"
+                      }
+                    },
+                    {
+                      "type": "deadline",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "intake 2nd Mid note"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Auto Intake command"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "to wing Mid 2"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
                 }
               }
             ]
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "to wing Mid 1"
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "AimShoot"
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "To 2nd from bottom Mid"
-          }
-        },
-        {
-          "type": "parallel",
-          "data": {
-            "commands": [
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "intake 2nd Mid note"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Intake with stop"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "to wing Mid 2"
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "AimShoot"
           }
         }
       ]

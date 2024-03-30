@@ -3,16 +3,16 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.8462571210856704,
-        "y": 6.7
+        "x": 3.3698610254363364,
+        "y": 6.8837766246961065
       },
       "prevControl": null,
       "nextControl": {
-        "x": 4.0881381762763525,
-        "y": 7.252984505969012
+        "x": 4.611742080627018,
+        "y": 7.4367611306651185
       },
       "isLocked": false,
-      "linkedName": "CWR endpoint"
+      "linkedName": "CCWR end angled"
     },
     {
       "anchor": {
@@ -25,7 +25,7 @@
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Outer note line up"
+      "linkedName": null
     }
   ],
   "rotationTargets": [],
