@@ -47,11 +47,6 @@ public class IntakeTimedCommand extends Command {
     @Override
     public void execute() {
         if(m_ShooterAngle.isAimed() == true && m_Shooter.getBottomShooterRPS() > 75){
-            if (m_ShooterAngle.angle() < 40){
-                if (t.get()> .4){
-                    m_intake.setIntakeAuto(kIntakeSpeed);
-                }
-            } else
                 m_intake.setIntakeAuto(kIntakeSpeed);
         }
     }

@@ -41,13 +41,14 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-import edu.wpi.first.wpilibj2.command.button.POVButton
+import edu.wpi.first.wpilibj2.command.button.POVButton;
 
 import java.util.List;
 
 import frc.robot.Commands.*;
 import frc.robot.subsystems.*;
 
+import com.fasterxml.jackson.databind.util.Named;
 import com.pathplanner.lib.auto.AutoBuilder;
 import com.pathplanner.lib.auto.NamedCommands;
 import com.pathplanner.lib.util.PathPlannerLogging;
@@ -101,14 +102,15 @@ public class RobotContainer {
 
       // Auto Preset Shots
       NamedCommands.registerCommand("Stage 2 note Preload", new PresetHoodCommand(136.25));
-      NamedCommands.registerCommand("Stage note shot", new PresetHoodCommand(119.25));
-      NamedCommands.registerCommand("Center Preload", new PresetHoodCommand(156.5));// Correct
-      NamedCommands.registerCommand("Amp note", new PresetHoodCommand(100.5));
-      NamedCommands.registerCommand("Center Note", new PresetHoodCommand(108)); // correct
+      NamedCommands.registerCommand("Stage note shot", new PresetHoodCommand(98.5));
+      NamedCommands.registerCommand("Center Preload", new PresetHoodCommand(134.5));// Correct
+      NamedCommands.registerCommand("Amp note", new PresetHoodCommand(74.5));
+      NamedCommands.registerCommand("Center Note", new PresetHoodCommand(96.75)); // correct
       NamedCommands.registerCommand("Zero", new PresetHoodCommand(0));
       NamedCommands.registerCommand("Center Wing 1", new PresetHoodCommand(36));  
       NamedCommands.registerCommand("Amp Preload", new PresetHoodCommand(142));
       NamedCommands.registerCommand("Top anlge", new PresetHoodCommand(170));
+      NamedCommands.registerCommand("Stage shot", new PresetHoodCommand(33));
       
 
 
@@ -201,9 +203,13 @@ public class RobotContainer {
             .onTrue( new PresetHoodCommand(97.5));
 
             new POVButton(m_OpController, 90).onTrue(new PresetHoodCommand(35));
+
+            new POVButton(m_OpController, 270).onTrue(new PresetHoodCommand(22));
             
             new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value)
-            .whileTrue(new AimShootCommand());
+            .whileTrue(new ShootSpecificSpeedCommand(40));
+
+
  
              new JoystickButton(m_driverController, XboxController.Button.kA.value).whileTrue( new RunCommand(() -> m_robotDrive.resetGyro(), m_robotDrive));
 

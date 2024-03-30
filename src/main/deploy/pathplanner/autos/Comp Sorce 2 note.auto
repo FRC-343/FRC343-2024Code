@@ -34,12 +34,6 @@
                             "data": {
                               "pathName": "short stage"
                             }
-                          },
-                          {
-                            "type": "named",
-                            "data": {
-                              "name": "Top anlge"
-                            }
                           }
                         ]
                       }
@@ -47,7 +41,7 @@
                     {
                       "type": "named",
                       "data": {
-                        "name": "Timed Intake"
+                        "name": "Intake for Auto"
                       }
                     },
                     {
@@ -82,10 +76,66 @@
                           {
                             "type": "path",
                             "data": {
-                              "pathName": "Source shot"
+                              "pathName": "to wing Mid 1"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Stage shot"
                             }
                           }
                         ]
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "Timed Intake"
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "To 2nd from bottom Mid"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "intake 2nd Mid note"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Auto Intake command"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "path",
+                      "data": {
+                        "pathName": "to wing Mid 2"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "Timed Intake"
                       }
                     }
                   ]

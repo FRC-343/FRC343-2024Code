@@ -4,24 +4,24 @@
     {
       "anchor": {
         "x": 8.639464421785986,
-        "y": 0.7415000544286795
+        "y": 0.6799999999999999
       },
       "prevControl": null,
       "nextControl": {
-        "x": 8.337385246199064,
-        "y": 2.110925650422731
+        "x": 6.317060791545555,
+        "y": 1.891695694538847
       },
       "isLocked": false,
       "linkedName": "Bottom After intake"
     },
     {
       "anchor": {
-        "x": 5.048078667585907,
-        "y": 4.722232301607461
+        "x": 5.039406429438977,
+        "y": 4.625989931765195
       },
       "prevControl": {
-        "x": 6.2362567582278,
-        "y": 4.487281831706521
+        "x": 6.831059672852806,
+        "y": 4.09730536813512
       },
       "nextControl": null,
       "isLocked": false,
@@ -44,14 +44,14 @@
   ],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 5.0,
-    "maxAcceleration": 5.0,
+    "maxVelocity": 2.5,
+    "maxAcceleration": 4.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -1.6135389328812049,
+    "rotation": -11.431570834661812,
     "rotateFast": false
   },
   "reversed": false,
@@ -60,5 +60,5 @@
     "rotation": 0,
     "velocity": 0
   },
-  "useDefaultConstraints": false
+  "useDefaultConstraints": true
 }
