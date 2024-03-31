@@ -1,0 +1,68 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 0.5034652926448709,
+        "y": 6.99118255379368
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 0.5101781632134692,
+        "y": 6.984469683225081
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 1.9534453354620995,
+        "y": 7.67
+      },
+      "prevControl": {
+        "x": 1.9131681120505097,
+        "y": 7.669182481222105
+      },
+      "nextControl": {
+        "x": 1.971859408956408,
+        "y": 7.670373755924168
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 5.14877172611488,
+        "y": 7.67
+      },
+      "prevControl": {
+        "x": 4.464058928117856,
+        "y": 7.709459704633695
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Amp Scramble wing line"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 2.5,
+    "maxAcceleration": 4.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "Amp Set up",
+  "previewStartingState": {
+    "rotation": 0,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

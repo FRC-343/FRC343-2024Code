@@ -3,24 +3,24 @@ package frc.robot.Commands.intakeCommands;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Intake;
 
-public class IntakeCommandAuto extends Command {
+public class IntakeAuto extends Command {
     private final Intake m_intake;
 
     private double kIntakeSpeed;
  
 
-    public IntakeCommandAuto(double intakeSpeed, boolean raise) {
+    public IntakeAuto(double intakeSpeed, boolean raise) {
         m_intake = Intake.getInstance();
         kIntakeSpeed = intakeSpeed;
 
         addRequirements(m_intake);
     }
 
-    public IntakeCommandAuto() {
+    public IntakeAuto() {
         this(-10, true); // defaults to .8 speed
     }
 
-    public IntakeCommandAuto(double intakeSpeed) {
+    public IntakeAuto(double intakeSpeed) {
         this(intakeSpeed, true);
     }
 
@@ -47,7 +47,7 @@ public class IntakeCommandAuto extends Command {
     // Returns true when the command should end.
     @Override
     public boolean isFinished() {
-        return false;
+        return m_intake.getNoteDetector() == true;
     }
 
 }

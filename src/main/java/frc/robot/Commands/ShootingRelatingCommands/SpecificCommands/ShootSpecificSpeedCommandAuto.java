@@ -9,7 +9,7 @@ public class ShootSpecificSpeedCommandAuto extends SequentialCommandGroup {
 
   public ShootSpecificSpeedCommandAuto(double bottomSpeed, double topSpeed) {
     addCommands(
-        new InstantCommand(() -> ShootCommand.useCustom(false, bottomSpeed, topSpeed, 0, 1.5)),
+        new InstantCommand(() -> ShootCommand.useCustom(false, bottomSpeed, topSpeed, 0, 8)),
         new ShootCommand()
     );
   }

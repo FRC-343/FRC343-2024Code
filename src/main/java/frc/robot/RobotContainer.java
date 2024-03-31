@@ -28,6 +28,7 @@ import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.AimShootComm
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.AimShootCommandAuto;
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.ShootSpecificSpeedCommand;
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.ShootSpecificSpeedCommandAuto;
+import frc.robot.Commands.intakeCommands.IntakeAuto;
 import frc.robot.Commands.intakeCommands.IntakeCommand;
 import frc.robot.Commands.intakeCommands.IntakeCommandAuto;
 import frc.robot.Commands.intakeCommands.IntakeLiftCommand;
@@ -62,7 +63,7 @@ import com.pathplanner.lib.util.PathPlannerLogging;
 public class RobotContainer {
   // The robot's subsystems
   private final DriveSubsystem m_robotDrive = DriveSubsystem.getInstance();
-  private final IntakeLift m_IntakeLift = IntakeLift.getInstance(); 
+  private final IntakeLift m_IntakeLift = IntakeLift.getInstance();
   private final Climber m_Climber = Climber.getInstance();
   private final Shooter m_Shooter = Shooter.getInstance();
   private final Intake m_Intake = Intake.getInstance();
@@ -73,76 +74,78 @@ public class RobotContainer {
   private final ShooterAngle m_ShooterAngle = ShooterAngle.getInstance();
 
   private final SendableChooser<Command> autoChooser;
-  
-  private final Field2d field;
 
+  private final Field2d field;
 
   // The driver's controller
   XboxController m_driverController = new XboxController(OIConstants.kDriverControllerPort);
   XboxController m_OpController = new XboxController(OIConstants.kOpControllerPort);
+
   /**
    * The container for the robot. Contains subsystems, OI devices, and commands.
    */
   public RobotContainer() {
 
-    
+    NamedCommands.registerCommand("AimShoot", new AimShootCommandAuto());
+    // These are controls for several things and should not be used in auto and is
+    // here as a redundancy
+    NamedCommands.registerCommand("Intake lift", new IntakeLiftCommand(.3));
+    NamedCommands.registerCommand("Wait", new waitcommand());
+    NamedCommands.registerCommand("Shoot", new ShootCommand());
 
-      NamedCommands.registerCommand("AimShoot", new AimShootCommandAuto());
-      NamedCommands.registerCommand("Intake lift", new IntakeLiftCommand(.3));
-      NamedCommands.registerCommand("Intake with stop", new IntakeCommand());
-      NamedCommands.registerCommand("Wait", new waitcommand());
-      NamedCommands.registerCommand("Shoot",new ShootCommand());
-      NamedCommands.registerCommand("Intake for Auto", new IntakeCommandAuto());
-      NamedCommands.registerCommand("Timed Intake", new IntakeTimedCommand(-10, .9));
-      NamedCommands.registerCommand("Auto Intake command", new IntakeTimedStopCommand());
+    // Several intake commands to be used during auto
+    NamedCommands.registerCommand("Intake for Auto", new IntakeAuto());
+    NamedCommands.registerCommand("Timed Intake", new IntakeTimedCommand(-10, .9));
+    NamedCommands.registerCommand("Auto Intake command", new IntakeTimedStopCommand());
+    NamedCommands.registerCommand("Intake with stop", new IntakeCommand());
 
+    // Auto fire speed
+    NamedCommands.registerCommand("Auto Shot Speed", new ShootSpecificSpeedCommand(80));
+    NamedCommands.registerCommand("Half shot speed", new ShootSpecificSpeedCommand(40));
 
-      // Auto fire speed
-      NamedCommands.registerCommand("Auto Shot Speed", new ShootSpecificSpeedCommand(80));
+    // This is specific to a singular auto right now
+    NamedCommands.registerCommand("Auto shot speed with timed stop", new ShootSpecificSpeedCommandAuto(80));
+    NamedCommands.registerCommand("Half shot speed with timed stop", new ShootSpecificSpeedCommandAuto(80));
 
-      // Auto Preset Shots
-      NamedCommands.registerCommand("Stage 2 note Preload", new PresetHoodCommand(136.25));
-      NamedCommands.registerCommand("Stage note shot", new PresetHoodCommand(98.5));
-      NamedCommands.registerCommand("Center Preload", new PresetHoodCommand(134.5));// Correct
-      NamedCommands.registerCommand("Amp note", new PresetHoodCommand(74.5));
-      NamedCommands.registerCommand("Center Note", new PresetHoodCommand(96.75)); // correct
-      NamedCommands.registerCommand("Zero", new PresetHoodCommand(0));
-      NamedCommands.registerCommand("Center Wing 1", new PresetHoodCommand(36));  
-      NamedCommands.registerCommand("Amp Preload", new PresetHoodCommand(142));
-      NamedCommands.registerCommand("Top anlge", new PresetHoodCommand(170));
-      NamedCommands.registerCommand("Stage shot", new PresetHoodCommand(33));
-      
+    // Auto Preset Shots
+    NamedCommands.registerCommand("Stage 2 note Preload", new PresetHoodCommand(136.25));
+    NamedCommands.registerCommand("Stage note shot", new PresetHoodCommand(98.5));
+    NamedCommands.registerCommand("Center Preload", new PresetHoodCommand(134.5));// Correct
+    NamedCommands.registerCommand("Amp note", new PresetHoodCommand(74.5));
+    NamedCommands.registerCommand("Center Note", new PresetHoodCommand(96.75)); // correct
+    NamedCommands.registerCommand("Zero", new PresetHoodCommand(0));
+    NamedCommands.registerCommand("Center Wing 1", new PresetHoodCommand(36));
+    NamedCommands.registerCommand("Amp Preload", new PresetHoodCommand(142));
+    NamedCommands.registerCommand("Top anlge", new PresetHoodCommand(170));
+    NamedCommands.registerCommand("Stage shot", new PresetHoodCommand(33));
 
+    field = new Field2d();
+    SmartDashboard.putData("Field", field);
 
+    // Logging callback for current robot pose
+    PathPlannerLogging.setLogCurrentPoseCallback((pose) -> {
+      // Do whatever you want with the pose here
+      field.setRobotPose(pose);
+    });
 
-      field = new Field2d();
-        SmartDashboard.putData("Field", field);
-        
+    // Logging callback for target robot pose
+    PathPlannerLogging.setLogTargetPoseCallback((pose) -> {
+      // Do whatever you want with the pose here
+      field.getObject("target pose").setPose(pose);
+    });
 
-        // Logging callback for current robot pose
-        PathPlannerLogging.setLogCurrentPoseCallback((pose) -> {
-            // Do whatever you want with the pose here
-            field.setRobotPose(pose);
-        });
-
-        // Logging callback for target robot pose
-        PathPlannerLogging.setLogTargetPoseCallback((pose) -> {
-            // Do whatever you want with the pose here
-            field.getObject("target pose").setPose(pose);
-        });
-
-        // Logging callback for the active path, this is sent as a list of poses
-        PathPlannerLogging.setLogActivePathCallback((poses) -> {
-            // Do whatever you want with the poses here
-            field.getObject("path").setPoses(poses);
-        });
+    // Logging callback for the active path, this is sent as a list of poses
+    PathPlannerLogging.setLogActivePathCallback((poses) -> {
+      // Do whatever you want with the poses here
+      field.getObject("path").setPoses(poses);
+    });
     // Configure the button bindings
     configureButtonBindings();
     // Build an auto chooser. This will use Commands.none() as the default option.
-  //  initAutoChooser();
+    // initAutoChooser();
     autoChooser = AutoBuilder.buildAutoChooser();
     // autoChooser.setDefaultOption("Test", new TestAuto());
-    
+
     // Another option that allows you to specify the default auto by its name
     // autoChooser = AutoBuilder.buildAutoChooser("My Default Auto");
 
@@ -159,8 +162,6 @@ public class RobotContainer {
                 true, true),
             m_robotDrive));
 
-
-
   }
 
   /**
@@ -173,63 +174,60 @@ public class RobotContainer {
    * {@link JoystickButton}.
    */
   private void configureButtonBindings() {
+
+    // Driver Controller buttons
     new JoystickButton(m_driverController, Button.kR1.value)
         .whileTrue(new RunCommand(
             () -> m_robotDrive.setX(),
             m_robotDrive));
 
+    new JoystickButton(m_driverController, XboxController.Button.kX.value)
+        .whileTrue(new RunCommand(() -> m_robotDrive.Centerbot(), m_robotDrive));
 
-            // new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value).whileTrue(new RunCommand(()-> m_robotDrive.AimBody(), m_robotDrive));
+    new JoystickButton(m_driverController, XboxController.Button.kLeftBumper.value).whileTrue(new IntakeCommand(-8));
 
+    new JoystickButton(m_driverController, XboxController.Button.kA.value)
+        .whileTrue(new RunCommand(() -> m_robotDrive.resetGyro(), m_robotDrive));
 
-            new JoystickButton(m_driverController, XboxController.Button.kX.value).whileTrue(new RunCommand(()-> m_robotDrive.Centerbot(), m_robotDrive));
+    new POVButton(m_OpController, 45).onTrue(new ClimberCommand());
 
-          new POVButton(m_OpController, 45).onTrue(new ClimberCommand());
+    new POVButton(m_driverController, 0).whileTrue(new Wantnote());
 
-             m_IntakeLift.setDefaultCommand(
-               new RunCommand(() -> m_IntakeLift.setIntakeLift(  -m_OpController.getLeftY()), m_IntakeLift));
+    // Operator Controller buttons
+    m_IntakeLift.setDefaultCommand(
+        new RunCommand(() -> m_IntakeLift.setIntakeLift(-m_OpController.getLeftY()), m_IntakeLift));
 
-             m_Climber.setDefaultCommand(
-               new RunCommand(() -> m_Climber.setCLimber(  m_OpController.getRightY() * 2), m_Climber));
+    m_Climber.setDefaultCommand(
+        new RunCommand(() -> m_Climber.setCLimber(m_OpController.getRightY() * 2), m_Climber));
 
-            new JoystickButton(m_OpController, XboxController.Button.kRightBumper.value)
-            .whileTrue(new IntakeCommandAuto(-8));
+    new JoystickButton(m_OpController, XboxController.Button.kRightBumper.value)
+        .whileTrue(new IntakeCommandAuto(-8));
 
-            new JoystickButton(m_OpController, XboxController.Button.kB.value).whileTrue(new IntakeCommandAuto(8));
+    new JoystickButton(m_OpController, XboxController.Button.kB.value).whileTrue(new IntakeCommandAuto(8));
 
-            new JoystickButton(m_driverController, XboxController.Button.kLeftBumper.value).whileTrue(new IntakeCommand(-8));
+    new JoystickButton(m_OpController, XboxController.Button.kA.value)
+        .onTrue(new PresetHoodCommand(97.5));
 
-            new JoystickButton(m_OpController, XboxController.Button.kA.value)
-            .onTrue( new PresetHoodCommand(97.5));
+    new POVButton(m_OpController, 90).onTrue(new PresetHoodCommand(35));
 
-            new POVButton(m_OpController, 90).onTrue(new PresetHoodCommand(35));
+    new POVButton(m_OpController, 180).onTrue(new PresetHoodCommand(22));
 
-            new POVButton(m_OpController, 270).onTrue(new PresetHoodCommand(22));
-            
-            new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value)
-            .whileTrue(new ShootSpecificSpeedCommand(40));
+    new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value)
+        .whileTrue(new AimShootCommand());
 
+    new JoystickButton(m_OpController, XboxController.Button.kX.value)
+        .onTrue(new PresetHoodCommand(170));
 
- 
-             new JoystickButton(m_driverController, XboxController.Button.kA.value).whileTrue( new RunCommand(() -> m_robotDrive.resetGyro(), m_robotDrive));
+    new JoystickButton(m_OpController, XboxController.Button.kY.value).whileTrue(new ShootSpecificSpeedCommand(80));
 
-             new JoystickButton(m_OpController, XboxController.Button.kX.value)
-             .onTrue(new PresetHoodCommand(170));
+    m_ShooterAngle.setDefaultCommand(
+        new RunCommand(() -> m_ShooterAngle.move(m_OpController.getRightX() / 1.5), m_ShooterAngle));
 
-             new JoystickButton(m_OpController, XboxController.Button.kY.value).whileTrue(new ShootSpecificSpeedCommand(80));
-            
-            // new JoystickButton(m_OpController, XboxController.Button.kLeftBumper.value).whileFalse((new ShootSpecificSpeedCommand(0)));
-
-            // new JoystickButton(m_OpController, XboxController.Button.kA.value).onTrue(new AimCommand());
-
-            m_ShooterAngle.setDefaultCommand(
-            new RunCommand(() -> m_ShooterAngle.move(  m_OpController.getRightX()/1.5), m_ShooterAngle));
-
-            new POVButton(m_driverController, 0).whileTrue(new Wantnote());
   }
-//   private void initAutoChooser() {
-//     autoChooser.setDefaultOption("Test", new TestAuto());
-//   }
+
+  // private void initAutoChooser() {
+  // autoChooser.setDefaultOption("Test", new TestAuto());
+  // }
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
    *
@@ -240,41 +238,44 @@ public class RobotContainer {
 
     // Create config for trajectory
     // TrajectoryConfig config = new TrajectoryConfig(
-    //     AutoConstants.kMaxSpeedMetersPerSecond,
-    //     AutoConstants.kMaxAccelerationMetersPerSecondSquared)
-    //     // Add kinematics to ensure max speed is actually obeyed
-    //     .setKinematics(DriveConstants.kDriveKinematics);
+    // AutoConstants.kMaxSpeedMetersPerSecond,
+    // AutoConstants.kMaxAccelerationMetersPerSecondSquared)
+    // // Add kinematics to ensure max speed is actually obeyed
+    // .setKinematics(DriveConstants.kDriveKinematics);
 
     // // An example trajectory to follow. All units in meters.
     // Trajectory exampleTrajectory = TrajectoryGenerator.generateTrajectory(
-    //     // Start at the origin facing the +X direction
-    //     new Pose2d(0, 0, new Rotation2d(0)),
-    //     // Pass through these two interior waypoints, making an 's' curve path
-    //     List.of(new Translation2d(1, 1), new Translation2d(2, -1)),
-    //     // End 3 meters straight ahead of where we started, facing forward
-    //     new Pose2d(3, 0, new Rotation2d(0)),
-    //     config);
+    // // Start at the origin facing the +X direction
+    // new Pose2d(0, 0, new Rotation2d(0)),
+    // // Pass through these two interior waypoints, making an 's' curve path
+    // List.of(new Translation2d(1, 1), new Translation2d(2, -1)),
+    // // End 3 meters straight ahead of where we started, facing forward
+    // new Pose2d(3, 0, new Rotation2d(0)),
+    // config);
 
     // var thetaController = new ProfiledPIDController(
-    //     AutoConstants.kPThetaController, 0, 0, AutoConstants.kThetaControllerConstraints);
+    // AutoConstants.kPThetaController, 0, 0,
+    // AutoConstants.kThetaControllerConstraints);
     // thetaController.enableContinuousInput(-Math.PI, Math.PI);
 
-    // SwerveControllerCommand swerveControllerCommand = new SwerveControllerCommand(
-    //     exampleTrajectory,
-    //     m_robotDrive::getPose, // Functional interface to feed supplier
-    //     DriveConstants.kDriveKinematics,
+    // SwerveControllerCommand swerveControllerCommand = new
+    // SwerveControllerCommand(
+    // exampleTrajectory,
+    // m_robotDrive::getPose, // Functional interface to feed supplier
+    // DriveConstants.kDriveKinematics,
 
-    //     // Position controllers
-    //     new PIDController(AutoConstants.kPXController, 0, 0),
-    //     new PIDController(AutoConstants.kPYController, 0, 0),
-    //     thetaController,
-    //     m_robotDrive::setModuleStates,
-    //     m_robotDrive);
+    // // Position controllers
+    // new PIDController(AutoConstants.kPXController, 0, 0),
+    // new PIDController(AutoConstants.kPYController, 0, 0),
+    // thetaController,
+    // m_robotDrive::setModuleStates,
+    // m_robotDrive);
 
     // // Reset odometry to the starting pose of the trajectory.
     // m_robotDrive.resetOdometry(exampleTrajectory.getInitialPose());
 
     // // Run path following command, then stop at the end.
-    // return swerveControllerCommand.andThen(() -> m_robotDrive.drive(0, 0, 0, false, false));
+    // return swerveControllerCommand.andThen(() -> m_robotDrive.drive(0, 0, 0,
+    // false, false));
   }
 }
