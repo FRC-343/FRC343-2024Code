@@ -1,0 +1,69 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 0.5034652926448709,
+      "y": 6.971043942087884
+    },
+    "rotation": 0
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Amp Scramble 1"
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Amp Scramble 2"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Half shot speed with timed stop"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Auto shot speed"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Stage shot"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Timed Intake"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "folder": "Comp Autos",
+  "choreoAuto": false
+}

@@ -1,0 +1,52 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 8.773721833157952,
+        "y": 4.131499691570812
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 7.484850683987083,
+        "y": 4.225479879531188
+      },
+      "isLocked": false,
+      "linkedName": "AmpScram intaked mid mid"
+    },
+    {
+      "anchor": {
+        "x": 5.039406429438977,
+        "y": 4.625989931765195
+      },
+      "prevControl": {
+        "x": 5.209187561232265,
+        "y": 4.05765811531623
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Mid note shoot"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 2.5,
+    "maxAcceleration": 4.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -3.9849382376370164,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "Amp Set up",
+  "previewStartingState": {
+    "rotation": 0,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

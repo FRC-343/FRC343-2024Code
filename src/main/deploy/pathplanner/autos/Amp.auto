@@ -3,7 +3,7 @@
   "startingPose": {
     "position": {
       "x": 0.5034652926448709,
-      "y": 6.971043942087884
+      "y": 6.99118255379368
     },
     "rotation": 0
   },
@@ -20,7 +20,122 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Amp Scramble 2"
+            "pathName": "Amp Scramble 3"
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Auto Intake command"
+                }
+              },
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Amp Scramble 4"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Half shot speed with timed stop"
+                }
+              },
+              {
+                "type": "sequential",
+                "data": {
+                  "commands": [
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "Amp Scramble 5"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Timed Intake"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "Amp Scramble 6"
+                            }
+                          },
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Auto Intake command"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "parallel",
+                      "data": {
+                        "commands": [
+                          {
+                            "type": "named",
+                            "data": {
+                              "name": "Timed Intake"
+                            }
+                          },
+                          {
+                            "type": "path",
+                            "data": {
+                              "pathName": "Amp Scramble 7"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "parallel",
+                "data": {
+                  "commands": [
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "Auto Intake command"
+                      }
+                    },
+                    {
+                      "type": "path",
+                      "data": {
+                        "pathName": "Amp Scramble 8"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
           }
         },
         {
@@ -40,9 +155,22 @@
                 }
               },
               {
-                "type": "named",
+                "type": "sequential",
                 "data": {
-                  "name": "Timed Intake"
+                  "commands": [
+                    {
+                      "type": "path",
+                      "data": {
+                        "pathName": "Amp Scramble 9"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "Timed Intake"
+                      }
+                    }
+                  ]
                 }
               }
             ]
