@@ -5,16 +5,16 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.Commands.ShootingRelatingCommands.ShootCommand;
 
-public class ShootSpecificSpeedCommand extends SequentialCommandGroup {
+public class ShootSpecificSpeedCommand2 extends SequentialCommandGroup {
 
-  public ShootSpecificSpeedCommand(double bottomSpeed, double topSpeed) {
+  public ShootSpecificSpeedCommand2(double bottomSpeed, double topSpeed) {
     addCommands(
-        new InstantCommand(() -> ShootCommand.useCustom(false, bottomSpeed, topSpeed, 0, 1.2)),
+        new InstantCommand(() -> ShootCommand.useCustom(false, bottomSpeed, topSpeed, 0, 0)),
         new ShootCommand()
     );
   }
 
-  public ShootSpecificSpeedCommand(double speed) {
+  public ShootSpecificSpeedCommand2(double speed) {
     this(speed, MathUtil.clamp(speed * 1.5, speed, 100)); //sets top speed to bottom speed * 1.5 with a max of 100
   }
 }

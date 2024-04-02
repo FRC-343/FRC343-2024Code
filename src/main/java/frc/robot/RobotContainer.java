@@ -27,6 +27,7 @@ import frc.robot.Commands.ShootingRelatingCommands.ShootCommand;
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.AimShootCommand;
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.AimShootCommandAuto;
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.ShootSpecificSpeedCommand;
+import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.ShootSpecificSpeedCommand2;
 import frc.robot.Commands.ShootingRelatingCommands.SpecificCommands.ShootSpecificSpeedCommandAuto;
 import frc.robot.Commands.intakeCommands.IntakeAuto;
 import frc.robot.Commands.intakeCommands.IntakeCommand;
@@ -100,7 +101,7 @@ public class RobotContainer {
     NamedCommands.registerCommand("Intake with stop", new IntakeCommand());
 
     // Auto fire speed
-    NamedCommands.registerCommand("Auto Shot Speed", new ShootSpecificSpeedCommand(80));
+    NamedCommands.registerCommand("Auto Shot Speed", new ShootSpecificSpeedCommand2(80));
     NamedCommands.registerCommand("Half shot speed", new ShootSpecificSpeedCommand(40));
 
     // This is specific to a singular auto right now
@@ -109,7 +110,7 @@ public class RobotContainer {
 
     // Auto Preset Shots
     NamedCommands.registerCommand("Stage 2 note Preload", new PresetHoodCommand(136.25));
-    NamedCommands.registerCommand("Stage note shot", new PresetHoodCommand(98.5));
+    NamedCommands.registerCommand("Stage note shot", new PresetHoodCommand(96.5));
     NamedCommands.registerCommand("Center Preload", new PresetHoodCommand(134.5));// Correct
     NamedCommands.registerCommand("Amp note", new PresetHoodCommand(74.5));
     NamedCommands.registerCommand("Center Note", new PresetHoodCommand(96.75)); // correct
@@ -117,7 +118,7 @@ public class RobotContainer {
     NamedCommands.registerCommand("Center Wing 1", new PresetHoodCommand(36));
     NamedCommands.registerCommand("Amp Preload", new PresetHoodCommand(142));
     NamedCommands.registerCommand("Top anlge", new PresetHoodCommand(170));
-    NamedCommands.registerCommand("Stage shot", new PresetHoodCommand(33));
+    NamedCommands.registerCommand("Stage shot", new PresetHoodCommand(31));
 
     field = new Field2d();
     SmartDashboard.putData("Field", field);
@@ -189,11 +190,12 @@ public class RobotContainer {
     new JoystickButton(m_driverController, XboxController.Button.kA.value)
         .whileTrue(new RunCommand(() -> m_robotDrive.resetGyro(), m_robotDrive));
 
-    new POVButton(m_OpController, 45).onTrue(new ClimberCommand());
-
     new POVButton(m_driverController, 0).whileTrue(new Wantnote());
 
     // Operator Controller buttons
+
+    new POVButton(m_OpController, 45).onTrue(new ClimberCommand());
+
     m_IntakeLift.setDefaultCommand(
         new RunCommand(() -> m_IntakeLift.setIntakeLift(-m_OpController.getLeftY()), m_IntakeLift));
 
@@ -208,7 +210,7 @@ public class RobotContainer {
     new JoystickButton(m_OpController, XboxController.Button.kA.value)
         .onTrue(new PresetHoodCommand(97.5));
 
-    new POVButton(m_OpController, 90).onTrue(new PresetHoodCommand(35));
+    new POVButton(m_OpController, 90).onTrue(new PresetHoodCommand(19));
 
     new POVButton(m_OpController, 180).onTrue(new PresetHoodCommand(22));
 

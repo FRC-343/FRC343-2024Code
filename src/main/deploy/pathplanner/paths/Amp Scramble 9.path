@@ -3,13 +3,13 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 8.773721833157952,
-        "y": 4.131499691570812
+        "x": 8.36,
+        "y": 4.12
       },
       "prevControl": null,
       "nextControl": {
-        "x": 7.484850683987083,
-        "y": 4.225479879531188
+        "x": 7.071128850829131,
+        "y": 4.213980187960376
       },
       "isLocked": false,
       "linkedName": "AmpScram intaked mid mid"
@@ -39,7 +39,7 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -3.9849382376370164,
+    "rotation": -10.619655276155168,
     "rotateFast": false
   },
   "reversed": false,

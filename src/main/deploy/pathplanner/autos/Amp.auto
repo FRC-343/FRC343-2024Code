@@ -47,92 +47,84 @@
           "data": {
             "commands": [
               {
+                "type": "path",
+                "data": {
+                  "pathName": "Amp Scramble 5"
+                }
+              },
+              {
                 "type": "named",
                 "data": {
-                  "name": "Half shot speed with timed stop"
+                  "name": "Intake for Auto"
                 }
               },
               {
-                "type": "sequential",
+                "type": "named",
                 "data": {
-                  "commands": [
-                    {
-                      "type": "parallel",
-                      "data": {
-                        "commands": [
-                          {
-                            "type": "path",
-                            "data": {
-                              "pathName": "Amp Scramble 5"
-                            }
-                          },
-                          {
-                            "type": "named",
-                            "data": {
-                              "name": "Timed Intake"
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "type": "parallel",
-                      "data": {
-                        "commands": [
-                          {
-                            "type": "path",
-                            "data": {
-                              "pathName": "Amp Scramble 6"
-                            }
-                          },
-                          {
-                            "type": "named",
-                            "data": {
-                              "name": "Auto Intake command"
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "type": "parallel",
-                      "data": {
-                        "commands": [
-                          {
-                            "type": "named",
-                            "data": {
-                              "name": "Timed Intake"
-                            }
-                          },
-                          {
-                            "type": "path",
-                            "data": {
-                              "pathName": "Amp Scramble 7"
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
+                  "name": "Half shot speed"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Amp Scramble 6"
                 }
               },
               {
-                "type": "parallel",
+                "type": "named",
                 "data": {
-                  "commands": [
-                    {
-                      "type": "named",
-                      "data": {
-                        "name": "Auto Intake command"
-                      }
-                    },
-                    {
-                      "type": "path",
-                      "data": {
-                        "pathName": "Amp Scramble 8"
-                      }
-                    }
-                  ]
+                  "name": "Auto Intake command"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Amp Scramble 7"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Intake for Auto"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Half shot speed"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Amp Scramble 8"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Auto Intake command"
                 }
               }
             ]
@@ -145,32 +137,25 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Auto shot speed"
+                  "name": "Stage shot"
                 }
               },
               {
                 "type": "named",
                 "data": {
-                  "name": "Stage shot"
+                  "name": "Auto Shot Speed"
                 }
               },
               {
-                "type": "sequential",
+                "type": "path",
                 "data": {
-                  "commands": [
-                    {
-                      "type": "path",
-                      "data": {
-                        "pathName": "Amp Scramble 9"
-                      }
-                    },
-                    {
-                      "type": "named",
-                      "data": {
-                        "name": "Timed Intake"
-                      }
-                    }
-                  ]
+                  "pathName": "Amp Scramble 9"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Timed Intake"
                 }
               }
             ]

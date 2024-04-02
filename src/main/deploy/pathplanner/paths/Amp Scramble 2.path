@@ -1,0 +1,272 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 4.83380687691608,
+        "y": 6.197357940333054
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 5.83380687691608,
+        "y": 6.197357940333054
+      },
+      "isLocked": false,
+      "linkedName": "Amp Scramble wing line"
+    },
+    {
+      "anchor": {
+        "x": 7.632533836496243,
+        "y": 7.49464784643855
+      },
+      "prevControl": {
+        "x": 6.632533836496243,
+        "y": 7.49464784643855
+      },
+      "nextControl": {
+        "x": 8.632533836496243,
+        "y": 7.49464784643855
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 8.646177292354585,
+        "y": 7.49464784643855
+      },
+      "prevControl": {
+        "x": 8.26343481258391,
+        "y": 7.471152799448457
+      },
+      "nextControl": {
+        "x": 9.02891977212526,
+        "y": 7.518142893428643
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 6.659167604049494,
+        "y": 6.5347073551289965
+      },
+      "prevControl": {
+        "x": 7.695085566840278,
+        "y": 7.094341197096432
+      },
+      "nextControl": {
+        "x": 6.075147864581443,
+        "y": 6.219202438404877
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 7.632533836496243,
+        "y": 5.809717333720382
+      },
+      "prevControl": {
+        "x": 6.733868708453834,
+        "y": 5.8525109112462115
+      },
+      "nextControl": {
+        "x": 8.619325810080191,
+        "y": 5.762727239740194
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 9.075801008744873,
+        "y": 5.809717333720382
+      },
+      "prevControl": {
+        "x": 8.720018868609166,
+        "y": 5.829855945426177
+      },
+      "nextControl": {
+        "x": 9.43158314888058,
+        "y": 5.789578722014587
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 7.632533836496243,
+        "y": 5.588192604956638
+      },
+      "prevControl": {
+        "x": 8.77372183315795,
+        "y": 5.853350992416271
+      },
+      "nextControl": {
+        "x": 6.491345839834537,
+        "y": 5.323034217497005
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 6.967959650205015,
+        "y": 4.191915526688196
+      },
+      "prevControl": {
+        "x": 6.504904215613237,
+        "y": 4.292337187202075
+      },
+      "nextControl": {
+        "x": 7.525127907398671,
+        "y": 4.071083856453427
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 8.954969338510105,
+        "y": 4.091222468159223
+      },
+      "prevControl": {
+        "x": 8.04201894118074,
+        "y": 4.050945244747633
+      },
+      "nextControl": {
+        "x": 9.867919735839472,
+        "y": 4.131499691570812
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 5.039406429438977,
+        "y": 4.625989931765195
+      },
+      "prevControl": {
+        "x": 6.430930004717152,
+        "y": 3.869697739395479
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Mid note shoot"
+    }
+  ],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 5.75,
+      "rotationDegrees": 0,
+      "rotateFast": true
+    }
+  ],
+  "constraintZones": [],
+  "eventMarkers": [
+    {
+      "name": "Intake",
+      "waypointRelativePos": 0.8999999999999999,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "Auto Intake command"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Shot1",
+      "waypointRelativePos": 2.5,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "Intake for Auto"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Intake2",
+      "waypointRelativePos": 3.75,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "Auto Intake command"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Shot 2",
+      "waypointRelativePos": 5.65,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "Intake for Auto"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Intake3",
+      "waypointRelativePos": 7.4,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "Auto Intake command"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 2.5,
+    "maxAcceleration": 4.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -3.5915185620008327,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "Amp Set up",
+  "previewStartingState": {
+    "rotation": 0,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}
