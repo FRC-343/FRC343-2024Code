@@ -112,7 +112,7 @@ public class RobotContainer {
     NamedCommands.registerCommand("Stage 2 note Preload", new PresetHoodCommand(136.25));
     NamedCommands.registerCommand("Stage note shot", new PresetHoodCommand(96.5));
     NamedCommands.registerCommand("Center Preload", new PresetHoodCommand(134.5));// Correct
-    NamedCommands.registerCommand("Amp note", new PresetHoodCommand(74.5));
+    NamedCommands.registerCommand("Amp note", new PresetHoodCommand(72.5));
     NamedCommands.registerCommand("Center Note", new PresetHoodCommand(96.75)); // correct
     NamedCommands.registerCommand("Zero", new PresetHoodCommand(0));
     NamedCommands.registerCommand("Center Wing 1", new PresetHoodCommand(36));
@@ -191,10 +191,11 @@ public class RobotContainer {
         .whileTrue(new RunCommand(() -> m_robotDrive.resetGyro(), m_robotDrive));
 
     new POVButton(m_driverController, 0).whileTrue(new Wantnote());
+      
 
     // Operator Controller buttons
 
-    new POVButton(m_OpController, 45).onTrue(new ClimberCommand());
+    new JoystickButton (m_OpController, XboxController.Button.kLeftStick.value).whileTrue(new ClimberCommand());
 
     m_IntakeLift.setDefaultCommand(
         new RunCommand(() -> m_IntakeLift.setIntakeLift(-m_OpController.getLeftY()), m_IntakeLift));
