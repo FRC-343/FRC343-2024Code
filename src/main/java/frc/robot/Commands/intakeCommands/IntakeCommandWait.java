@@ -61,7 +61,7 @@ public class IntakeCommandWait extends Command{
     // Returns true when the command should end.
     @Override
     public boolean isFinished() {
-        return ((m_intake.getNoteDetector()== true));
+        return ((m_intake.getNoteDetector2()== true));
     }
 
 }

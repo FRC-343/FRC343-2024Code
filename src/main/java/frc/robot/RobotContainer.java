@@ -118,7 +118,7 @@ public class RobotContainer {
     NamedCommands.registerCommand("Center Wing 1", new PresetHoodCommand(36));
     NamedCommands.registerCommand("Amp Preload", new PresetHoodCommand(142));
     NamedCommands.registerCommand("Top anlge", new PresetHoodCommand(170));
-    NamedCommands.registerCommand("Stage shot", new PresetHoodCommand(31));
+    NamedCommands.registerCommand("Stage shot", new PresetHoodCommand(38));
 
     field = new Field2d();
     SmartDashboard.putData("Field", field);
@@ -211,7 +211,7 @@ public class RobotContainer {
     new JoystickButton(m_OpController, XboxController.Button.kA.value)
         .onTrue(new PresetHoodCommand(97.5));
 
-    new POVButton(m_OpController, 90).onTrue(new PresetHoodCommand(19));
+    new POVButton(m_OpController, 90).onTrue(new PresetHoodCommand(33));
 
     new POVButton(m_OpController, 180).onTrue(new PresetHoodCommand(22));
 
@@ -221,7 +221,7 @@ public class RobotContainer {
     new JoystickButton(m_OpController, XboxController.Button.kX.value)
         .onTrue(new PresetHoodCommand(170));
 
-    new JoystickButton(m_OpController, XboxController.Button.kY.value).whileTrue(new ShootSpecificSpeedCommand(80));
+    new JoystickButton(m_OpController, XboxController.Button.kY.value).whileTrue(new ShootSpecificSpeedCommand2(80));
 
     m_ShooterAngle.setDefaultCommand(
         new RunCommand(() -> m_ShooterAngle.move(m_OpController.getRightX() / 1.5), m_ShooterAngle));

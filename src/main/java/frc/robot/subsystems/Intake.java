@@ -17,7 +17,7 @@ public class Intake extends SubsystemBase {
 
     private final CANSparkMax m_intake = new CANSparkMax( 1, MotorType.kBrushed);
 
-    private final DigitalInput m_NoteDetector = new DigitalInput(7);
+    private final DigitalInput m_NoteDetector;
     private final DigitalInput m_NoteDetector2 = new DigitalInput(8);
 
     private boolean flashNote = false;
@@ -27,7 +27,7 @@ public class Intake extends SubsystemBase {
 
     public Intake() {
         m_intake.setInverted(false);
-
+        m_NoteDetector = new DigitalInput(7);
         // SendableRegistry.setSubsystem(m_intake, this.getClass().getSimpleName());
         // SendableRegistry.setName(m_intake, "Intake Motor");
 
@@ -46,7 +46,7 @@ public class Intake extends SubsystemBase {
         flashNote = false;
     }
     
-    public boolean getNoteDetector() {
+    public boolean  getNoteDetector() {
         return m_NoteDetector.get(); // false = note in intake
     }
 
@@ -56,7 +56,7 @@ public class Intake extends SubsystemBase {
 
     public void setIntake(double speed) {
 
-        if (getNoteDetector() == false){
+        if (getNoteDetector2() == false){
             m_intake.set(0);           
          } else{
 
@@ -87,7 +87,7 @@ public class Intake extends SubsystemBase {
     public void periodic() {
               SmartDashboard.putBoolean("Note detector 1", getNoteDetector());
               SmartDashboard.putBoolean("Note detector 2", getNoteDetector2());
-         if (getNoteDetector() == false){
+         if (getNoteDetector2() == false){
             m_LEDs.HaveNote(); 
             flashNote = false;
          } else if(flashNote == false){

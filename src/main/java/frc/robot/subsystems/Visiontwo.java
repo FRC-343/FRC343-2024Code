@@ -13,7 +13,7 @@ import org.ejml.equation.Variable;
 import org.photonvision.PhotonCamera;
 import org.photonvision.PhotonTargetSortMode;
 import org.photonvision.targeting.PhotonPipelineResult;
-import org.photonvision.targeting.PhotonTrackedTarget;    
+import org.photonvision.targeting.PhotonTrackedTarget;
 
 //18.2 degrees
 
@@ -23,121 +23,151 @@ public class Visiontwo extends SubsystemBase {
     private LEDs m_LEDs = LEDs.getInstance();
 
     public final PhotonCamera camera = new PhotonCamera("ShooterCam");
-     
 
-    private final NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight-shooter");
-    private final NetworkTableEntry tx = table.getEntry("tx");
-    private final NetworkTableEntry ty = table.getEntry("ty");
-
-
-
+    // private final NetworkTable table =
+    // NetworkTableInstance.getDefault().getTable("limelight-shooter");
+    // private final NetworkTableEntry tx = table.getEntry("tx");
+    // private final NetworkTableEntry ty = table.getEntry("ty");
 
     double angle = 0.0;
-
 
     public static Visiontwo getInstance() {
         return m_instance;
     }
 
     public double getTx() {
-        if(camera.getLatestResult().hasTargets() == true){//} && (getId() == (4) || getId() == 7)){
-        return camera.getLatestResult().getBestTarget().getYaw();
-        } else {
+        try {
+            PhotonPipelineResult frame = camera.getLatestResult();
+            if (frame.hasTargets()) {
+                return frame.getBestTarget().getYaw();
+            } else {
+                return 0;
+            }
+        } catch (Exception e) {
             return 0;
         }
+        // if(camera.getLatestResult().hasTargets()){//} && (getId() == (4) || getId()
+        // == 7)){
+        // return camera.getLatestResult().getBestTarget().getYaw();
+        // } else {
+        // return 0;
+        // }
     }
 
     public double getTy() {
-       if (camera.getLatestResult().hasTargets() == true){// && (getId() == (4) || getId() == 7)){
-        return camera.getLatestResult().getBestTarget().getPitch();
-       } else {
-        return 0.0;
-       }
+         try {
+            PhotonPipelineResult frame = camera.getLatestResult();
+            if (frame.hasTargets()) {
+                return frame.getBestTarget().getYaw();
+            } else {
+                return 0;
+            }
+        } catch (Exception e) {
+            return 0;
+        }
     }
-
     public boolean getTv() {
-        if (camera.getLatestResult().hasTargets() == true )//&& (getId() == (4) || getId() == 7))
-        return camera.getLatestResult().hasTargets();
+        if (camera.getLatestResult().hasTargets() == true)// && (getId() == (4) || getId() == 7))
+            return camera.getLatestResult().hasTargets();
         return false;
     }
 
-
     // public double getThor() { //possibly with a hammer
-    // //     return table.getEntry("thor").getDouble(0.0);
+    // // return table.getEntry("thor").getDouble(0.0);
     // // }
 
     public boolean isAimed(double precision) {
         if (camera.getLatestResult().hasTargets() == true)// && (getId() == (4) || getId() == 7))
-        return Math.abs(getTx()) < precision;
+            return Math.abs(getTx()) < precision;
         return false;
     }
 
     public double getId() {
-        if (camera.getLatestResult().hasTargets() == true)
-        return camera.getLatestResult().getBestTarget().getFiducialId();
-        return 0.0;
+        try {
+            PhotonPipelineResult frame = camera.getLatestResult();
+            if (frame.hasTargets()) {
+                return frame.getBestTarget().getFiducialId();
+            } else {
+                return 0;
+            }
+        } catch (Exception e) {
+            return 0;
+        }
     }
 
- 
-
     // public void setLEDS(boolean turnOn) {
-    //     if (turnOn) {
-    //         table.getEntry("ledMode").setNumber(3);
-    //     } else {
-    //         table.getEntry("ledMode").setNumber(1);
-    //     }
+    // if (turnOn) {
+    // table.getEntry("ledMode").setNumber(3);
+    // } else {
+    // table.getEntry("ledMode").setNumber(1);
     // }
-    
-    public double AimMath(){
-            if (camera.getLatestResult().hasTargets() == true )//&& (getId() == (4) || getId() == 7))
-            angle = (7.97224  * getTy() + 86.37707)-12;
+    // }
 
-        //  SmartDashboard.putNumber("Ty", getTy());
-        //  SmartDashboard.putNumber("Tx", getTx());
-        
+    public double AimMath() {
+        // if (camera.getLatestResult().targets.stream().anyMatch((PhotonTrackedTarget
+        // target) -> {
+        // return target.getFiducialId() == 4 || target.getFiducialId() == 7;
+        // })) {
 
-return angle;
-}
+        // }
+
+        PhotonPipelineResult frame = camera.getLatestResult();
+
+        frame.targets.stream().forEach((PhotonTrackedTarget target) -> {
+            if (target.getFiducialId() == 4 || target.getFiducialId() == 7) {
+                angle = (7.97224 * getTy() + 86.37707) - 12;
+                // something?
+            }
+        });
+
+        // if (camera.getLatestResult().hasTargets() == true && (getId() == (4) ||
+        // getId() == 7))
+        // angle = (7.97224 * getTy() + 86.37707)-12;
+
+        // SmartDashboard.putNumber("Ty", getTy());
+        // SmartDashboard.putNumber("Tx", getTx());
+
+        return angle;
+    }
     // public void killYourEnimiesViaLEDS() {
-    //     table.getEntry("ledMode").setNumber(2);
+    // table.getEntry("ledMode").setNumber(2);
     // }
 
     // public void setLEDSToDefault() {
-    //     table.getEntry("ledMode").setNumber(0);
+    // table.getEntry("ledMode").setNumber(0);
     // }
 
-    //this is for second camera plugged into limelight
-    // public void setCamera(double value) {//vaulue = 0 split, 1 = secondary camera is small, 2 = limelight is small
-    //     table.getEntry("stream").setNumber(0);
+    // this is for second camera plugged into limelight
+    // public void setCamera(double value) {//vaulue = 0 split, 1 = secondary camera
+    // is small, 2 = limelight is small
+    // table.getEntry("stream").setNumber(0);
     // }
-
 
     @Override
     public void periodic() {
-    
+
         // if (target.getFiducialId() == 3 || target.getFiducialId() == 7){
 
         // }
-        if (getTv() == true){
-         SmartDashboard.putNumber("Ty", getTy());
-         SmartDashboard.putNumber("Tx", getTx());    
+        if (getTv() == true) {
+            SmartDashboard.putNumber("Ty", getTy());
+            SmartDashboard.putNumber("Tx", getTx());
         }
-    if (getTv() == true){
-     if((getTx() <1 && getTx() > -1) && getTv() == true){
-         m_LEDs.target();
-     }
+        if (getTv() == true) {
+            if ((getTx() < 1 && getTx() > -1) && getTv() == true) {
+                m_LEDs.target();
+            }
+        }
+        // var alliance = DriverStation.getAlliance();
+        // if (alliance.isPresent()) {
+        // if (alliance.get() == DriverStation.Alliance.Red){
+        // NetworkTableEntry pipline = table.getEntry("pipeline");
+        // pipline.setNumber(0);
+        // } else if (alliance.get() == DriverStation.Alliance.Blue){
+        // NetworkTableEntry pipline = table.getEntry("pipeline");
+        // pipline.setNumber(1);
+        // }
+        // }
     }
-    //               var alliance = DriverStation.getAlliance();
-    //           if (alliance.isPresent()) {
-    //             if (alliance.get() == DriverStation.Alliance.Red){
-    //               NetworkTableEntry pipline = table.getEntry("pipeline");
-    //               pipline.setNumber(0);
-    //             } else if (alliance.get() == DriverStation.Alliance.Blue){
-    //               NetworkTableEntry pipline = table.getEntry("pipeline");
-    //               pipline.setNumber(1);                    
-    //           }
-    //         }
-    }
-    
 
 }

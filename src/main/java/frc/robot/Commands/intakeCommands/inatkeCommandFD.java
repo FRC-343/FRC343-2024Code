@@ -45,11 +45,10 @@ public class inatkeCommandFD extends Command{
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-            if (m_vision.camera.getLatestResult().hasTargets() == true){
+            
               if(( m_ShooterAngle.isAimed() == true &&(m_vision.getTx() <=1 && m_vision.getTx() >= -1))){
             m_intake.setIntakeAuto(kIntakeSpeed);
         }
-      }
     }
 
     // Called once the command ends or is interrupted.
@@ -62,7 +61,7 @@ public class inatkeCommandFD extends Command{
     // Returns true when the command should end.
     @Override
     public boolean isFinished() {
-        return ((m_intake.getNoteDetector()== true));
+        return ((m_intake.getNoteDetector2()== true));
     }
 
 }

@@ -53,7 +53,7 @@ public class IntakeTimedStopCommand extends Command {
     // Returns true when the command should end.
     @Override
     public boolean isFinished() {
-        return (m_intake.getNoteDetector() == false || time.get() > 1.2 );
+        return (m_intake.getNoteDetector2() == false || time.get() > 1.2 );
     }
 
 }

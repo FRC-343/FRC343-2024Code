@@ -19,9 +19,8 @@ public class BodyTurnTest extends Command {
 
     @Override
     public void execute() {
-        if(m_vision.getTv() == true){
-        m_DriveSubsystem.AimBody();
-        }
+            m_DriveSubsystem.AimBody();
+        
         
     }
 
