@@ -10,7 +10,7 @@ public class LEDs extends SubsystemBase{
             // PWM port 9
     // Must be a PWM header, not MXP or DIO
     private final AddressableLED m_led = new AddressableLED(0);
-  private final AddressableLEDBuffer m_ledBuffer = new AddressableLEDBuffer(109);
+  private final AddressableLEDBuffer m_ledBuffer = new AddressableLEDBuffer(144);
 
     // Reuse buffer
     // Default to a length of 60, start empty output
@@ -23,11 +23,11 @@ public class LEDs extends SubsystemBase{
     }
     public LEDs(){
             m_led.setLength(m_ledBuffer.getLength());
-    for (var i = 0; i < 50; i++) {
+    for (var i = 0; i < 72; i++) {
                 // Sets the specified LED to the RGB values for red
-        m_ledBuffer.setRGB(i, 255, 0, 0);
+        m_ledBuffer.setRGB(i, 0, 255, 0);
     }
-        for (var i = 50; i >= 50 && i <109; i++) {
+        for (var i = 72; i >= 72 && i <144; i++) {
                 // Sets the specified LED to the RGB values for red
         m_ledBuffer.setRGB(i, 0, 0, 255);
     }
@@ -56,7 +56,7 @@ public class LEDs extends SubsystemBase{
 
       public void HaveNote(){
         for (var i = 0; i < m_ledBuffer.getLength(); i++){
-            m_ledBuffer.setRGB(i, 80, 0, 80);
+            m_ledBuffer.setRGB(i, 0, 80, 80);
         }
         m_led.setData(m_ledBuffer);
       }
@@ -68,7 +68,7 @@ public class LEDs extends SubsystemBase{
       }
       public void target(){
         for (var i = 0; i < m_ledBuffer.getLength(); i++){
-            m_ledBuffer.setRGB(i, 0, 255, 0);
+            m_ledBuffer.setRGB(i, 255, 0, 0);
         }
         m_led.setData(m_ledBuffer);
       }
