@@ -197,8 +197,10 @@ public class RobotContainer {
 
     new JoystickButton (m_OpController, XboxController.Button.kLeftStick.value).whileTrue(new ClimberCommand());
 
+    new JoystickButton(m_OpController, XboxController.Button.kStart.value).whileTrue(new ShootSpecificSpeedCommand2(50));
+
     m_IntakeLift.setDefaultCommand(
-        new RunCommand(() -> m_IntakeLift.setIntakeLift(-m_OpController.getLeftY()), m_IntakeLift));
+        new RunCommand(() -> m_IntakeLift.setIntakeLift(-m_OpController.getLeftY() * 2), m_IntakeLift));
 
     m_Climber.setDefaultCommand(
         new RunCommand(() -> m_Climber.setCLimber(m_OpController.getRightY() * 2), m_Climber));
