@@ -114,7 +114,7 @@ public class Visiontwo extends SubsystemBase {
         PhotonPipelineResult frame = camera.getLatestResult();
 
         frame.targets.stream().forEach((PhotonTrackedTarget target) -> {
-            if (target.getFiducialId() == 4 || target.getFiducialId() == 7) {
+            if (target.getFiducialId() == 1 || target.getFiducialId() == 7) {
                 angle = (7.97224 * getTy() + 86.37707) - 12;
                 // something?
             }
