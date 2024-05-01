@@ -1,5 +1,11 @@
 package frc.robot.subsystems;
 
+import edu.wpi.first.apriltag.AprilTagFieldLayout;
+import edu.wpi.first.apriltag.AprilTagFields;
+import edu.wpi.first.math.geometry.Pose2d;
+import edu.wpi.first.math.geometry.Rotation3d;
+import edu.wpi.first.math.geometry.Transform3d;
+import edu.wpi.first.math.geometry.Translation3d;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
@@ -8,22 +14,34 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 import java.lang.annotation.Target;
+import java.util.Optional;
 
 import org.ejml.equation.Variable;
+import org.photonvision.EstimatedRobotPose;
 import org.photonvision.PhotonCamera;
 import org.photonvision.PhotonTargetSortMode;
+import org.photonvision.PhotonPoseEstimator.PoseStrategy;
 import org.photonvision.targeting.PhotonPipelineResult;
 import org.photonvision.targeting.PhotonTrackedTarget;
+import org.photonvision.PhotonPoseEstimator;
 
 //18.2 degrees
 
 public class Visiontwo extends SubsystemBase {
     private static final Visiontwo m_instance = new Visiontwo();
 
+  
+
+
+    private static AprilTagFieldLayout aprilTagFieldLayout = AprilTagFields.k2024Crescendo.loadAprilTagLayoutField();
+
     private LEDs m_LEDs = LEDs.getInstance();
 
-    public final PhotonCamera camera = new PhotonCamera("ShooterCam");
+    public static final PhotonCamera camera = new PhotonCamera("ShooterCam");
 
+    private static Transform3d robotToCam = new Transform3d(new Translation3d(0.5, 0.0, 0.5), new Rotation3d(0,0,0)); //Cam mounted facing forward, half a meter forward of center, half a meter up from center.
+
+    private static PhotonPoseEstimator photonPoseEstimator = new PhotonPoseEstimator(aprilTagFieldLayout, PoseStrategy.CLOSEST_TO_REFERENCE_POSE, camera, robotToCam);
     // private final NetworkTable table =
     // NetworkTableInstance.getDefault().getTable("limelight-shooter");
     // private final NetworkTableEntry tx = table.getEntry("tx");
@@ -33,6 +51,11 @@ public class Visiontwo extends SubsystemBase {
 
     public static Visiontwo getInstance() {
         return m_instance;
+    }
+
+        public Optional<EstimatedRobotPose> getEstimatedGlobalPose(Pose2d prevEstimatedRobotPose) {
+        photonPoseEstimator.setReferencePose(prevEstimatedRobotPose);
+        return photonPoseEstimator.update();
     }
 
     public double getTx() {
@@ -102,6 +125,9 @@ public class Visiontwo extends SubsystemBase {
     // table.getEntry("ledMode").setNumber(1);
     // }
     // }
+
+
+    //.35
 
     public double AimMath() {
         // if (camera.getLatestResult().targets.stream().anyMatch((PhotonTrackedTarget
